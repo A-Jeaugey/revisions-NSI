@@ -3,238 +3,248 @@ title: Accueil
 hide:
   - navigation
   - toc
+  - path
 ---
 
-<style>
-.hero {
-  text-align: center;
-  padding: 2.5rem 1rem 1.5rem;
-  background: linear-gradient(135deg, #3949ab 0%, #5e35b1 100%);
-  color: white;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-}
-.hero h1 { color: white; font-size: 2.4rem; margin: 0 0 0.5rem; }
-.hero p  { color: rgba(255,255,255,.92); font-size: 1.05rem; max-width: 720px; margin: 0 auto; }
-.countdown { font-size: 3rem; font-weight: 700; margin: 1rem 0 0.2rem; letter-spacing: 0.05em; }
-.countdown-label { color: rgba(255,255,255,.85); font-size: 0.95rem; }
-
-.cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
-.cta { display: inline-block; padding: 0.6rem 1.2rem; border-radius: 999px; background: rgba(255,255,255,.18); color: white !important; text-decoration: none; font-weight: 600; transition: background 0.15s; }
-.cta:hover { background: rgba(255,255,255,.28); }
-.cta--solid { background: white; color: #3949ab !important; }
-.cta--solid:hover { background: #f3f4f6; }
-</style>
-
-<div class="hero" markdown>
-
-# 🎓 Révisions NSI Terminale
-
-Pack complet pour préparer le bac NSI : **18 fiches de séquence**, **4 mémos**,
-**6 diagrammes**, plan de révision sur 4 semaines. Conforme au programme officiel BO 2020.
-
-<div id="bac-countdown" class="countdown">…</div>
-<div class="countdown-label">jours avant l'épreuve écrite (date à régler dans <code>countdown.js</code>)</div>
-
-<div class="cta-row">
-  <a class="cta cta--solid" href="plan-de-revision/">📅 Plan de révision</a>
-  <a class="cta" href="fiches/">📚 Fiches par séquence</a>
-  <a class="cta" href="memos/memo_complexites/">🧮 Mémo complexités</a>
-</div>
-
-</div>
-
-## 🚀 Par où commencer ?
-
-<div class="grid cards" markdown>
-
-- :material-rocket-launch:{ .lg .middle } **Première fois ici ?**
-
-    ---
-
-    Lis d'abord le **plan de révision** (4 semaines structurées), puis pioche
-    dans les fiches selon ton avancement.
-
-    [:octicons-arrow-right-24: Plan de révision](plan-de-revision.md)
-
-- :material-book-open-page-variant:{ .lg .middle } **Réviser une notion précise**
-
-    ---
-
-    Toutes les fiches sont indexées par numéro de séquence (0 → 80). Chacune
-    contient TL;DR, vocabulaire, code Python, diagrammes, pièges et Q/R bac.
-
-    [:octicons-arrow-right-24: Toutes les fiches](fiches/index.md)
-
-- :material-clipboard-list-outline:{ .lg .middle } **Avant l'épreuve**
-
-    ---
-
-    Garde sous la main les **mémos** : complexités, pièges Python, cheat-sheet
-    SQL, glossaire alphabétique.
-
-    [:octicons-arrow-right-24: Mémos transverses](memos/index.md)
-
-- :material-graph:{ .lg .middle } **Visualiser**
-
-    ---
-
-    Cartes mentales et organigrammes pour les notions visuelles : arbre de
-    décision algorithmique, parcours de graphes, modèles OSI/TCP-IP, etc.
-
-    [:octicons-arrow-right-24: Diagrammes](diagrammes/index.md)
-
-</div>
-
----
-
-## 📚 Les 18 fiches en un coup d'œil
-
-<div class="grid cards" markdown>
-
-- :material-language-python: **0 — Python remise en route**
-
-    Variables, listes, dictionnaires, slicing, compréhensions, exceptions.
-
-    [Lire :octicons-arrow-right-16:](fiches/00_python_remise_en_route.md)
-
-- :fontawesome-solid-arrows-spin: **1 — Récursivité**
-
-    Cas de base, factorielle, Fibonacci, Tours de Hanoï.
-
-    [Lire :octicons-arrow-right-16:](fiches/01_recursivite.md)
-
-- :material-package-variant-closed: **2 — Types abstraits (ADT)**
-
-    Pile (LIFO), File (FIFO), liste chaînée, calculatrice polonaise inversée.
-
-    [Lire :octicons-arrow-right-16:](fiches/02_types_abstraits_donnees.md)
-
-- :material-account-tie-hat: **3 — POO**
-
-    Classes, instances, héritage, polymorphisme, méthodes spéciales.
-
-    [Lire :octicons-arrow-right-16:](fiches/03_programmation_orientee_objet.md)
-
-- :material-graph-outline: **4 — Graphes**
-
-    Matrice / liste d'adjacence, BFS, DFS, applications.
-
-    [Lire :octicons-arrow-right-16:](fiches/04_graphes.md)
-
-- :material-file-tree-outline: **5 — Arbres**
-
-    Vocabulaire, ABR, parcours préfixe / infixe / suffixe, tas.
-
-    [Lire :octicons-arrow-right-16:](fiches/05_arbres.md)
-
-- :material-database: **6 — Bases de données (SQL)**
-
-    Modèle relationnel, SELECT/JOIN/GROUP BY, ACID, transactions.
-
-    [Lire :octicons-arrow-right-16:](fiches/06_bases_de_donnees.md)
-
-- :material-call-split: **7 — Diviser pour régner**
-
-    Tri fusion, tri rapide, dichotomie, exponentiation rapide.
-
-    [Lire :octicons-arrow-right-16:](fiches/07_diviser_pour_regner.md)
-
-- :material-cog-sync-outline: **8 — Processus**
-
-    États, ordonnancement, fork, interblocage (Coffman).
-
-    [Lire :octicons-arrow-right-16:](fiches/08_processus.md)
-
-- :material-linux: **9 — Linux**
-
-    Shell, commandes, permissions, redirections, scripts.
-
-    [Lire :octicons-arrow-right-16:](fiches/09_linux.md)
-
-- :material-lan: **10 — Réseaux**
-
-    OSI / TCP-IP, IPv4 + CIDR, TCP/UDP, encapsulation.
-
-    [Lire :octicons-arrow-right-16:](fiches/10_reseaux.md)
-
-- :material-treasure-chest: **20 — Glouton & KNN**
-
-    Rendu de monnaie, sac à dos fractionnaire, k-plus proches voisins.
-
-    [Lire :octicons-arrow-right-16:](fiches/20_glouton_knn.md)
-
-- :material-table-large: **30 — Programmation dynamique**
-
-    Mémoïsation, tabulation, sac à dos 0/1, PLSC.
-
-    [Lire :octicons-arrow-right-16:](fiches/30_programmation_dynamique.md)
-
-- :material-key-variant: **40 — Cryptographie**
-
-    César, Vigenère, RSA, signature, hachage SHA-256.
-
-    [Lire :octicons-arrow-right-16:](fiches/40_cryptographie.md)
-
-- :material-chip: **50 — System on Chip (SoC)**
-
-    von Neumann vs Harvard, cycle d'instruction, hiérarchie mémoire.
-
-    [Lire :octicons-arrow-right-16:](fiches/50_soc.md)
-
-- :material-magnify: **60 — Recherche textuelle**
-
-    Algo naïf, KMP, Boyer-Moore, Rabin-Karp, regex.
-
-    [Lire :octicons-arrow-right-16:](fiches/60_recherche_textuelle.md)
-
-- :material-language-haskell: **70 — Paradigmes**
-
-    Impératif, fonctionnel, déclaratif, événementiel.
-
-    [Lire :octicons-arrow-right-16:](fiches/70_paradigmes_programmation.md)
-
-- :material-trophy-outline: **80 — Synthèse & quiz**
-
-    Récapitulatif complet, conseils méthodo, mini-quiz.
-
-    [Lire :octicons-arrow-right-16:](fiches/80_approfondissement.md)
-
-</div>
-
----
-
-## ⚙️ Comment utiliser ce site
-
-!!! tip "Mobile-friendly"
-    Le site fonctionne aussi bien sur ordinateur que sur téléphone — révise dans le
-    train, dans la queue à la cantine ou avant de t'endormir.
-
-!!! info "Recherche full-text"
-    Tape :material-magnify: ou `/` pour ouvrir la barre de recherche. Tape un mot
-    (ex : « Hanoï », « JOIN », « BFS ») et tu trouveras toutes les occurrences.
-
-!!! tip "Mode sombre"
-    Bascule clair/sombre via l'icône :material-weather-night: en haut à droite.
-
-!!! example "Code copiable"
-    Sur chaque bloc de code Python, le bouton :material-content-copy: copie le
-    contenu en un clic.
-
----
-
-## 🧠 Mémo de dernière minute
-
-| Mémo | Lien |
-|------|------|
-| Toutes les complexités à connaître | [📊 Mémo complexités](memos/memo_complexites.md) |
-| Pièges Python typiques au bac | [🐍 Mémo Python](memos/memo_python_bac.md) |
-| Cheat-sheet SQL complet | [🗄️ Mémo SQL](memos/memo_sql_bac.md) |
-| Glossaire alphabétique des notions | [📖 Glossaire](memos/memo_vocabulaire.md) |
-
----
-
-<p style="text-align:center; color: var(--md-default-fg-color--light); font-size: 0.9rem; margin-top: 2rem;">
-🚀 Bonne révision et bon bac !<br>
-<em>La régularité bat l'intensité.</em>
-</p>
+<section class="nsi-hero" data-reveal>
+  <div class="nsi-hero__eyebrow">Révisions · NSI Terminale · BO 2020</div>
+
+  <h1 class="nsi-hero__title">
+    Tout le programme,<br>
+    <em>distillé</em> pour le <span class="mark">bac</span>.
+  </h1>
+
+  <p class="nsi-hero__subtitle">
+    18 fiches auto-suffisantes, 4 mémos transverses, 6 diagrammes Mermaid et un
+    plan de révision sur 4 semaines. Conçu pour tenir dans ta poche, pensé pour
+    que tu puisses ouvrir n'importe quelle page, n'importe quand, et trouver
+    exactement ce qu'il faut.
+  </p>
+
+  <div class="nsi-cta-row">
+    <a class="nsi-cta" href="plan-de-revision/">Plan de révision <span class="arrow">→</span></a>
+    <a class="nsi-cta nsi-cta--ghost" href="fiches/">Toutes les fiches</a>
+  </div>
+
+  <div class="nsi-hero__meta">
+    <div class="nsi-meta">
+      <span class="nsi-meta__label">Compte à rebours</span>
+      <span class="nsi-meta__value" id="bac-countdown">…</span>
+    </div>
+    <div class="nsi-meta">
+      <span class="nsi-meta__label">Fiches</span>
+      <span class="nsi-meta__value">18<small>séquences</small></span>
+    </div>
+    <div class="nsi-meta">
+      <span class="nsi-meta__label">Mémos</span>
+      <span class="nsi-meta__value">4<small>transverses</small></span>
+    </div>
+    <div class="nsi-meta">
+      <span class="nsi-meta__label">Diagrammes</span>
+      <span class="nsi-meta__value">6<small>Mermaid</small></span>
+    </div>
+  </div>
+</section>
+
+<section class="nsi-section" data-reveal>
+  <div class="nsi-section__eyebrow">01 — Les fiches</div>
+  <h2 class="nsi-section__title">
+    Dix-huit <em>séquences</em>. Une structure unique : TL;DR, notions, vocabulaire, code, diagrammes, pièges, Q/R.
+  </h2>
+
+  <div class="nsi-bento">
+
+  <a class="nsi-fiche nsi-fiche--accent nsi-fiche--large" href="fiches/01_recursivite/">
+    <span class="nsi-fiche__num">Séquence 01</span>
+    <h3 class="nsi-fiche__title">Récursivité</h3>
+    <p class="nsi-fiche__desc">Cas de base, pile d'appels, Fibonacci, Tours de Hanoï. Le classique de l'écrit.</p>
+    <span class="nsi-fiche__arrow">→</span>
+    <span class="nsi-fiche__tag">Phare</span>
+  </a>
+
+  <a class="nsi-fiche nsi-fiche--wide" href="fiches/00_python_remise_en_route/">
+    <span class="nsi-fiche__num">Séquence 00</span>
+    <h3 class="nsi-fiche__title">Python, remise en route</h3>
+    <p class="nsi-fiche__desc">Bases, listes, dicts, slicing, compréhensions.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/02_types_abstraits_donnees/">
+    <span class="nsi-fiche__num">02</span>
+    <h3 class="nsi-fiche__title">Types abstraits</h3>
+    <p class="nsi-fiche__desc">Pile, file, liste chaînée.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/03_programmation_orientee_objet/">
+    <span class="nsi-fiche__num">03</span>
+    <h3 class="nsi-fiche__title">POO</h3>
+    <p class="nsi-fiche__desc">Classes, héritage, polymorphisme.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche nsi-fiche--wide" href="fiches/04_graphes/">
+    <span class="nsi-fiche__num">Séquence 04</span>
+    <h3 class="nsi-fiche__title">Graphes</h3>
+    <p class="nsi-fiche__desc">Matrice/liste d'adjacence, BFS, DFS, plus court chemin.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche nsi-fiche--wide" href="fiches/05_arbres/">
+    <span class="nsi-fiche__num">Séquence 05</span>
+    <h3 class="nsi-fiche__title">Arbres</h3>
+    <p class="nsi-fiche__desc">ABR, parcours préfixe / infixe / suffixe, tas.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche nsi-fiche--large" href="fiches/06_bases_de_donnees/">
+    <span class="nsi-fiche__num">Séquence 06</span>
+    <h3 class="nsi-fiche__title">Bases de données · SQL</h3>
+    <p class="nsi-fiche__desc">Modèle relationnel, algèbre, SQL (SELECT, JOIN, GROUP BY, HAVING), ACID.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/07_diviser_pour_regner/">
+    <span class="nsi-fiche__num">07</span>
+    <h3 class="nsi-fiche__title">Diviser pour régner</h3>
+    <p class="nsi-fiche__desc">Tri fusion, rapide, dichotomie.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/20_glouton_knn/">
+    <span class="nsi-fiche__num">20</span>
+    <h3 class="nsi-fiche__title">Glouton · KNN</h3>
+    <p class="nsi-fiche__desc">Monnaie, sac à dos, voisins.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/30_programmation_dynamique/">
+    <span class="nsi-fiche__num">30</span>
+    <h3 class="nsi-fiche__title">Prog. dynamique</h3>
+    <p class="nsi-fiche__desc">Mémoïsation, tabulation.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche nsi-fiche--wide" href="fiches/10_reseaux/">
+    <span class="nsi-fiche__num">Séquence 10</span>
+    <h3 class="nsi-fiche__title">Réseaux</h3>
+    <p class="nsi-fiche__desc">OSI / TCP-IP, IPv4 + CIDR, TCP/UDP, encapsulation.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/08_processus/">
+    <span class="nsi-fiche__num">08</span>
+    <h3 class="nsi-fiche__title">Processus</h3>
+    <p class="nsi-fiche__desc">États, ordonnancement, deadlock.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/09_linux/">
+    <span class="nsi-fiche__num">09</span>
+    <h3 class="nsi-fiche__title">Linux</h3>
+    <p class="nsi-fiche__desc">Shell, commandes, scripts.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/40_cryptographie/">
+    <span class="nsi-fiche__num">40</span>
+    <h3 class="nsi-fiche__title">Cryptographie</h3>
+    <p class="nsi-fiche__desc">César, Vigenère, RSA.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/50_soc/">
+    <span class="nsi-fiche__num">50</span>
+    <h3 class="nsi-fiche__title">SoC</h3>
+    <p class="nsi-fiche__desc">von Neumann, cycle d'instruction.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/60_recherche_textuelle/">
+    <span class="nsi-fiche__num">60</span>
+    <h3 class="nsi-fiche__title">Recherche textuelle</h3>
+    <p class="nsi-fiche__desc">Naïf, KMP, regex.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="fiches/70_paradigmes_programmation/">
+    <span class="nsi-fiche__num">70</span>
+    <h3 class="nsi-fiche__title">Paradigmes</h3>
+    <p class="nsi-fiche__desc">Impératif, fonctionnel, déclaratif.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche nsi-fiche--accent nsi-fiche--full" href="fiches/80_approfondissement/">
+    <span class="nsi-fiche__num">Séquence 80 — à lire à J-2 / J-1</span>
+    <h3 class="nsi-fiche__title">Synthèse finale &amp; mini-quiz</h3>
+    <p class="nsi-fiche__desc">Récapitulatif complet des algorithmes, structures de données, complexités, vocabulaire piégeux et 10 questions de révision. Le kit de survie pour le jour J.</p>
+    <span class="nsi-fiche__arrow">→</span>
+    <span class="nsi-fiche__tag">Synthèse</span>
+  </a>
+
+  </div>
+</section>
+
+<section class="nsi-section" data-reveal>
+  <div class="nsi-section__eyebrow">02 — Outils transverses</div>
+  <h2 class="nsi-section__title">
+    Quatre mémos, six diagrammes. À garder <em>ouverts</em> pendant les révisions.
+  </h2>
+
+  <div class="nsi-trio">
+
+  <a class="nsi-fiche" href="memos/memo_complexites/">
+    <span class="nsi-fiche__num">Mémo · A</span>
+    <h3 class="nsi-fiche__title">Complexités</h3>
+    <p class="nsi-fiche__desc">Tous les O(...) du programme — recherche, tri, graphes, arbres, DP, crypto. À relire AVANT l'épreuve.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="memos/memo_python_bac/">
+    <span class="nsi-fiche__num">Mémo · B</span>
+    <h3 class="nsi-fiche__title">Python — pièges bac</h3>
+    <p class="nsi-fiche__desc">Mutabilité, slicing, compréhensions, syntaxe piégeuse, squelette d'exo pratique.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="memos/memo_sql_bac/">
+    <span class="nsi-fiche__num">Mémo · C</span>
+    <h3 class="nsi-fiche__title">SQL cheat-sheet</h3>
+    <p class="nsi-fiche__desc">SELECT, JOIN, GROUP BY, HAVING, ACID, WHERE vs HAVING, 10 requêtes types du bac.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="memos/memo_vocabulaire/">
+    <span class="nsi-fiche__num">Mémo · D</span>
+    <h3 class="nsi-fiche__title">Glossaire</h3>
+    <p class="nsi-fiche__desc">Vocabulaire de A à Z, définitions courtes et formelles attendues au bac.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="diagrammes/arbre_decision_algos/">
+    <span class="nsi-fiche__num">Diag · 01</span>
+    <h3 class="nsi-fiche__title">Quel algo choisir ?</h3>
+    <p class="nsi-fiche__desc">Arbre de décision : devant un problème, quelle stratégie appliquer ?</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  <a class="nsi-fiche" href="diagrammes/parcours_graphes/">
+    <span class="nsi-fiche__num">Diag · 02</span>
+    <h3 class="nsi-fiche__title">BFS vs DFS</h3>
+    <p class="nsi-fiche__desc">Parcours de graphes schématisés avec code Python à la clé.</p>
+    <span class="nsi-fiche__arrow">→</span>
+  </a>
+
+  </div>
+</section>
+
+<section class="nsi-section" data-reveal>
+  <div class="nsi-section__eyebrow">03 — Méthode</div>
+  <blockquote class="nsi-quote">
+    La régularité bat l'intensité. Lis la <em>TL;DR</em>, ferme l'onglet,
+    reformule à voix haute. Recommence.
+  </blockquote>
+  <div class="nsi-cta-row">
+    <a class="nsi-cta" href="plan-de-revision/">Voir le plan J-30 → J-1 <span class="arrow">→</span></a>
+  </div>
+</section>
