@@ -1,0 +1,161 @@
+site_name: NSI Terminale — Révisions Bac
+site_description: Pack complet de fiches de révision pour le bac NSI Terminale
+site_author: Révisions NSI
+site_url: https://a-jeaugey.github.io/revisions-NSI/
+
+repo_name: A-Jeaugey/revisions-NSI
+repo_url: https://github.com/A-Jeaugey/revisions-NSI
+edit_uri: edit/main/docs/
+
+copyright: Pack de révision NSI Terminale — basé sur le programme officiel BO 2020 et le cours de M. Lyotard (Lycée Notre-Dame).
+
+theme:
+  name: material
+  language: fr
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/school
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      tip: octicons/light-bulb-16
+      info: octicons/info-16
+      warning: octicons/alert-16
+      danger: octicons/zap-16
+      example: octicons/beaker-16
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Mode clair
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    - announce.dismiss
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/A-Jeaugey/revisions-NSI
+      name: Dépôt GitHub
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/countdown.js
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: ⚓
+      title: Sommaire de la page
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang:
+        - fr
+        - en
+  - glightbox
+
+nav:
+  - 🏠 Accueil: index.md
+  - 📅 Plan de révision: plan-de-revision.md
+  - 📚 Fiches:
+      - Vue d'ensemble: fiches/index.md
+      - "0 — Python : remise en route": fiches/00_python_remise_en_route.md
+      - "1 — Récursivité": fiches/01_recursivite.md
+      - "2 — Types abstraits de données": fiches/02_types_abstraits_donnees.md
+      - "3 — Programmation orientée objet": fiches/03_programmation_orientee_objet.md
+      - "4 — Graphes": fiches/04_graphes.md
+      - "5 — Arbres": fiches/05_arbres.md
+      - "6 — Bases de données (SQL)": fiches/06_bases_de_donnees.md
+      - "7 — Diviser pour régner": fiches/07_diviser_pour_regner.md
+      - "8 — Processus": fiches/08_processus.md
+      - "9 — Linux": fiches/09_linux.md
+      - "10 — Réseaux": fiches/10_reseaux.md
+      - "20 — Glouton & KNN": fiches/20_glouton_knn.md
+      - "30 — Programmation dynamique": fiches/30_programmation_dynamique.md
+      - "40 — Cryptographie": fiches/40_cryptographie.md
+      - "50 — System on Chip (SoC)": fiches/50_soc.md
+      - "60 — Recherche textuelle": fiches/60_recherche_textuelle.md
+      - "70 — Paradigmes de programmation": fiches/70_paradigmes_programmation.md
+      - "80 — Approfondissement & synthèse": fiches/80_approfondissement.md
+  - 🧰 Mémos:
+      - Vue d'ensemble: memos/index.md
+      - Complexités: memos/memo_complexites.md
+      - Python (pièges bac): memos/memo_python_bac.md
+      - SQL (cheat-sheet): memos/memo_sql_bac.md
+      - Glossaire alphabétique: memos/memo_vocabulaire.md
+  - 🗺 Diagrammes:
+      - Vue d'ensemble: diagrammes/index.md
+      - Quel algo choisir ?: diagrammes/arbre_decision_algos.md
+      - Parcours de graphes: diagrammes/parcours_graphes.md
+      - Terminologie des arbres: diagrammes/arbres_terminologie.md
+      - Modèle OSI / TCP-IP: diagrammes/modele_osi_tcpip.md
+      - États d'un processus: diagrammes/etats_processus.md
+      - Pipeline de compilation: diagrammes/pipeline_compilation.md

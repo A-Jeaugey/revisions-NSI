@@ -1,81 +1,105 @@
 # 🎓 Révisions NSI Terminale — Pack complet pour le Bac
 
-Pack de fiches de révision, mémos et diagrammes synthétisant les **19 séquences** du cours
-de M. Lyotard ([Lycée Notre-Dame](https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/)),
-calé sur le **programme officiel NSI Terminale (BO 2020)**.
+Pack complet de **fiches**, **mémos** et **diagrammes** pour le bac NSI Terminale,
+calé sur le **programme officiel BO 2020** et le cours de M. Lyotard
+([Lycée Notre-Dame](https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/)).
+
+> **🌐 Site en ligne (mobile-friendly, recherche full-text, mode sombre) :**
+> *(disponible après le premier déploiement GitHub Pages — voir section ci-dessous)*
 
 ---
 
-## 🚀 Comment utiliser ce pack
+## 📚 Contenu
 
-1. Commence par lire **[PLAN_DE_REVISION.md](PLAN_DE_REVISION.md)** — méthode et planning J-30.
-2. Choisis une fiche dans le sommaire ci-dessous → lis la **TL;DR** d'abord, puis le détail.
-3. Garde toujours ouvert **[memos/memo_complexites.md](memos/memo_complexites.md)** — c'est le mémo
-   de référence à connaître par cœur.
-4. Refais les exercices Capytale du cours en ligne après chaque fiche (lien donné dans la fiche).
-5. À J-2, fais le quiz de la fiche **[80 — Approfondissement](fiches/80_approfondissement.md)**.
+- **18 fiches de séquence** dans `docs/fiches/` (séquences 0 → 80) :
+  Python, récursivité, ADT (pile/file/liste), POO, graphes, arbres, BDD/SQL,
+  diviser pour régner, processus, Linux, réseaux, glouton+KNN, programmation
+  dynamique, cryptographie, SoC, recherche textuelle, paradigmes, synthèse.
+- **4 mémos transverses** dans `docs/memos/` : complexités, pièges Python,
+  cheat-sheet SQL, glossaire alphabétique.
+- **6 diagrammes Mermaid** dans `docs/diagrammes/` : arbre de décision algos,
+  parcours de graphes (BFS/DFS), terminologie arbres, modèles OSI/TCP-IP, états
+  d'un processus, pipeline de compilation.
+- **Plan de révision sur 4 semaines** : `docs/plan-de-revision.md`.
+- **Page d'accueil avec compte à rebours** vers l'épreuve.
 
----
+Chaque fiche suit la même structure :
 
-## 📚 Sommaire des fiches (par séquence)
-
-| # | Séquence | Fiche | Type d'épreuve concernée |
-|--:|----------|-------|--------------------------|
-| 0 | Python : remise en route | [00_python_remise_en_route.md](fiches/00_python_remise_en_route.md) | Pratique |
-| 1 | Récursivité | [01_recursivite.md](fiches/01_recursivite.md) | Écrit + Pratique |
-| 2 | Types abstraits de données (Pile, File, Liste chaînée) | [02_types_abstraits_donnees.md](fiches/02_types_abstraits_donnees.md) | Écrit + Pratique |
-| 3 | Programmation orientée objet (POO) | [03_programmation_orientee_objet.md](fiches/03_programmation_orientee_objet.md) | Écrit + Pratique |
-| 4 | Graphes | [04_graphes.md](fiches/04_graphes.md) | Écrit + Pratique |
-| 5 | Arbres | [05_arbres.md](fiches/05_arbres.md) | Écrit + Pratique |
-| 6 | Bases de données (SQL) | [06_bases_de_donnees.md](fiches/06_bases_de_donnees.md) | Écrit |
-| 7 | Diviser pour régner | [07_diviser_pour_regner.md](fiches/07_diviser_pour_regner.md) | Écrit + Pratique |
-| 8 | Processus | [08_processus.md](fiches/08_processus.md) | Écrit |
-| 9 | Linux | [09_linux.md](fiches/09_linux.md) | Écrit |
-| 10 | Réseaux | [10_reseaux.md](fiches/10_reseaux.md) | Écrit |
-| 20 | Algorithmes gloutons + KNN | [20_glouton_knn.md](fiches/20_glouton_knn.md) | Écrit |
-| 30 | Programmation dynamique | [30_programmation_dynamique.md](fiches/30_programmation_dynamique.md) | Écrit + Pratique |
-| 40 | Cryptographie | [40_cryptographie.md](fiches/40_cryptographie.md) | Écrit |
-| 50 | System on Chip (SoC) | [50_soc.md](fiches/50_soc.md) | Écrit |
-| 60 | Recherche textuelle | [60_recherche_textuelle.md](fiches/60_recherche_textuelle.md) | Écrit + Pratique |
-| 70 | Paradigmes de programmation | [70_paradigmes_programmation.md](fiches/70_paradigmes_programmation.md) | Écrit |
-| 80 | Approfondissement (synthèse + quiz) | [80_approfondissement.md](fiches/80_approfondissement.md) | Écrit + Pratique |
+> TL;DR · Plan · Notions clés · Vocabulaire · Algorithmes & code Python ·
+> Diagramme Mermaid · Pièges classiques au bac · Questions types · Liens.
 
 ---
 
-## 🧰 Mémos transverses
+## 🚀 Lancer le site en local
 
-| Mémo | Quoi |
-|------|------|
-| [memo_complexites.md](memos/memo_complexites.md) | Tableau O(...) de **tous** les algos du programme |
-| [memo_python_bac.md](memos/memo_python_bac.md) | Pièges Python à connaître pour le bac |
-| [memo_sql_bac.md](memos/memo_sql_bac.md) | Cheat-sheet SQL (SELECT, JOIN, GROUP BY…) |
-| [memo_vocabulaire.md](memos/memo_vocabulaire.md) | Glossaire alphabétique cross-séquences |
+```bash
+pip install -r requirements.txt
+mkdocs serve
+# ouvre http://127.0.0.1:8000
+```
 
-## 🗺 Diagrammes & cartes mentales
+Pour générer le site statique dans `site/` :
 
-| Diagramme | Sujet |
-|-----------|-------|
-| [arbre_decision_algos.md](diagrammes/arbre_decision_algos.md) | « Quel algo choisir pour quel problème ? » |
-| [parcours_graphes.md](diagrammes/parcours_graphes.md) | BFS / DFS schématisés |
-| [arbres_terminologie.md](diagrammes/arbres_terminologie.md) | Vocabulaire des arbres |
-| [modele_osi_tcpip.md](diagrammes/modele_osi_tcpip.md) | Couches OSI / TCP-IP |
-| [etats_processus.md](diagrammes/etats_processus.md) | Automate des états d'un processus |
-| [pipeline_compilation.md](diagrammes/pipeline_compilation.md) | Source → exécutable, paradigmes |
+```bash
+mkdocs build --clean --strict
+```
 
 ---
 
-## 📦 Assets
+## 🌐 Déploiement automatique (GitHub Pages)
 
-- `assets/pdf/` : copies locales des PDFs du cours de M. Lyotard (téléchargés depuis
-  l'espace mkdocs).
+Un workflow GitHub Actions est livré (`.github/workflows/deploy.yml`).
+Pour activer le site :
+
+1. Aller dans **Settings → Pages** du dépôt GitHub.
+2. **Source** : sélectionner *« GitHub Actions »*.
+3. Pousser un commit sur `main` ou `claude/nsi-study-guides-HIgkL`.
+4. Le workflow build + déploie le site automatiquement.
+5. URL accessible : `https://<utilisateur>.github.io/revisions-NSI/`.
+
+> Le compte à rebours est paramétré dans `docs/javascripts/countdown.js`
+> (variable `BAC_DATE`). Modifie-le avec ta vraie date d'épreuve.
 
 ---
 
-## ℹ️ Conventions
+## 📁 Arborescence
 
-- **Tout est en français.** Code Python en PEP 8, commentaires en français.
-- Les blocs ` ```mermaid ` se rendent automatiquement dans GitHub.
-- Pour chaque algo : pseudo-code, code Python valide, complexité temps/espace.
-- Les liens `🔗` pointent vers le cours en ligne d'origine.
+```
+revisions-NSI/
+├── mkdocs.yml                  # Config MkDocs Material
+├── requirements.txt            # Dépendances Python
+├── README.md                   # (ce fichier)
+├── .github/workflows/
+│   └── deploy.yml              # Déploiement auto GitHub Pages
+└── docs/                       # Source du site
+    ├── index.md                # Page d'accueil avec compte à rebours
+    ├── plan-de-revision.md
+    ├── fiches/                 # 18 fiches de séquence + index
+    ├── memos/                  # 4 mémos + index
+    ├── diagrammes/             # 6 diagrammes + index
+    ├── assets/pdf/             # Documents PDF d'origine
+    ├── stylesheets/extra.css   # Styles custom
+    └── javascripts/countdown.js
+```
 
-Bonne révision, et fonce sur le bac 🎯.
+---
+
+## ✨ Fonctionnalités du site
+
+- **Mobile-first** : révise dans le train ou avant de t'endormir.
+- **Recherche full-text** instantanée (`/` ou icône :mag:).
+- **Mode sombre / clair** automatique selon ton OS, basculable.
+- **Diagrammes Mermaid** rendus dans le navigateur.
+- **Code Python** avec coloration syntaxique + bouton de copie.
+- **Tabs**, **admonitions** (notes/tips/warnings), **détails repliables**.
+- **Compte à rebours** vers le bac sur la page d'accueil.
+
+---
+
+## 📜 Crédits
+
+- Cours d'origine : [M. Lyotard, Lycée Notre-Dame](https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/) — site mkdocs sur le programme NSI Terminale.
+- Programme : [BO Spécial n°8 du 25 juillet 2019](https://www.education.gouv.fr/) (NSI Terminale).
+- Pack généré pour révisions personnelles. Diffusion libre.
+
+Bonne chance pour le bac 🎯

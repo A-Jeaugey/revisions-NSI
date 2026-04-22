@@ -1,0 +1,15 @@
+# Build MkDocs
+site/
+
+# Caches Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+.DS_Store
