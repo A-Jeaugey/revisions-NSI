@@ -1,0 +1,139 @@
+/* ===========================================================
+ * Pack Révisions NSI — feuille de styles personnalisée
+ * =========================================================== */
+
+/* Palette : indigo profond + accent orange. Mode sombre amber. */
+:root {
+  --nsi-radius: 12px;
+  --nsi-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --nsi-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #3949ab;
+  --md-primary-fg-color--light: #5e6fc8;
+  --md-primary-fg-color--dark: #283593;
+  --md-accent-fg-color: #ff5722;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #3f51b5;
+  --md-accent-fg-color: #ffb300;
+}
+
+/* === Typo plus aérée pour lecture longue === */
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  border-bottom: 3px solid var(--md-primary-fg-color);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+.md-typeset h2 {
+  font-weight: 700;
+  margin-top: 2rem;
+  border-left: 4px solid var(--md-accent-fg-color);
+  padding-left: 0.6rem;
+}
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+/* === Cartes (grid cards) === */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li,
+.md-typeset .grid > .card {
+  border-radius: var(--nsi-radius);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: var(--nsi-shadow);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover,
+.md-typeset .grid > .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--nsi-shadow-hover);
+  border-color: var(--md-primary-fg-color--light);
+}
+
+/* === Tableaux plus lisibles === */
+.md-typeset table:not([class]) {
+  border-radius: var(--nsi-radius);
+  overflow: hidden;
+  box-shadow: var(--nsi-shadow);
+  font-size: 0.78rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+}
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background: var(--md-default-fg-color--lightest);
+}
+
+/* === Code highlight === */
+.md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.85em;
+}
+.md-typeset pre > code {
+  border-radius: 8px;
+  font-size: 0.78rem;
+}
+
+/* === Admonitions plus contrastées === */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--nsi-radius);
+  box-shadow: var(--nsi-shadow);
+  font-size: 0.78rem;
+}
+
+/* === Mermaid : centrer et fond léger === */
+.md-typeset .mermaid {
+  text-align: center;
+  background: var(--md-default-bg-color);
+  padding: 0.8rem;
+  border-radius: var(--nsi-radius);
+  box-shadow: var(--nsi-shadow);
+  margin: 1rem 0;
+}
+
+/* === Liens "lire la fiche" === */
+.md-typeset a:hover {
+  text-decoration: none;
+}
+
+/* === Scroll horizontal des longs blocs === */
+.md-typeset .scrollable {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* === Cacher le bouton "edit" si confus === */
+.md-content__button[title="Modifier la page"] {
+  opacity: 0.6;
+}
+
+/* === Mobile : tabs plus compactes === */
+@media screen and (max-width: 76.1875em) {
+  .md-typeset h1 { font-size: 1.6rem; }
+  .md-typeset h2 { font-size: 1.2rem; }
+}
+
+/* === Highlight de la barre de progression de chargement === */
+.md-progress {
+  background: var(--md-accent-fg-color);
+}
+
+/* === Boutons "TL;DR" en relief === */
+.md-typeset h2:first-of-type::before {
+  content: "📌 ";
+}
