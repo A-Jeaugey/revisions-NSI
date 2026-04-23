@@ -12,33 +12,33 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-language-python: **0 — Python : remise en route**
+- :material-language-python: **1 — Python : remise en route**
 
     Variables, types, structures de contrôle, listes, dictionnaires, fonctions,
     exceptions, fichiers.
 
-    [→ Lire la fiche](00_python_remise_en_route.md)
+    [→ Lire la fiche](01_python_remise_en_route.md)
 
-- :fontawesome-solid-arrows-spin: **1 — Récursivité**
+- :fontawesome-solid-arrows-spin: **2 — Récursivité**
 
     Cas de base, pile d'appels, factorielle, Fibonacci, dichotomie récursive,
     Tours de Hanoï.
 
-    [→ Lire la fiche](01_recursivite.md)
+    [→ Lire la fiche](02_recursivite.md)
 
-- :material-package-variant-closed: **2 — Types abstraits (ADT)**
+- :material-package-variant-closed: **3 — Types abstraits (ADT)**
 
     Pile (LIFO), File (FIFO), liste chaînée, calculatrice polonaise inversée,
     type abstrait vs implémentation.
 
-    [→ Lire la fiche](02_types_abstraits_donnees.md)
+    [→ Lire la fiche](03_types_abstraits_donnees.md)
 
-- :material-account-tie-hat: **3 — Programmation orientée objet (POO)**
+- :material-account-tie-hat: **4 — Programmation orientée objet (POO)**
 
     Classes, objets, attributs, méthodes, héritage, polymorphisme, méthodes
     spéciales, UML simple.
 
-    [→ Lire la fiche](03_programmation_orientee_objet.md)
+    [→ Lire la fiche](04_programmation_orientee_objet.md)
 
 </div>
 
@@ -46,19 +46,19 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-graph-outline: **4 — Graphes**
+- :material-graph-outline: **5 — Graphes**
 
     Définitions, matrice / liste d'adjacence, BFS, DFS, plus court chemin,
     composantes connexes, détection de cycle.
 
-    [→ Lire la fiche](04_graphes.md)
+    [→ Lire la fiche](05_graphes.md)
 
-- :material-file-tree-outline: **5 — Arbres**
+- :material-file-tree-outline: **6 — Arbres**
 
     Vocabulaire (racine, feuille, hauteur), arbre binaire, ABR, parcours
     préfixe/infixe/suffixe/largeur, tas.
 
-    [→ Lire la fiche](05_arbres.md)
+    [→ Lire la fiche](06_arbres.md)
 
 </div>
 
@@ -66,12 +66,12 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-database: **6 — Bases de données (SQL)**
+- :material-database: **7 — Bases de données (SQL)**
 
     Modèle relationnel, clés, algèbre relationnelle (σ, π, ⋈), SQL
     (SELECT/JOIN/GROUP BY/HAVING), ACID, transactions.
 
-    [→ Lire la fiche](06_bases_de_donnees.md)
+    [→ Lire la fiche](07_bases_de_donnees.md)
 
 </div>
 
@@ -79,30 +79,30 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-call-split: **7 — Diviser pour régner**
+- :material-call-split: **8 — Diviser pour régner**
 
     Tri fusion, tri rapide, dichotomie, exponentiation rapide, récurrences.
 
-    [→ Lire la fiche](07_diviser_pour_regner.md)
+    [→ Lire la fiche](08_diviser_pour_regner.md)
 
-- :material-treasure-chest: **20 — Glouton & KNN**
+- :material-treasure-chest: **12 — Glouton & KNN**
 
     Rendu de monnaie, sac à dos fractionnaire, ordonnancement d'activités,
     K-plus proches voisins.
 
-    [→ Lire la fiche](20_glouton_knn.md)
+    [→ Lire la fiche](12_glouton_knn.md)
 
-- :material-table-large: **30 — Programmation dynamique**
+- :material-table-large: **13 — Programmation dynamique**
 
     Mémoïsation top-down, tabulation bottom-up, sac à dos 0/1, PLSC.
 
-    [→ Lire la fiche](30_programmation_dynamique.md)
+    [→ Lire la fiche](13_programmation_dynamique.md)
 
-- :material-magnify: **60 — Recherche textuelle**
+- :material-magnify: **16 — Recherche textuelle**
 
     Algorithme naïf, KMP (failure function), Boyer-Moore, Rabin-Karp, regex.
 
-    [→ Lire la fiche](60_recherche_textuelle.md)
+    [→ Lire la fiche](16_recherche_textuelle.md)
 
 </div>
 
@@ -110,33 +110,33 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-cog-sync-outline: **8 — Processus**
+- :material-cog-sync-outline: **9 — Processus**
 
     États, ordonnancement, fork, communication inter-processus, interblocage
     (Coffman), processus vs thread.
 
-    [→ Lire la fiche](08_processus.md)
+    [→ Lire la fiche](09_processus.md)
 
-- :material-linux: **9 — Linux**
+- :material-linux: **10 — Linux**
 
     Shell, arborescence, commandes essentielles, permissions (chmod),
     redirections (`|`, `>`, `<`), scripts shell.
 
-    [→ Lire la fiche](09_linux.md)
+    [→ Lire la fiche](10_linux.md)
 
-- :material-lan: **10 — Réseaux**
+- :material-lan: **11 — Réseaux**
 
     Modèles OSI / TCP-IP, IPv4 + CIDR, plages privées, TCP/UDP, encapsulation,
     routage, NAT.
 
-    [→ Lire la fiche](10_reseaux.md)
+    [→ Lire la fiche](11_reseaux.md)
 
-- :material-chip: **50 — System on Chip (SoC)**
+- :material-chip: **15 — System on Chip (SoC)**
 
     Architecture von Neumann/Harvard, CPU (ALU + registres), cycle Fetch/Decode/
     Execute/Writeback, hiérarchie mémoire.
 
-    [→ Lire la fiche](50_soc.md)
+    [→ Lire la fiche](15_soc.md)
 
 </div>
 
@@ -144,18 +144,18 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-key-variant: **40 — Cryptographie**
+- :material-key-variant: **14 — Cryptographie**
 
     Symétrique vs asymétrique, César, Vigenère, XOR, RSA, signature, fonctions
     de hachage.
 
-    [→ Lire la fiche](40_cryptographie.md)
+    [→ Lire la fiche](14_cryptographie.md)
 
-- :material-language-haskell: **70 — Paradigmes de programmation**
+- :material-language-haskell: **17 — Paradigmes de programmation**
 
     Impératif, OO, fonctionnel, logique, événementiel ; comparaison sur exemples.
 
-    [→ Lire la fiche](70_paradigmes_programmation.md)
+    [→ Lire la fiche](17_paradigmes_programmation.md)
 
 </div>
 
@@ -163,11 +163,11 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-trophy-outline: **80 — Approfondissement & synthèse**
+- :material-trophy-outline: **18 — Approfondissement & synthèse**
 
     **À lire à J-2 et J-1.** Récapitulatif algorithmes + structures, conseils
     méthodo écrit/pratique, vocabulaire piégeux, mini-quiz.
 
-    [→ Lire la fiche](80_approfondissement.md)
+    [→ Lire la fiche](18_approfondissement.md)
 
 </div>

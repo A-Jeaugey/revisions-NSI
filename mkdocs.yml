@@ -123,24 +123,24 @@ nav:
       - Quiz QCM: quiz.md
   - Fiches:
       - Vue d'ensemble: fiches/index.md
-      - "00 — Python : remise en route": fiches/00_python_remise_en_route.md
-      - "01 — Récursivité": fiches/01_recursivite.md
-      - "02 — Types abstraits de données": fiches/02_types_abstraits_donnees.md
-      - "03 — Programmation orientée objet": fiches/03_programmation_orientee_objet.md
-      - "04 — Graphes": fiches/04_graphes.md
-      - "05 — Arbres": fiches/05_arbres.md
-      - "06 — Bases de données (SQL)": fiches/06_bases_de_donnees.md
-      - "07 — Diviser pour régner": fiches/07_diviser_pour_regner.md
-      - "08 — Processus": fiches/08_processus.md
-      - "09 — Linux": fiches/09_linux.md
-      - "10 — Réseaux": fiches/10_reseaux.md
-      - "20 — Glouton & KNN": fiches/20_glouton_knn.md
-      - "30 — Programmation dynamique": fiches/30_programmation_dynamique.md
-      - "40 — Cryptographie": fiches/40_cryptographie.md
-      - "50 — System on Chip (SoC)": fiches/50_soc.md
-      - "60 — Recherche textuelle": fiches/60_recherche_textuelle.md
-      - "70 — Paradigmes de programmation": fiches/70_paradigmes_programmation.md
-      - "80 — Approfondissement & synthèse": fiches/80_approfondissement.md
+      - "01 — Python : remise en route": fiches/01_python_remise_en_route.md
+      - "02 — Récursivité": fiches/02_recursivite.md
+      - "03 — Types abstraits de données": fiches/03_types_abstraits_donnees.md
+      - "04 — Programmation orientée objet": fiches/04_programmation_orientee_objet.md
+      - "05 — Graphes": fiches/05_graphes.md
+      - "06 — Arbres": fiches/06_arbres.md
+      - "07 — Bases de données (SQL)": fiches/07_bases_de_donnees.md
+      - "08 — Diviser pour régner": fiches/08_diviser_pour_regner.md
+      - "09 — Processus": fiches/09_processus.md
+      - "10 — Linux": fiches/10_linux.md
+      - "11 — Réseaux": fiches/11_reseaux.md
+      - "12 — Glouton & KNN": fiches/12_glouton_knn.md
+      - "13 — Programmation dynamique": fiches/13_programmation_dynamique.md
+      - "14 — Cryptographie": fiches/14_cryptographie.md
+      - "15 — System on Chip (SoC)": fiches/15_soc.md
+      - "16 — Recherche textuelle": fiches/16_recherche_textuelle.md
+      - "17 — Paradigmes de programmation": fiches/17_paradigmes_programmation.md
+      - "18 — Approfondissement & synthèse": fiches/18_approfondissement.md
   - Mémos:
       - Vue d'ensemble: memos/index.md
       - Complexités: memos/memo_complexites.md

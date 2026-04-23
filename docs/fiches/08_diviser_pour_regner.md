@@ -1,4 +1,4 @@
-# Séquence 7 — Diviser pour régner
+# Séquence 8 — Diviser pour régner
 
 > Source principale : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/07_sequence_7/07_sequence_7/>
 > Exercices : <https://mcoilhac.forge.apps.education.fr/term/diviser_regner/exos_DR/>

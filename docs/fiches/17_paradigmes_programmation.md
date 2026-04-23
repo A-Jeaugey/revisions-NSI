@@ -1,4 +1,4 @@
-# Séquence 70 — Paradigmes de programmation
+# Séquence 17 — Paradigmes de programmation
 
 > Source : https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/70_sequence_70/70_sequence_70/
 >
@@ -339,5 +339,5 @@ graph TD
 
 - Programme officiel NSI Terminale (BO 2019)
 - Documentation Python : `functools`, `itertools`
-- Fiches associées : `00_python_remise_en_route.md`, `01_recursivite.md`
+- Fiches associées : `01_python_remise_en_route.md`, `02_recursivite.md`
 - Source initiale : https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/70_sequence_70/70_sequence_70/

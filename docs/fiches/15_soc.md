@@ -1,4 +1,4 @@
-# Séquence 50 — Architecture & System on Chip (SoC)
+# Séquence 15 — Architecture & System on Chip (SoC)
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/50_sequence_50/50_sequence_50/>
 > *Note : la page de cours en ligne pour cette séquence est très succincte. Cette fiche
@@ -208,5 +208,5 @@ flowchart LR
 ## Liens
 
 - Cours en ligne : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/50_sequence_50/50_sequence_50/>
-- Voir aussi : [`08_processus.md`](08_processus.md) (le système d'exploitation pilote ce matériel)
-- Voir aussi : [`09_linux.md`](09_linux.md) (Raspberry Pi tourne sous Linux)
+- Voir aussi : [`09_processus.md`](09_processus.md) (le système d'exploitation pilote ce matériel)
+- Voir aussi : [`10_linux.md`](10_linux.md) (Raspberry Pi tourne sous Linux)

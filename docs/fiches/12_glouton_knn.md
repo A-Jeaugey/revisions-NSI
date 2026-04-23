@@ -1,4 +1,4 @@
-# Séquence 20 — Algorithmes gloutons & K plus proches voisins (KNN)
+# Séquence 12 — Algorithmes gloutons & K plus proches voisins (KNN)
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/20_sequence_20/20_sequence_20/>
 
@@ -334,5 +334,5 @@ flowchart LR
 ## Liens
 
 - Cours en ligne : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/20_sequence_20/20_sequence_20/>
-- Voir aussi : [`30_programmation_dynamique.md`](30_programmation_dynamique.md) (alternative au glouton)
+- Voir aussi : [`13_programmation_dynamique.md`](13_programmation_dynamique.md) (alternative au glouton)
 - Voir aussi : [`memos/memo_complexites.md`](../memos/memo_complexites.md)

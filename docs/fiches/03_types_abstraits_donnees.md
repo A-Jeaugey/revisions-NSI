@@ -1,4 +1,4 @@
-# Séquence 2 — Types abstraits de données (ADT : pile, file, liste)
+# Séquence 3 — Types abstraits de données (ADT : pile, file, liste)
 
 > Source : https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/02_sequence_2/02_sequence_2/
 > Sous-pages : TAD (intro), PILES, FILES, LISTES.

@@ -1,4 +1,4 @@
-# Séquence 10 — Les Réseaux
+# Séquence 11 — Les Réseaux
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/10_sequence_10/10_sequence_10/>
 
@@ -337,5 +337,5 @@ flowchart LR
 
 - Cours en ligne : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/10_sequence_10/10_sequence_10/>
 - Voir aussi : [`diagrammes/modele_osi_tcpip.md`](../diagrammes/modele_osi_tcpip.md)
-- Voir aussi : [`40_cryptographie.md`](40_cryptographie.md) (TLS dans HTTPS)
-- Voir aussi : [`09_linux.md`](09_linux.md) (commandes réseau)
+- Voir aussi : [`14_cryptographie.md`](14_cryptographie.md) (TLS dans HTTPS)
+- Voir aussi : [`10_linux.md`](10_linux.md) (commandes réseau)

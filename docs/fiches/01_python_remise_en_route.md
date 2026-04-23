@@ -1,4 +1,4 @@
-# Séquence 0 — Python : Remise en route
+# Séquence 1 — Python : Remise en route
 
 > Source : https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/00_sequence_0/sequence_0/
 > PDFs : aucun PDF spécifique à cette séquence.

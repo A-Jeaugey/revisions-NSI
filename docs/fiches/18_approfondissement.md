@@ -1,4 +1,4 @@
-# Séquence 80 — Approfondissement (fiche transverse / récap bac)
+# Séquence 18 — Approfondissement (fiche transverse / récap bac)
 
 > Source : https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/80_sequence_80/80_sequence_80/
 >
@@ -484,7 +484,7 @@ Sur un **ABR** (arbre binaire de recherche), le parcours infixe affiche les vale
 
 ## Liens
 
-- Fiches associées : toutes les fiches `00_` à `09_`, et `70_paradigmes_programmation.md`.
+- Fiches associées : toutes les fiches `00_` à `09_`, et `17_paradigmes_programmation.md`.
 - Programme officiel NSI Terminale (BO 2019).
 - Annales du bac NSI : sujets et corrigés des sessions précédentes.
 - Banque d'épreuves pratiques (publiée chaque année par le Ministère).

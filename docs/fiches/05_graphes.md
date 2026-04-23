@@ -1,4 +1,4 @@
-# Séquence 4 — Les graphes (type abstrait de données)
+# Séquence 5 — Les graphes (type abstrait de données)
 
 > Source principale : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/04_sequence_4/04_sequence_4/>
 > Ressource détaillée : <https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/graphes/1_graphes_generalites/>

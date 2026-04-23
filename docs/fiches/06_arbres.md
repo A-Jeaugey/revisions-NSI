@@ -1,4 +1,4 @@
-# Séquence 5 — Les arbres (type abstrait de données)
+# Séquence 6 — Les arbres (type abstrait de données)
 
 > Source principale : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/05_sequence_5/05_sequence_5/>
 > Ressource détaillée : <https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/arbres/arbres/>

@@ -1,4 +1,4 @@
-# Séquence 8 — Processus & Système d'exploitation
+# Séquence 9 — Processus & Système d'exploitation
 
 > **Source principale** : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/08_sequence_8/08_sequence_8/>
 > **Ressources liées** : <https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/processus/1_processus/>

@@ -1,4 +1,4 @@
-# Séquence 6 — Les bases de données
+# Séquence 7 — Les bases de données
 
 > Source principale : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/06_sequence_6/06_sequence_6/>
 > Page SQL bonus (IDE intégré, exercices) : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/avec_SQL/exercices_sql/>

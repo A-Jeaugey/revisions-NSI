@@ -136,110 +136,110 @@ hide:
   </div>
 
   <div class="nsi-bento">
-    <a class="nsi-card nsi-card--accent nsi-card--large" href="fiches/01_recursivite/" data-fiche-id="01">
-      <div><div class="nsi-card__num">seq_01.py</div>
+    <a class="nsi-card nsi-card--accent nsi-card--large" href="fiches/02_recursivite/" data-fiche-id="02">
+      <div><div class="nsi-card__num">seq_02.py</div>
       <h3 class="nsi-card__title">Récursivité</h3>
       <p class="nsi-card__desc">Cas de base, pile d'appels, Fibonacci, Tours de Hanoï.</p></div>
       <div class="nsi-card__foot"><span>· classique écrit</span><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card nsi-card--wide" href="fiches/00_python_remise_en_route/" data-fiche-id="00">
-      <div><div class="nsi-card__num">seq_00.py</div>
+    <a class="nsi-card nsi-card--wide" href="fiches/01_python_remise_en_route/" data-fiche-id="01">
+      <div><div class="nsi-card__num">seq_01.py</div>
       <h3 class="nsi-card__title">Python remise en route</h3>
       <p class="nsi-card__desc">Bases, listes, dicts, slicing, compréhensions.</p></div>
       <div class="nsi-card__foot"><span>· fondations</span><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/02_types_abstraits_donnees/" data-fiche-id="02">
-      <div><div class="nsi-card__num">seq_02</div>
+    <a class="nsi-card" href="fiches/03_types_abstraits_donnees/" data-fiche-id="03">
+      <div><div class="nsi-card__num">seq_03</div>
       <h3 class="nsi-card__title">Types abstraits</h3>
       <p class="nsi-card__desc">Pile, file, liste chaînée.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/03_programmation_orientee_objet/" data-fiche-id="03">
-      <div><div class="nsi-card__num">seq_03</div>
+    <a class="nsi-card" href="fiches/04_programmation_orientee_objet/" data-fiche-id="04">
+      <div><div class="nsi-card__num">seq_04</div>
       <h3 class="nsi-card__title">POO</h3>
       <p class="nsi-card__desc">Classes, héritage, polymorphisme.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card nsi-card--wide" href="fiches/04_graphes/" data-fiche-id="04">
-      <div><div class="nsi-card__num">seq_04</div>
+    <a class="nsi-card nsi-card--wide" href="fiches/05_graphes/" data-fiche-id="05">
+      <div><div class="nsi-card__num">seq_05</div>
       <h3 class="nsi-card__title">Graphes</h3>
       <p class="nsi-card__desc">Matrice / liste d'adjacence, BFS, DFS.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card nsi-card--wide" href="fiches/05_arbres/" data-fiche-id="05">
-      <div><div class="nsi-card__num">seq_05</div>
+    <a class="nsi-card nsi-card--wide" href="fiches/06_arbres/" data-fiche-id="06">
+      <div><div class="nsi-card__num">seq_06</div>
       <h3 class="nsi-card__title">Arbres</h3>
       <p class="nsi-card__desc">ABR, parcours préfixe / infixe / suffixe, tas.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card nsi-card--large" href="fiches/06_bases_de_donnees/" data-fiche-id="06">
-      <div><div class="nsi-card__num">seq_06.sql</div>
+    <a class="nsi-card nsi-card--large" href="fiches/07_bases_de_donnees/" data-fiche-id="07">
+      <div><div class="nsi-card__num">seq_07.sql</div>
       <h3 class="nsi-card__title">Bases de données · SQL</h3>
       <p class="nsi-card__desc">Modèle relationnel, algèbre, SQL, ACID.</p></div>
       <div class="nsi-card__foot"><span>· forte probabilité</span><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/07_diviser_pour_regner/" data-fiche-id="07">
-      <div><div class="nsi-card__num">seq_07</div>
+    <a class="nsi-card" href="fiches/08_diviser_pour_regner/" data-fiche-id="08">
+      <div><div class="nsi-card__num">seq_08</div>
       <h3 class="nsi-card__title">Diviser pour régner</h3>
       <p class="nsi-card__desc">Tri fusion, rapide, dichotomie.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/20_glouton_knn/" data-fiche-id="20">
-      <div><div class="nsi-card__num">seq_20</div>
+    <a class="nsi-card" href="fiches/12_glouton_knn/" data-fiche-id="12">
+      <div><div class="nsi-card__num">seq_12</div>
       <h3 class="nsi-card__title">Glouton & KNN</h3>
       <p class="nsi-card__desc">Monnaie, sac à dos, voisins.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/30_programmation_dynamique/" data-fiche-id="30">
-      <div><div class="nsi-card__num">seq_30</div>
+    <a class="nsi-card" href="fiches/13_programmation_dynamique/" data-fiche-id="13">
+      <div><div class="nsi-card__num">seq_13</div>
       <h3 class="nsi-card__title">Prog. dynamique</h3>
       <p class="nsi-card__desc">Mémoïsation, tabulation.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card nsi-card--wide" href="fiches/10_reseaux/" data-fiche-id="10">
-      <div><div class="nsi-card__num">seq_10.net</div>
+    <a class="nsi-card nsi-card--wide" href="fiches/11_reseaux/" data-fiche-id="11">
+      <div><div class="nsi-card__num">seq_11.net</div>
       <h3 class="nsi-card__title">Réseaux</h3>
       <p class="nsi-card__desc">OSI / TCP-IP, IPv4 + CIDR, TCP/UDP.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/08_processus/" data-fiche-id="08">
-      <div><div class="nsi-card__num">seq_08</div>
+    <a class="nsi-card" href="fiches/09_processus/" data-fiche-id="09">
+      <div><div class="nsi-card__num">seq_09</div>
       <h3 class="nsi-card__title">Processus</h3>
       <p class="nsi-card__desc">États, fork, deadlock.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/09_linux/" data-fiche-id="09">
-      <div><div class="nsi-card__num">seq_09.sh</div>
+    <a class="nsi-card" href="fiches/10_linux/" data-fiche-id="10">
+      <div><div class="nsi-card__num">seq_10.sh</div>
       <h3 class="nsi-card__title">Linux</h3>
       <p class="nsi-card__desc">Shell, commandes, scripts.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/40_cryptographie/" data-fiche-id="40">
-      <div><div class="nsi-card__num">seq_40</div>
+    <a class="nsi-card" href="fiches/14_cryptographie/" data-fiche-id="14">
+      <div><div class="nsi-card__num">seq_14</div>
       <h3 class="nsi-card__title">Cryptographie</h3>
       <p class="nsi-card__desc">César, Vigenère, RSA.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/50_soc/" data-fiche-id="50">
-      <div><div class="nsi-card__num">seq_50</div>
+    <a class="nsi-card" href="fiches/15_soc/" data-fiche-id="15">
+      <div><div class="nsi-card__num">seq_15</div>
       <h3 class="nsi-card__title">SoC</h3>
       <p class="nsi-card__desc">von Neumann, cycle d'instruction.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/60_recherche_textuelle/" data-fiche-id="60">
-      <div><div class="nsi-card__num">seq_60</div>
+    <a class="nsi-card" href="fiches/16_recherche_textuelle/" data-fiche-id="16">
+      <div><div class="nsi-card__num">seq_16</div>
       <h3 class="nsi-card__title">Recherche textuelle</h3>
       <p class="nsi-card__desc">Naïf, KMP, regex.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card" href="fiches/70_paradigmes_programmation/" data-fiche-id="70">
-      <div><div class="nsi-card__num">seq_70</div>
+    <a class="nsi-card" href="fiches/17_paradigmes_programmation/" data-fiche-id="17">
+      <div><div class="nsi-card__num">seq_17</div>
       <h3 class="nsi-card__title">Paradigmes</h3>
       <p class="nsi-card__desc">Impératif, fonctionnel, déclaratif.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
-    <a class="nsi-card nsi-card--accent nsi-card--full" href="fiches/80_approfondissement/" data-fiche-id="80">
-      <div><div class="nsi-card__num">seq_80 · synthèse finale</div>
+    <a class="nsi-card nsi-card--accent nsi-card--full" href="fiches/18_approfondissement/" data-fiche-id="18">
+      <div><div class="nsi-card__num">seq_18 · synthèse finale</div>
       <h3 class="nsi-card__title">Kit de survie pour le J du bac</h3>
       <p class="nsi-card__desc">Récap algorithmes + structures + complexités + vocabulaire piégeux + mini-quiz. À lire à J−2 et J−1.</p></div>
       <div class="nsi-card__foot"><span>· révision express</span><span class="nsi-card__arrow">→</span></div>

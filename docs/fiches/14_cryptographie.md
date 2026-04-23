@@ -1,4 +1,4 @@
-# Séquence 40 — Cryptographie
+# Séquence 14 — Cryptographie
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/40_sequence_40/40_sequence_40/>
 
@@ -330,5 +330,5 @@ flowchart LR
 ## Liens
 
 - Cours en ligne : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/40_sequence_40/40_sequence_40/>
-- Voir aussi : [`10_reseaux.md`](10_reseaux.md) (HTTPS = HTTP + TLS)
+- Voir aussi : [`11_reseaux.md`](11_reseaux.md) (HTTPS = HTTP + TLS)
 - Voir aussi : [`memos/memo_vocabulaire.md`](../memos/memo_vocabulaire.md)

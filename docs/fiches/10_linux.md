@@ -1,4 +1,4 @@
-# Séquence 9 — Linux & système de fichiers
+# Séquence 10 — Linux & système de fichiers
 
 > **Source principale** : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/09_sequence_9/09_sequence_9/>
 > **Ressource** : <https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/Linux/1_generalites/>

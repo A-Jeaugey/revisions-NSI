@@ -1,4 +1,4 @@
-# Séquence 3 — Programmation orientée objet (POO)
+# Séquence 4 — Programmation orientée objet (POO)
 
 > Source : https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/03_sequence_3/03_sequence_3/
 > Sous-page : https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/POO/1_cours_POO/

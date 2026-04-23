@@ -1,4 +1,4 @@
-# Séquence 1 — Récursivité
+# Séquence 2 — Récursivité
 
 > Source : https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/01_sequence_1/sequence_1/
 > PDFs : `assets/pdf/NSI_Recursivite.pdf`

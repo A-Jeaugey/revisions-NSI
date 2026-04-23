@@ -1,4 +1,4 @@
-# Séquence 30 — Programmation dynamique
+# Séquence 13 — Programmation dynamique
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/30_sequence_30/30_sequence_30/>
 
@@ -311,6 +311,6 @@ flowchart LR
 ## Liens
 
 - Cours en ligne : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/30_sequence_30/30_sequence_30/>
-- Voir aussi : [`20_glouton_knn.md`](20_glouton_knn.md) (comparatif glouton/DP)
-- Voir aussi : [`07_diviser_pour_regner.md`](07_diviser_pour_regner.md) (autre stratégie récursive)
+- Voir aussi : [`12_glouton_knn.md`](12_glouton_knn.md) (comparatif glouton/DP)
+- Voir aussi : [`08_diviser_pour_regner.md`](08_diviser_pour_regner.md) (autre stratégie récursive)
 - Voir aussi : [`memos/memo_complexites.md`](../memos/memo_complexites.md)

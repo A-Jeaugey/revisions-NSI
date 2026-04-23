@@ -1,4 +1,4 @@
-# Séquence 60 — Recherche textuelle
+# Séquence 16 — Recherche textuelle
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/60_sequence_60/60_sequence_60/>
 
