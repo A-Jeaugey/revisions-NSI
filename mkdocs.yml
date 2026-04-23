@@ -63,10 +63,10 @@ extra:
 extra_css:
   - https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap
   - stylesheets/extra.css
+  - stylesheets/components.css
 
 extra_javascript:
-  - javascripts/countdown.js
-  - javascripts/reveal.js
+  - javascripts/app.js
 
 markdown_extensions:
   - abbr
@@ -118,6 +118,9 @@ plugins:
 nav:
   - Accueil: index.md
   - Plan: plan-de-revision.md
+  - Réviser:
+      - Flashcards: flashcards.md
+      - Quiz QCM: quiz.md
   - Fiches:
       - Vue d'ensemble: fiches/index.md
       - "00 — Python : remise en route": fiches/00_python_remise_en_route.md
