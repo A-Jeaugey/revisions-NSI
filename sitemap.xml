@@ -2,134 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
+    </url>
+    <url>
+         <loc>https://a-jeaugey.github.io/revisions-NSI/flashcards/</loc>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/plan-de-revision/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
+    </url>
+    <url>
+         <loc>https://a-jeaugey.github.io/revisions-NSI/quiz/</loc>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/diagrammes/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/diagrammes/arbre_decision_algos/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/diagrammes/arbres_terminologie/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/diagrammes/etats_processus/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/diagrammes/modele_osi_tcpip/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/diagrammes/parcours_graphes/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/diagrammes/pipeline_compilation/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/00_python_remise_en_route/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/01_recursivite/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/02_types_abstraits_donnees/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/03_programmation_orientee_objet/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/04_graphes/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/05_arbres/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/06_bases_de_donnees/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/07_diviser_pour_regner/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/08_processus/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/09_linux/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/10_reseaux/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/20_glouton_knn/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/30_programmation_dynamique/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/40_cryptographie/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/50_soc/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/60_recherche_textuelle/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/70_paradigmes_programmation/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/fiches/80_approfondissement/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/memos/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/memos/memo_complexites/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/memos/memo_python_bac/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/memos/memo_sql_bac/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://a-jeaugey.github.io/revisions-NSI/memos/memo_vocabulaire/</loc>
-         <lastmod>2026-04-22</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
 </urlset>
