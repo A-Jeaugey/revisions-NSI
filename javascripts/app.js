@@ -45,16 +45,20 @@
   }
 
   /* --------- Terminal typewriter --------- */
+  let termGen = 0;
   async function runTerminal() {
     const body = document.getElementById("nsi-term");
     if (!body) return;
+    const gen = ++termGen;
 
     const type = (text, cls = "") => new Promise((res) => {
+      if (gen !== termGen) { res(); return; }
       const span = document.createElement("span");
       if (cls) span.className = cls;
       body.appendChild(span);
       let i = 0;
       const tick = () => {
+        if (gen !== termGen) { res(); return; }
         if (i < text.length) {
           span.textContent += text[i++];
           setTimeout(tick, 14 + Math.random() * 20);
@@ -283,14 +287,14 @@
     markStudiedCards();
   }
 
-  if (document.readyState === "loading") {
+  // mkdocs Material : document$ émet à chaque navigation instant ET au chargement
+  // initial. On s'y abonne en priorité pour éviter un double init.
+  if (window.document$ && typeof window.document$.subscribe === "function") {
+    window.document$.subscribe(init);
+  } else if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
-  }
-  // mkdocs instant nav : re-init
-  if (window.document$ && typeof window.document$.subscribe === "function") {
-    window.document$.subscribe(init);
   }
 
   // Expose pour les pages Flashcards / Quiz qui auront leur propre JS inline
