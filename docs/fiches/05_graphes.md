@@ -318,7 +318,7 @@ graph LR
 - Confondre **degré** (non orienté) et **degré entrant / sortant** (orienté).
 - Dans un graphe **non orienté**, ne pas enregistrer l'arête dans les **deux** sens dans le dictionnaire d'adjacence.
 - Confondre **chaîne** (non orienté) et **chemin** (orienté) : à la rédaction, employer le bon mot.
-- Croire que BFS donne le plus court chemin **pondéré** : c'est faux, BFS minimise le **nombre d'arêtes**. Pour les graphes pondérés, on utilise Dijkstra (hors programme strict mais évoqué).
+- Croire que BFS donne le plus court chemin **pondéré** : c'est faux, BFS minimise le **nombre d'arêtes** (pas la somme des poids).
 - Pour la détection de cycle non orienté, oublier l'argument `parent` et conclure faussement à un cycle dès qu'on retombe sur le sommet d'où l'on vient.
 - Confondre l'**ordre** (nb sommets) et la **taille** (nb arêtes).
 

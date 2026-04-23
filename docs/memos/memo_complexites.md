@@ -85,12 +85,10 @@
 | Recherche dichotomique | O(log n) | Diviser pour régner |
 | Tri fusion | O(n log n) | Diviser pour régner |
 | Tri rapide | O(n log n) moy. / O(n²) pire | Diviser pour régner |
-| Exponentiation rapide aⁿ | O(log n) | Diviser pour régner |
 | Fibonacci naïf | O(2ⁿ) | Récursif simple |
 | Fibonacci mémoïsé | O(n) temps, O(n) espace | Prog. dynamique |
 | Rendu de monnaie (DP) | O(n × S) où S = somme | Prog. dynamique |
 | Sac à dos 0/1 (DP) | O(n × W) | Prog. dynamique |
-| PLSC (plus longue sous-séquence commune) | O(n × m) | Prog. dynamique |
 
 ---
 
@@ -121,8 +119,6 @@
 |-----------|------|---------|-------|
 | Naïf (brute force) | O(n × m) | O(n × m) | Simple, base du programme |
 | Knuth-Morris-Pratt (KMP) | O(n + m) | O(n + m) | Précalcul O(m) |
-| Boyer-Moore | O(n × m) | O(n / m) | Bons décalages |
-| Rabin-Karp (hachage) | O(n × m) | O(n + m) | Rolling hash |
 
 ---
 
@@ -131,8 +127,7 @@
 | Opération | Complexité (clé/message de taille n bits) |
 |-----------|-------------------------------------------|
 | Chiffrement César / Vigenère | O(n) |
-| Chiffrement / déchiffrement RSA (par modexp) | O(k³) avec k = taille de la clé en bits |
-| Test de primalité Miller-Rabin | O(k³) probabiliste |
+| Chiffrement / déchiffrement RSA | polynomial en la taille k (en bits) de la clé |
 | Recherche brute force d'une clé n bits | O(2ⁿ) |
 
 ---

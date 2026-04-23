@@ -10,8 +10,7 @@
   **mémoriser** les résultats pour ne pas les recalculer.
 - Deux approches : **top-down** (mémoïsation, récursif + cache) et **bottom-up** (tabulation, itératif).
 - Conditions : **sous-structure optimale** + **chevauchement** des sous-problèmes.
-- Exemples bac : **Fibonacci**, **rendu de monnaie**, **sac à dos 0/1**, **PLSC** (plus longue
-  sous-séquence commune).
+- Exemples bac : **Fibonacci**, **rendu de monnaie**, **sac à dos 0/1**.
 - DP transforme typiquement une complexité **exponentielle en polynomiale** (ex : Fibonacci O(2ⁿ) → O(n)).
 
 ---
@@ -24,7 +23,6 @@
 4. Fibonacci en DP.
 5. Rendu de monnaie en DP (cas non canonique).
 6. Sac à dos 0/1.
-7. PLSC (plus longue sous-séquence commune).
 
 ---
 
@@ -208,35 +206,6 @@ def sac_a_dos_01(objets, capacite):
 # Exemple
 objets = [(60, 10), (100, 20), (120, 30)]
 print(sac_a_dos_01(objets, 50))   # 220 — on prend O2 et O3
-```
-
-### 4. Plus Longue Sous-Séquence Commune (PLSC)
-
-Étant donné deux chaînes A et B, trouver la longueur de la plus longue **sous-séquence**
-commune (non nécessairement contiguë).
-
-```python
-def plsc(A, B):
-    """Longueur de la plus longue sous-séquence commune.
-
-    dp[i][j] = PLSC entre A[:i] et B[:j].
-    Récurrence :
-        - si A[i-1] == B[j-1] : dp[i][j] = dp[i-1][j-1] + 1
-        - sinon              : dp[i][j] = max(dp[i-1][j], dp[i][j-1])
-    Complexité : O(n × m).
-    """
-    n, m = len(A), len(B)
-    dp = [[0] * (m + 1) for _ in range(n + 1)]
-    for i in range(1, n + 1):
-        for j in range(1, m + 1):
-            if A[i - 1] == B[j - 1]:
-                dp[i][j] = dp[i - 1][j - 1] + 1
-            else:
-                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-    return dp[n][m]
-
-
-print(plsc("ABCBDAB", "BDCAB"))   # 4 ("BCAB" ou "BDAB")
 ```
 
 ---

@@ -74,7 +74,6 @@ flowchart LR
 | « plus court chemin », graphe non pondéré | BFS |
 | « tous les sommets atteignables » | DFS |
 | « est-ce qu'il y a un cycle ? » | DFS avec marquage |
-| « plus longue sous-séquence commune » | DP |
 | « combien de chemins ? » dans un treillis | DP |
 | « rechercher dans un texte » | Naïf / KMP |
 | « trier n grandes valeurs » | Tri fusion ou rapide |

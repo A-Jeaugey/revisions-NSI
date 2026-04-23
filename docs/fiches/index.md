@@ -81,7 +81,7 @@ Pièges au bac → Questions types → Liens.**
 
 - :material-call-split: **8 — Diviser pour régner**
 
-    Tri fusion, tri rapide, dichotomie, exponentiation rapide, récurrences.
+    Tri fusion, tri rapide, dichotomie, récurrences.
 
     [→ Lire la fiche](08_diviser_pour_regner.md)
 
@@ -94,13 +94,13 @@ Pièges au bac → Questions types → Liens.**
 
 - :material-table-large: **13 — Programmation dynamique**
 
-    Mémoïsation top-down, tabulation bottom-up, sac à dos 0/1, PLSC.
+    Mémoïsation top-down, tabulation bottom-up, sac à dos 0/1.
 
     [→ Lire la fiche](13_programmation_dynamique.md)
 
 - :material-magnify: **16 — Recherche textuelle**
 
-    Algorithme naïf, KMP (failure function), Boyer-Moore, Rabin-Karp, regex.
+    Algorithme naïf, KMP (failure function), regex.
 
     [→ Lire la fiche](16_recherche_textuelle.md)
 

@@ -356,7 +356,7 @@ graphe = {
 - Une boucle de 1 à n → O(n)
 - Deux boucles imbriquées → O(n²)
 - Division par 2 à chaque tour → O(log n)
-- Récursion `T(n) = 2·T(n/2) + n` → O(n log n) (Master theorem, hors programme)
+- Diviser pour régner avec combinaison linéaire à chaque niveau (type tri fusion) → O(n log n)
 
 ---
 

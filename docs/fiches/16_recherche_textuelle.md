@@ -10,8 +10,6 @@
   (longueur `n`).
 - **Algorithme naïf** : O(n × m) — simple, à connaître par cœur.
 - **KMP** (Knuth-Morris-Pratt) : O(n + m), précalcul O(m) — évite les retours dans le texte.
-- **Boyer-Moore** : sauts grâce au **mauvais caractère** — souvent meilleur en pratique.
-- **Rabin-Karp** : utilise un **hachage glissant** ; bon pour multi-motifs.
 - **Regex (`re`)** : motifs flexibles (`\d`, `*`, `+`, `[]`, `(...|...)` …).
 
 ---
@@ -21,9 +19,7 @@
 1. Définition du problème.
 2. Algorithme naïf (force brute).
 3. Algorithme de Knuth-Morris-Pratt (KMP).
-4. Algorithme de Boyer-Moore (notion).
-5. Algorithme de Rabin-Karp (notion).
-6. Expressions régulières en Python.
+4. Expressions régulières en Python.
 
 ---
 
@@ -41,7 +37,7 @@ renvoyer la **liste des positions** `i` de `T` à partir desquelles `M` apparaî
 
 - Un texte peut faire des **gigaoctets** (génome humain, archives web).
 - L'algo naïf O(nm) devient vite trop lent.
-- Algos sublinéaires (Boyer-Moore) ou linéaires (KMP, Rabin-Karp) deviennent indispensables.
+- Un algo linéaire comme KMP (O(n+m)) devient indispensable.
 
 ---
 
@@ -56,7 +52,6 @@ renvoyer la **liste des positions** `i` de `T` à partir desquelles `M` apparaî
 | Suffixe propre | Suffixe non vide et différent du mot. |
 | Bord | Préfixe propre qui est aussi un suffixe propre. |
 | Failure function (KMP) | Tableau π[i] = longueur du plus long bord du préfixe de longueur i+1. |
-| Hachage glissant | Hachage incrémental (Rabin-Karp). |
 | Regex | Expression régulière, langage de motifs. |
 
 ---
@@ -150,50 +145,7 @@ def kmp_recherche(motif, texte):
 print(kmp_recherche("ab", "ababab"))   # [0, 2, 4]
 ```
 
-### 3. Algorithme de Boyer-Moore (notion)
-
-- Compare le motif **de droite à gauche**.
-- En cas d'échec, applique deux règles :
-  - **Mauvais caractère** : décale le motif pour aligner le caractère du texte avec sa
-    dernière occurrence dans le motif.
-  - **Bon suffixe** : décale en utilisant le suffixe déjà apparié.
-- Pire cas : O(n × p), mais en moyenne **sub-linéaire** (O(n / p) sur un alphabet large).
-
-### 4. Algorithme de Rabin-Karp (notion)
-
-- Calcule un **hachage** du motif et un hachage de chaque sous-chaîne de `texte` de longueur `p`.
-- Utilise un **hachage glissant** (rolling hash) pour passer du hachage de `texte[i:i+p]` à
-  `texte[i+1:i+p+1]` en O(1).
-- Si les hachés correspondent, vérifier la chaîne réelle (gérer les collisions).
-- Complexité moyenne : **O(n + p)**.
-- Très utilisé pour la **recherche multi-motifs** (anti-plagiat).
-
-```python
-def rabin_karp(motif, texte, base=256, mod=10**9 + 7):
-    """Recherche par hachage glissant (Rabin-Karp).
-
-    Complexité moyenne : O(n + p) ; pire cas O(n*p) en cas de nombreuses collisions.
-    """
-    n, p = len(texte), len(motif)
-    if p > n:
-        return []
-    h_motif = 0
-    h_fenetre = 0
-    base_p = pow(base, p - 1, mod)
-    for i in range(p):
-        h_motif = (h_motif * base + ord(motif[i])) % mod
-        h_fenetre = (h_fenetre * base + ord(texte[i])) % mod
-    positions = []
-    for i in range(n - p + 1):
-        if h_motif == h_fenetre and texte[i:i + p] == motif:
-            positions.append(i)
-        if i < n - p:
-            h_fenetre = ((h_fenetre - ord(texte[i]) * base_p) * base
-                         + ord(texte[i + p])) % mod
-    return positions
-```
-
-### 5. Expressions régulières (regex)
+### 3. Expressions régulières (regex)
 
 Le module `re` de Python.
 
@@ -285,9 +237,6 @@ flowchart LR
 
 **Q5.** *Combien d'occurrences de "ab" dans "ababab" ?*
 > 3 (positions 0, 2, 4).
-
-**Q6.** *Quel algorithme est le plus rapide en pratique sur de longs textes en alphabet large ?*
-> Boyer-Moore (sub-linéaire en moyenne).
 
 ---
 

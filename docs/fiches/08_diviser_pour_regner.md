@@ -7,7 +7,7 @@
 ## TL;DR
 
 - **Diviser pour régner** = paradigme algorithmique en **3 étapes** : **Diviser** le problème en sous-problèmes plus petits → **Régner** (résoudre récursivement chaque sous-problème) → **Combiner** les solutions partielles en une solution globale.
-- Algorithmes phares au programme : **tri fusion** (O(n log n), stable), **tri rapide** (O(n log n) en moyenne, O(n²) au pire), **recherche dichotomique** (O(log n)), **exponentiation rapide** (O(log n)).
+- Algorithmes phares au programme : **tri fusion** (O(n log n), stable), **tri rapide** (O(n log n) en moyenne, O(n²) au pire), **recherche dichotomique** (O(log n)).
 - **Tri fusion vs tri par insertion / sélection** : O(n log n) au lieu de O(n²) → gain énorme dès que n est grand.
 - L'analyse repose sur des **récurrences** type T(n) = 2 T(n/2) + O(n) (théorème maître hors programme strict, mais à savoir manipuler).
 - Coût mémoire : tri fusion utilise **O(n)** (tableau auxiliaire), tri rapide est **en place** (O(log n) de pile).
@@ -18,8 +18,7 @@
 2. Recherche dichotomique récursive (rappel de Première, version diviser pour régner).
 3. Tri fusion (merge sort) : algorithme, code, complexité, stabilité.
 4. Tri rapide (quicksort) : pivot, partition, cas pire.
-5. Exponentiation rapide.
-6. Comparaison avec les tris quadratiques (sélection, insertion).
+5. Comparaison avec les tris quadratiques (sélection, insertion).
 
 ## Notions clés (définitions précises bac)
 
@@ -29,7 +28,6 @@
 - **Tri en place** : tri qui n'utilise qu'une mémoire auxiliaire en O(1) ou O(log n) (la pile).
 - **Pivot** (tri rapide) : élément choisi pour partitionner le tableau (gauche : ≤ pivot, droite : > pivot).
 - **Recherche dichotomique** : recherche d'une valeur dans un tableau **trié** en divisant l'intervalle de recherche en deux à chaque étape.
-- **Exponentiation rapide** : calcul de a^n en utilisant la propriété a^n = (a^(n/2))² (n pair) ou a · (a^((n-1)/2))² (n impair) → O(log n) multiplications.
 
 ## Vocabulaire
 
@@ -45,7 +43,6 @@
 | Partition | Réorganiser autour d'un pivot |
 | Pivot | Élément de référence du quicksort |
 | Dichotomie | Division en deux moitiés (recherche dans un tableau trié) |
-| Exponentiation rapide | Algorithme de a^n en O(log n) |
 
 ## Algorithmes & code
 
@@ -168,28 +165,7 @@ def tri_rapide(t: list) -> list:
 **En place** : possible avec une partition de Hoare/Lomuto (non utilisée ici pour la lisibilité).
 **Stable** : non en général.
 
-### 4. Exponentiation rapide
-
-**Principe** : pour calculer a^n, on utilise la décomposition récursive :
-- a^0 = 1 ;
-- si n est pair : a^n = (a^(n/2))² ;
-- si n est impair : a^n = a · (a^((n-1)/2))².
-
-```python
-def puissance_rapide(a: float, n: int) -> float:
-    """Calcule a**n par exponentiation rapide. Pre : n >= 0 entier."""
-    if n == 0:
-        return 1
-    # Demi-puissance : un seul appel recursif !
-    demi = puissance_rapide(a, n // 2)
-    if n % 2 == 0:
-        return demi * demi            # n pair : a^n = (a^(n/2))^2
-    return a * demi * demi            # n impair : a^n = a * (a^((n-1)/2))^2
-```
-
-**Complexité** : T(n) = T(n/2) + O(1) → **O(log n)** multiplications, contre O(n) pour la version naïve `a*a*…*a`.
-
-### 5. Comparaison avec les tris quadratiques
+### 4. Comparaison avec les tris quadratiques
 
 | Algorithme | Complexité moyenne | Pire cas | Mémoire | Stable | En place |
 |------------|-------------------|----------|---------|--------|----------|
@@ -200,7 +176,7 @@ def puissance_rapide(a: float, n: int) -> float:
 
 **À retenir** : pour n grand, le tri fusion et le tri rapide sont **massivement** plus rapides que les tris quadratiques. Pour n = 10⁶ : ≈ 20·10⁶ opérations contre 10¹² → 50 000 fois plus rapide.
 
-### 6. Récapitulatif des récurrences
+### 5. Récapitulatif des récurrences
 
 | Algorithme | Récurrence | Solution |
 |------------|------------|----------|
@@ -208,7 +184,6 @@ def puissance_rapide(a: float, n: int) -> float:
 | Tri fusion | T(n) = 2·T(n/2) + O(n) | O(n log n) |
 | Tri rapide (moyenne) | T(n) = 2·T(n/2) + O(n) | O(n log n) |
 | Tri rapide (pire) | T(n) = T(n−1) + O(n) | O(n²) |
-| Exponentiation rapide | T(n) = T(n/2) + O(1) | O(log n) |
 
 ## Diagramme Mermaid
 
@@ -266,7 +241,6 @@ graph TD
 - Pour le **tri fusion**, oublier de **fusionner** les deux moitiés (ne renvoyer que `gauche + droite` non fusionné).
 - Pour la **recherche dichotomique**, oublier la **précondition** : tableau **trié**. Sans ça, l'algorithme renvoie n'importe quoi.
 - Confondre la **complexité moyenne** O(n log n) et la **complexité dans le pire des cas** O(n²) du tri rapide.
-- Croire que l'**exponentiation rapide** divise par 2 le temps de calcul : non, elle le rend **logarithmique** (gain bien supérieur).
 - Confondre **diviser pour régner** et **récursivité** : toute fonction récursive n'est pas du diviser pour régner (ex. factorielle).
 - Confondre **stable** et **en place** : un tri peut être l'un, l'autre, les deux ou aucun.
 - Pour le tri fusion en Python, créer trop de listes intermédiaires (`t[:milieu]`) : la complexité reste O(n log n) en théorie mais le facteur constant grandit ; pour le bac, l'écriture lisible est privilégiée.
@@ -286,10 +260,7 @@ R. À chaque appel récursif, la taille de l'intervalle de recherche est **divis
 **Q4.** *Quels sont les avantages et inconvénients du tri rapide par rapport au tri fusion ?*
 R. **Avantages** du tri rapide : il est en place (O(log n) de mémoire au lieu de O(n)) et a un excellent comportement en moyenne en pratique (constantes faibles). **Inconvénients** : il n'est pas stable et sa complexité dans le **pire des cas** est en **O(n²)** (lorsque le pivot est mal choisi, par exemple toujours le minimum ou le maximum). Le tri fusion garantit O(n log n) dans tous les cas et est **stable**, mais utilise O(n) de mémoire.
 
-**Q5.** *Calculer 3¹³ par exponentiation rapide en détaillant les appels récursifs.*
-R. 13 = impair, donc 3¹³ = 3 · (3⁶)². 6 pair → 3⁶ = (3³)². 3 impair → 3³ = 3 · (3¹)². 1 impair → 3¹ = 3 · (3⁰)² = 3 · 1 = 3. On remonte : 3³ = 3 · 9 = 27 ; 3⁶ = 27² = 729 ; 3¹³ = 3 · 729² = 3 · 531 441 = **1 594 323**. On a effectué seulement 4 appels récursifs (au lieu de 13 multiplications).
-
-**Q6.** *Pour quelle entrée le tri rapide est-il particulièrement inefficace si l'on choisit le premier élément comme pivot ?*
+**Q5.** *Pour quelle entrée le tri rapide est-il particulièrement inefficace si l'on choisit le premier élément comme pivot ?*
 R. Lorsque le tableau est **déjà trié** (croissant ou décroissant). Dans ce cas, le pivot est toujours le minimum (ou le maximum) : la partition produit une partie vide et une partie de taille n−1. La récurrence devient T(n) = T(n−1) + O(n), de solution **O(n²)**. C'est le pire cas. Pour s'en prémunir, on choisit un pivot aléatoire, le médian de trois éléments, etc.
 
 ## Liens
