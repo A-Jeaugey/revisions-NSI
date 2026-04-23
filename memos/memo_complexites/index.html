@@ -2307,11 +2307,6 @@ Les complexités sont exprimées en <strong>O(...)</strong> (pire cas sauf menti
 <td>Diviser pour régner</td>
 </tr>
 <tr>
-<td>Exponentiation rapide aⁿ</td>
-<td>O(log n)</td>
-<td>Diviser pour régner</td>
-</tr>
-<tr>
 <td>Fibonacci naïf</td>
 <td>O(2ⁿ)</td>
 <td>Récursif simple</td>
@@ -2329,11 +2324,6 @@ Les complexités sont exprimées en <strong>O(...)</strong> (pire cas sauf menti
 <tr>
 <td>Sac à dos 0/1 (DP)</td>
 <td>O(n × W)</td>
-<td>Prog. dynamique</td>
-</tr>
-<tr>
-<td>PLSC (plus longue sous-séquence commune)</td>
-<td>O(n × m)</td>
 <td>Prog. dynamique</td>
 </tr>
 </tbody>
@@ -2420,18 +2410,6 @@ Les complexités sont exprimées en <strong>O(...)</strong> (pire cas sauf menti
 <td>O(n + m)</td>
 <td>Précalcul O(m)</td>
 </tr>
-<tr>
-<td>Boyer-Moore</td>
-<td>O(n × m)</td>
-<td>O(n / m)</td>
-<td>Bons décalages</td>
-</tr>
-<tr>
-<td>Rabin-Karp (hachage)</td>
-<td>O(n × m)</td>
-<td>O(n + m)</td>
-<td>Rolling hash</td>
-</tr>
 </tbody>
 </table>
 <hr>
@@ -2449,12 +2427,8 @@ Les complexités sont exprimées en <strong>O(...)</strong> (pire cas sauf menti
 <td>O(n)</td>
 </tr>
 <tr>
-<td>Chiffrement / déchiffrement RSA (par modexp)</td>
-<td>O(k³) avec k = taille de la clé en bits</td>
-</tr>
-<tr>
-<td>Test de primalité Miller-Rabin</td>
-<td>O(k³) probabiliste</td>
+<td>Chiffrement / déchiffrement RSA</td>
+<td>polynomial en la taille k (en bits) de la clé</td>
 </tr>
 <tr>
 <td>Recherche brute force d'une clé n bits</td>

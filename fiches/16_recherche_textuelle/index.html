@@ -1292,32 +1292,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-algorithme-de-boyer-moore-notion" class="md-nav__link">
+  <a href="#3-expressions-regulieres-regex" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Algorithme de Boyer-Moore (notion)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-algorithme-de-rabin-karp-notion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Algorithme de Rabin-Karp (notion)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-expressions-regulieres-regex" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Expressions régulières (regex)
+        3. Expressions régulières (regex)
       
     </span>
   </a>
@@ -2028,32 +2006,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-algorithme-de-boyer-moore-notion" class="md-nav__link">
+  <a href="#3-expressions-regulieres-regex" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Algorithme de Boyer-Moore (notion)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-algorithme-de-rabin-karp-notion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Algorithme de Rabin-Karp (notion)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-expressions-regulieres-regex" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Expressions régulières (regex)
+        3. Expressions régulières (regex)
       
     </span>
   </a>
@@ -2140,8 +2096,6 @@
   (longueur <code>n</code>).</li>
 <li><strong>Algorithme naïf</strong> : O(n × m) — simple, à connaître par cœur.</li>
 <li><strong>KMP</strong> (Knuth-Morris-Pratt) : O(n + m), précalcul O(m) — évite les retours dans le texte.</li>
-<li><strong>Boyer-Moore</strong> : sauts grâce au <strong>mauvais caractère</strong> — souvent meilleur en pratique.</li>
-<li><strong>Rabin-Karp</strong> : utilise un <strong>hachage glissant</strong> ; bon pour multi-motifs.</li>
 <li><strong>Regex (<code>re</code>)</strong> : motifs flexibles (<code>\d</code>, <code>*</code>, <code>+</code>, <code>[]</code>, <code>(...|...)</code> …).</li>
 </ul>
 <hr>
@@ -2150,8 +2104,6 @@
 <li>Définition du problème.</li>
 <li>Algorithme naïf (force brute).</li>
 <li>Algorithme de Knuth-Morris-Pratt (KMP).</li>
-<li>Algorithme de Boyer-Moore (notion).</li>
-<li>Algorithme de Rabin-Karp (notion).</li>
 <li>Expressions régulières en Python.</li>
 </ol>
 <hr>
@@ -2165,7 +2117,7 @@
 <ul>
 <li>Un texte peut faire des <strong>gigaoctets</strong> (génome humain, archives web).</li>
 <li>L'algo naïf O(nm) devient vite trop lent.</li>
-<li>Algos sublinéaires (Boyer-Moore) ou linéaires (KMP, Rabin-Karp) deviennent indispensables.</li>
+<li>Un algo linéaire comme KMP (O(n+m)) devient indispensable.</li>
 </ul>
 <hr>
 <h2 id="vocabulaire">Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">§</a></h2>
@@ -2204,10 +2156,6 @@
 <tr>
 <td>Failure function (KMP)</td>
 <td>Tableau π[i] = longueur du plus long bord du préfixe de longueur i+1.</td>
-</tr>
-<tr>
-<td>Hachage glissant</td>
-<td>Hachage incrémental (Rabin-Karp).</td>
 </tr>
 <tr>
 <td>Regex</td>
@@ -2292,48 +2240,7 @@ en arrière dans le texte.</p>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">kmp_recherche</span><span class="p">(</span><span class="s2">"ab"</span><span class="p">,</span> <span class="s2">"ababab"</span><span class="p">))</span>   <span class="c1"># [0, 2, 4]</span>
 </span></code></pre></div>
-<h3 id="3-algorithme-de-boyer-moore-notion">3. Algorithme de Boyer-Moore (notion)<a class="headerlink" href="#3-algorithme-de-boyer-moore-notion" title="Permanent link">§</a></h3>
-<ul>
-<li>Compare le motif <strong>de droite à gauche</strong>.</li>
-<li>En cas d'échec, applique deux règles :</li>
-<li><strong>Mauvais caractère</strong> : décale le motif pour aligner le caractère du texte avec sa
-    dernière occurrence dans le motif.</li>
-<li><strong>Bon suffixe</strong> : décale en utilisant le suffixe déjà apparié.</li>
-<li>Pire cas : O(n × p), mais en moyenne <strong>sub-linéaire</strong> (O(n / p) sur un alphabet large).</li>
-</ul>
-<h3 id="4-algorithme-de-rabin-karp-notion">4. Algorithme de Rabin-Karp (notion)<a class="headerlink" href="#4-algorithme-de-rabin-karp-notion" title="Permanent link">§</a></h3>
-<ul>
-<li>Calcule un <strong>hachage</strong> du motif et un hachage de chaque sous-chaîne de <code>texte</code> de longueur <code>p</code>.</li>
-<li>Utilise un <strong>hachage glissant</strong> (rolling hash) pour passer du hachage de <code>texte[i:i+p]</code> à
-  <code>texte[i+1:i+p+1]</code> en O(1).</li>
-<li>Si les hachés correspondent, vérifier la chaîne réelle (gérer les collisions).</li>
-<li>Complexité moyenne : <strong>O(n + p)</strong>.</li>
-<li>Très utilisé pour la <strong>recherche multi-motifs</strong> (anti-plagiat).</li>
-</ul>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">rabin_karp</span><span class="p">(</span><span class="n">motif</span><span class="p">,</span> <span class="n">texte</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">mod</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">"""Recherche par hachage glissant (Rabin-Karp).</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">    Complexité moyenne : O(n + p) ; pire cas O(n*p) en cas de nombreuses collisions.</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="sd">    """</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="k">return</span> <span class="p">[]</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">h_motif</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">h_fenetre</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">base_p</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="n">h_motif</span> <span class="o">=</span> <span class="p">(</span><span class="n">h_motif</span> <span class="o">*</span> <span class="n">base</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">motif</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">%</span> <span class="n">mod</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">h_fenetre</span> <span class="o">=</span> <span class="p">(</span><span class="n">h_fenetre</span> <span class="o">*</span> <span class="n">base</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">%</span> <span class="n">mod</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="n">positions</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="k">if</span> <span class="n">h_motif</span> <span class="o">==</span> <span class="n">h_fenetre</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">:</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">p</span><span class="p">:</span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>            <span class="n">h_fenetre</span> <span class="o">=</span> <span class="p">((</span><span class="n">h_fenetre</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">base_p</span><span class="p">)</span> <span class="o">*</span> <span class="n">base</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                         <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">p</span><span class="p">]))</span> <span class="o">%</span> <span class="n">mod</span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="k">return</span> <span class="n">positions</span>
-</span></code></pre></div>
-<h3 id="5-expressions-regulieres-regex">5. Expressions régulières (regex)<a class="headerlink" href="#5-expressions-regulieres-regex" title="Permanent link">§</a></h3>
+<h3 id="3-expressions-regulieres-regex">3. Expressions régulières (regex)<a class="headerlink" href="#3-expressions-regulieres-regex" title="Permanent link">§</a></h3>
 <p>Le module <code>re</code> de Python.</p>
 <table>
 <thead>
@@ -2405,22 +2312,22 @@ en arrière dans le texte.</p>
 </tr>
 </tbody>
 </table>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Trouver tous les nombres dans un texte</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="s2">"il y a 12 pommes et 7 oranges"</span><span class="p">)</span>   <span class="c1"># ['12', '7']</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Vérifier un email simple</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">motif_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"^[\w.+-]+@[\w-]+\.[a-zA-Z]{2,}$"</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">motif_email</span><span class="p">,</span> <span class="s2">"alice@example.com"</span><span class="p">))</span>      <span class="c1"># True</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Substitution</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="s2">"code 1234"</span><span class="p">)</span>                        <span class="c1"># 'code ****'</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Groupe de capture</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(\d+)/(\d+)/(\d+)"</span><span class="p">,</span> <span class="s2">"Date: 22/04/2026"</span><span class="p">)</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># '22/04/2026'</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># ('22', '04', '2026')</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Trouver tous les nombres dans un texte</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="s2">"il y a 12 pommes et 7 oranges"</span><span class="p">)</span>   <span class="c1"># ['12', '7']</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Vérifier un email simple</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">motif_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"^[\w.+-]+@[\w-]+\.[a-zA-Z]{2,}$"</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">motif_email</span><span class="p">,</span> <span class="s2">"alice@example.com"</span><span class="p">))</span>      <span class="c1"># True</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Substitution</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="s2">"code 1234"</span><span class="p">)</span>                        <span class="c1"># 'code ****'</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># Groupe de capture</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(\d+)/(\d+)/(\d+)"</span><span class="p">,</span> <span class="s2">"Date: 22/04/2026"</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># '22/04/2026'</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># ('22', '04', '2026')</span>
 </span></code></pre></div>
 <hr>
 <h2 id="diagramme-deroule-de-lalgo-naif">Diagramme — déroulé de l'algo naïf<a class="headerlink" href="#diagramme-deroule-de-lalgo-naif" title="Permanent link">§</a></h2>
@@ -2466,10 +2373,6 @@ aussi suffixe.</p>
 <p><strong>Q5.</strong> <em>Combien d'occurrences de "ab" dans "ababab" ?</em></p>
 <blockquote>
 <p>3 (positions 0, 2, 4).</p>
-</blockquote>
-<p><strong>Q6.</strong> <em>Quel algorithme est le plus rapide en pratique sur de longs textes en alphabet large ?</em></p>
-<blockquote>
-<p>Boyer-Moore (sub-linéaire en moyenne).</p>
 </blockquote>
 <hr>
 <h2 id="liens">Liens<a class="headerlink" href="#liens" title="Permanent link">§</a></h2>

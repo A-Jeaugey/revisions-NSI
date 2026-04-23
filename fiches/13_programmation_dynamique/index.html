@@ -1240,17 +1240,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#4-plus-longue-sous-sequence-commune-plsc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Plus Longue Sous-Séquence Commune (PLSC)
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2071,17 +2060,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#4-plus-longue-sous-sequence-commune-plsc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Plus Longue Sous-Séquence Commune (PLSC)
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2162,8 +2140,7 @@
   <strong>mémoriser</strong> les résultats pour ne pas les recalculer.</li>
 <li>Deux approches : <strong>top-down</strong> (mémoïsation, récursif + cache) et <strong>bottom-up</strong> (tabulation, itératif).</li>
 <li>Conditions : <strong>sous-structure optimale</strong> + <strong>chevauchement</strong> des sous-problèmes.</li>
-<li>Exemples bac : <strong>Fibonacci</strong>, <strong>rendu de monnaie</strong>, <strong>sac à dos 0/1</strong>, <strong>PLSC</strong> (plus longue
-  sous-séquence commune).</li>
+<li>Exemples bac : <strong>Fibonacci</strong>, <strong>rendu de monnaie</strong>, <strong>sac à dos 0/1</strong>.</li>
 <li>DP transforme typiquement une complexité <strong>exponentielle en polynomiale</strong> (ex : Fibonacci O(2ⁿ) → O(n)).</li>
 </ul>
 <hr>
@@ -2175,7 +2152,6 @@
 <li>Fibonacci en DP.</li>
 <li>Rendu de monnaie en DP (cas non canonique).</li>
 <li>Sac à dos 0/1.</li>
-<li>PLSC (plus longue sous-séquence commune).</li>
 </ol>
 <hr>
 <h2 id="notions-cles">Notions clés<a class="headerlink" href="#notions-cles" title="Permanent link">§</a></h2>
@@ -2373,31 +2349,6 @@ Approche <strong>itérative</strong>.</p>
 </span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="c1"># Exemple</span>
 </span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="n">objets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">)]</span>
 </span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="nb">print</span><span class="p">(</span><span class="n">sac_a_dos_01</span><span class="p">(</span><span class="n">objets</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>   <span class="c1"># 220 — on prend O2 et O3</span>
-</span></code></pre></div>
-<h3 id="4-plus-longue-sous-sequence-commune-plsc">4. Plus Longue Sous-Séquence Commune (PLSC)<a class="headerlink" href="#4-plus-longue-sous-sequence-commune-plsc" title="Permanent link">§</a></h3>
-<p>Étant donné deux chaînes A et B, trouver la longueur de la plus longue <strong>sous-séquence</strong>
-commune (non nécessairement contiguë).</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">plsc</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="sd">"""Longueur de la plus longue sous-séquence commune.</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="sd">    dp[i][j] = PLSC entre A[:i] et B[:j].</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="sd">    Récurrence :</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="sd">        - si A[i-1] == B[j-1] : dp[i][j] = dp[i-1][j-1] + 1</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="sd">        - sinon              : dp[i][j] = max(dp[i-1][j], dp[i][j-1])</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="sd">    Complexité : O(n × m).</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="sd">    """</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">plsc</span><span class="p">(</span><span class="s2">"ABCBDAB"</span><span class="p">,</span> <span class="s2">"BDCAB"</span><span class="p">))</span>   <span class="c1"># 4 ("BCAB" ou "BDAB")</span>
 </span></code></pre></div>
 <hr>
 <h2 id="diagramme-explosion-exponentielle-vs-memoisation">Diagramme — explosion exponentielle vs mémoïsation<a class="headerlink" href="#diagramme-explosion-exponentielle-vs-memoisation" title="Permanent link">§</a></h2>

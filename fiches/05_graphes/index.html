@@ -2526,7 +2526,7 @@ Inconvénients : test d'adjacence en <strong>O(deg(s))</strong> (parcours de la 
 <li>Confondre <strong>degré</strong> (non orienté) et <strong>degré entrant / sortant</strong> (orienté).</li>
 <li>Dans un graphe <strong>non orienté</strong>, ne pas enregistrer l'arête dans les <strong>deux</strong> sens dans le dictionnaire d'adjacence.</li>
 <li>Confondre <strong>chaîne</strong> (non orienté) et <strong>chemin</strong> (orienté) : à la rédaction, employer le bon mot.</li>
-<li>Croire que BFS donne le plus court chemin <strong>pondéré</strong> : c'est faux, BFS minimise le <strong>nombre d'arêtes</strong>. Pour les graphes pondérés, on utilise Dijkstra (hors programme strict mais évoqué).</li>
+<li>Croire que BFS donne le plus court chemin <strong>pondéré</strong> : c'est faux, BFS minimise le <strong>nombre d'arêtes</strong> (pas la somme des poids).</li>
 <li>Pour la détection de cycle non orienté, oublier l'argument <code>parent</code> et conclure faussement à un cycle dès qu'on retombe sur le sommet d'où l'on vient.</li>
 <li>Confondre l'<strong>ordre</strong> (nb sommets) et la <strong>taille</strong> (nb arêtes).</li>
 </ul>

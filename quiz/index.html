@@ -1763,7 +1763,7 @@
     ], c: 1, e: "FROM d'abord (sources), puis filtres, regroupements, projection, tri." },
     { tag: "07", q: "WHERE filtre …", o: ["Les groupes après agrégation", "Les lignes avant agrégation", "Les colonnes du SELECT", "L'ordre des résultats"], c: 1, e: "WHERE = lignes avant agrégation. HAVING = groupes après." },
     { tag: "08", q: "Complexité de la recherche dichotomique ?", o: ["O(1)", "O(log n)", "O(n)", "O(n log n)"], c: 1, e: "À chaque itération on divise l'intervalle par 2." },
-    { tag: "08", q: "Complexité du tri fusion ?", o: ["O(n)", "O(n log n)", "O(n²)", "O(2ⁿ)"], c: 1, e: "T(n) = 2T(n/2) + n → n log n (master theorem)." },
+    { tag: "08", q: "Complexité du tri fusion ?", o: ["O(n)", "O(n log n)", "O(n²)", "O(2ⁿ)"], c: 1, e: "Chaque niveau de la récursion fait n opérations, il y a log n niveaux → n log n." },
     { tag: "09", q: "Que retourne <code>fork()</code> au père sous Unix ?", o: ["0", "Le PID du fils", "-1 systématiquement", "Son propre PID"], c: 1, e: "Le fils reçoit 0, le père reçoit le PID du fils." },
     { tag: "09", q: "Combien de conditions de Coffman pour un interblocage ?", o: ["2", "3", "4", "5"], c: 2, e: "Exclusion mutuelle, occupation+attente, pas de préemption, attente circulaire." },
     { tag: "10", q: "Que fait <code>chmod 644 f</code> ?", o: [

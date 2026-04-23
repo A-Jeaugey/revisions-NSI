@@ -1051,10 +1051,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-exponentiation-rapide" class="md-nav__link">
+  <a href="#4-comparaison-avec-les-tris-quadratiques" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Exponentiation rapide
+        4. Comparaison avec les tris quadratiques
       
     </span>
   </a>
@@ -1062,21 +1062,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-comparaison-avec-les-tris-quadratiques" class="md-nav__link">
+  <a href="#5-recapitulatif-des-recurrences" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Comparaison avec les tris quadratiques
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-recapitulatif-des-recurrences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Récapitulatif des récurrences
+        5. Récapitulatif des récurrences
       
     </span>
   </a>
@@ -1994,10 +1983,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-exponentiation-rapide" class="md-nav__link">
+  <a href="#4-comparaison-avec-les-tris-quadratiques" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Exponentiation rapide
+        4. Comparaison avec les tris quadratiques
       
     </span>
   </a>
@@ -2005,21 +1994,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-comparaison-avec-les-tris-quadratiques" class="md-nav__link">
+  <a href="#5-recapitulatif-des-recurrences" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Comparaison avec les tris quadratiques
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-recapitulatif-des-recurrences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Récapitulatif des récurrences
+        5. Récapitulatif des récurrences
       
     </span>
   </a>
@@ -2104,7 +2082,7 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">§</a></h2>
 <ul>
 <li><strong>Diviser pour régner</strong> = paradigme algorithmique en <strong>3 étapes</strong> : <strong>Diviser</strong> le problème en sous-problèmes plus petits → <strong>Régner</strong> (résoudre récursivement chaque sous-problème) → <strong>Combiner</strong> les solutions partielles en une solution globale.</li>
-<li>Algorithmes phares au programme : <strong>tri fusion</strong> (O(n log n), stable), <strong>tri rapide</strong> (O(n log n) en moyenne, O(n²) au pire), <strong>recherche dichotomique</strong> (O(log n)), <strong>exponentiation rapide</strong> (O(log n)).</li>
+<li>Algorithmes phares au programme : <strong>tri fusion</strong> (O(n log n), stable), <strong>tri rapide</strong> (O(n log n) en moyenne, O(n²) au pire), <strong>recherche dichotomique</strong> (O(log n)).</li>
 <li><strong>Tri fusion vs tri par insertion / sélection</strong> : O(n log n) au lieu de O(n²) → gain énorme dès que n est grand.</li>
 <li>L'analyse repose sur des <strong>récurrences</strong> type T(n) = 2 T(n/2) + O(n) (théorème maître hors programme strict, mais à savoir manipuler).</li>
 <li>Coût mémoire : tri fusion utilise <strong>O(n)</strong> (tableau auxiliaire), tri rapide est <strong>en place</strong> (O(log n) de pile).</li>
@@ -2115,7 +2093,6 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 <li>Recherche dichotomique récursive (rappel de Première, version diviser pour régner).</li>
 <li>Tri fusion (merge sort) : algorithme, code, complexité, stabilité.</li>
 <li>Tri rapide (quicksort) : pivot, partition, cas pire.</li>
-<li>Exponentiation rapide.</li>
 <li>Comparaison avec les tris quadratiques (sélection, insertion).</li>
 </ol>
 <h2 id="notions-cles-definitions-precises-bac">Notions clés (définitions précises bac)<a class="headerlink" href="#notions-cles-definitions-precises-bac" title="Permanent link">§</a></h2>
@@ -2126,7 +2103,6 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 <li><strong>Tri en place</strong> : tri qui n'utilise qu'une mémoire auxiliaire en O(1) ou O(log n) (la pile).</li>
 <li><strong>Pivot</strong> (tri rapide) : élément choisi pour partitionner le tableau (gauche : ≤ pivot, droite : &gt; pivot).</li>
 <li><strong>Recherche dichotomique</strong> : recherche d'une valeur dans un tableau <strong>trié</strong> en divisant l'intervalle de recherche en deux à chaque étape.</li>
-<li><strong>Exponentiation rapide</strong> : calcul de a^n en utilisant la propriété a^n = (a^(n/2))² (n pair) ou a · (a^((n-1)/2))² (n impair) → O(log n) multiplications.</li>
 </ul>
 <h2 id="vocabulaire">Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">§</a></h2>
 <table>
@@ -2176,10 +2152,6 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 <tr>
 <td>Dichotomie</td>
 <td>Division en deux moitiés (recherche dans un tableau trié)</td>
-</tr>
-<tr>
-<td>Exponentiation rapide</td>
-<td>Algorithme de a^n en O(log n)</td>
 </tr>
 </tbody>
 </table>
@@ -2281,23 +2253,7 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 <p><strong>Mémoire</strong> : O(log n) en moyenne (pile), O(n) au pire.
 <strong>En place</strong> : possible avec une partition de Hoare/Lomuto (non utilisée ici pour la lisibilité).
 <strong>Stable</strong> : non en général.</p>
-<h3 id="4-exponentiation-rapide">4. Exponentiation rapide<a class="headerlink" href="#4-exponentiation-rapide" title="Permanent link">§</a></h3>
-<p><strong>Principe</strong> : pour calculer a^n, on utilise la décomposition récursive :
-- a^0 = 1 ;
-- si n est pair : a^n = (a^(n/2))² ;
-- si n est impair : a^n = a · (a^((n-1)/2))².</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">puissance_rapide</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">"""Calcule a**n par exponentiation rapide. Pre : n &gt;= 0 entier."""</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="k">return</span> <span class="mi">1</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="c1"># Demi-puissance : un seul appel recursif !</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">demi</span> <span class="o">=</span> <span class="n">puissance_rapide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="k">return</span> <span class="n">demi</span> <span class="o">*</span> <span class="n">demi</span>            <span class="c1"># n pair : a^n = (a^(n/2))^2</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">demi</span> <span class="o">*</span> <span class="n">demi</span>            <span class="c1"># n impair : a^n = a * (a^((n-1)/2))^2</span>
-</span></code></pre></div>
-<p><strong>Complexité</strong> : T(n) = T(n/2) + O(1) → <strong>O(log n)</strong> multiplications, contre O(n) pour la version naïve <code>a*a*…*a</code>.</p>
-<h3 id="5-comparaison-avec-les-tris-quadratiques">5. Comparaison avec les tris quadratiques<a class="headerlink" href="#5-comparaison-avec-les-tris-quadratiques" title="Permanent link">§</a></h3>
+<h3 id="4-comparaison-avec-les-tris-quadratiques">4. Comparaison avec les tris quadratiques<a class="headerlink" href="#4-comparaison-avec-les-tris-quadratiques" title="Permanent link">§</a></h3>
 <table>
 <thead>
 <tr>
@@ -2345,7 +2301,7 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 </tbody>
 </table>
 <p><strong>À retenir</strong> : pour n grand, le tri fusion et le tri rapide sont <strong>massivement</strong> plus rapides que les tris quadratiques. Pour n = 10⁶ : ≈ 20·10⁶ opérations contre 10¹² → 50 000 fois plus rapide.</p>
-<h3 id="6-recapitulatif-des-recurrences">6. Récapitulatif des récurrences<a class="headerlink" href="#6-recapitulatif-des-recurrences" title="Permanent link">§</a></h3>
+<h3 id="5-recapitulatif-des-recurrences">5. Récapitulatif des récurrences<a class="headerlink" href="#5-recapitulatif-des-recurrences" title="Permanent link">§</a></h3>
 <table>
 <thead>
 <tr>
@@ -2374,11 +2330,6 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 <td>Tri rapide (pire)</td>
 <td>T(n) = T(n−1) + O(n)</td>
 <td>O(n²)</td>
-</tr>
-<tr>
-<td>Exponentiation rapide</td>
-<td>T(n) = T(n/2) + O(1)</td>
-<td>O(log n)</td>
 </tr>
 </tbody>
 </table>
@@ -2428,7 +2379,6 @@ TP Capytale : algorithmes de tri ; rotation d'une image d'un quart de tour.</p>
 <li>Pour le <strong>tri fusion</strong>, oublier de <strong>fusionner</strong> les deux moitiés (ne renvoyer que <code>gauche + droite</code> non fusionné).</li>
 <li>Pour la <strong>recherche dichotomique</strong>, oublier la <strong>précondition</strong> : tableau <strong>trié</strong>. Sans ça, l'algorithme renvoie n'importe quoi.</li>
 <li>Confondre la <strong>complexité moyenne</strong> O(n log n) et la <strong>complexité dans le pire des cas</strong> O(n²) du tri rapide.</li>
-<li>Croire que l'<strong>exponentiation rapide</strong> divise par 2 le temps de calcul : non, elle le rend <strong>logarithmique</strong> (gain bien supérieur).</li>
 <li>Confondre <strong>diviser pour régner</strong> et <strong>récursivité</strong> : toute fonction récursive n'est pas du diviser pour régner (ex. factorielle).</li>
 <li>Confondre <strong>stable</strong> et <strong>en place</strong> : un tri peut être l'un, l'autre, les deux ou aucun.</li>
 <li>Pour le tri fusion en Python, créer trop de listes intermédiaires (<code>t[:milieu]</code>) : la complexité reste O(n log n) en théorie mais le facteur constant grandit ; pour le bac, l'écriture lisible est privilégiée.</li>
@@ -2443,9 +2393,7 @@ R. La fonction de fusion de deux listes de taille totale n est en O(n). On a don
 R. À chaque appel récursif, la taille de l'intervalle de recherche est <strong>divisée par 2</strong>. Au bout de k étapes, il reste au plus n / 2^k éléments. La recherche s'arrête quand l'intervalle est vide ou que l'élément est trouvé : k est de l'ordre de log₂ n. Donc le nombre d'itérations (ou de comparaisons) est en <strong>O(log n)</strong>.</p>
 <p><strong>Q4.</strong> <em>Quels sont les avantages et inconvénients du tri rapide par rapport au tri fusion ?</em>
 R. <strong>Avantages</strong> du tri rapide : il est en place (O(log n) de mémoire au lieu de O(n)) et a un excellent comportement en moyenne en pratique (constantes faibles). <strong>Inconvénients</strong> : il n'est pas stable et sa complexité dans le <strong>pire des cas</strong> est en <strong>O(n²)</strong> (lorsque le pivot est mal choisi, par exemple toujours le minimum ou le maximum). Le tri fusion garantit O(n log n) dans tous les cas et est <strong>stable</strong>, mais utilise O(n) de mémoire.</p>
-<p><strong>Q5.</strong> <em>Calculer 3¹³ par exponentiation rapide en détaillant les appels récursifs.</em>
-R. 13 = impair, donc 3¹³ = 3 · (3⁶)². 6 pair → 3⁶ = (3³)². 3 impair → 3³ = 3 · (3¹)². 1 impair → 3¹ = 3 · (3⁰)² = 3 · 1 = 3. On remonte : 3³ = 3 · 9 = 27 ; 3⁶ = 27² = 729 ; 3¹³ = 3 · 729² = 3 · 531 441 = <strong>1 594 323</strong>. On a effectué seulement 4 appels récursifs (au lieu de 13 multiplications).</p>
-<p><strong>Q6.</strong> <em>Pour quelle entrée le tri rapide est-il particulièrement inefficace si l'on choisit le premier élément comme pivot ?</em>
+<p><strong>Q5.</strong> <em>Pour quelle entrée le tri rapide est-il particulièrement inefficace si l'on choisit le premier élément comme pivot ?</em>
 R. Lorsque le tableau est <strong>déjà trié</strong> (croissant ou décroissant). Dans ce cas, le pivot est toujours le minimum (ou le maximum) : la partition produit une partie vide et une partie de taille n−1. La récurrence devient T(n) = T(n−1) + O(n), de solution <strong>O(n²)</strong>. C'est le pire cas. Pour s'en prémunir, on choisit un pivot aléatoire, le médian de trois éléments, etc.</p>
 <h2 id="liens">Liens<a class="headerlink" href="#liens" title="Permanent link">§</a></h2>
 <ul>
