@@ -25,6 +25,7 @@
     { id: "16", title: "Recherche textuelle", href: "fiches/16_recherche_textuelle/" },
     { id: "17", title: "Paradigmes", href: "fiches/17_paradigmes_programmation/" },
     { id: "18", title: "Synthèse & quiz", href: "fiches/18_approfondissement/" },
+    { id: "19", title: "Décidabilité & calculabilité", href: "fiches/19_decidabilite_calculabilite/" },
   ];
 
   const store = {
@@ -95,10 +96,10 @@
     await wait(200);
     await type("$ ", prompt); await type("python revise.py\n", cmd);
     await wait(300);
-    await type("✓ 18 fiches prêtes\n", accent);
+    await type("✓ 19 fiches prêtes\n", accent);
     await type("✓ 4 mémos condensés\n", accent);
-    await type("✓ 60 flashcards\n", accent);
-    await type("✓ 30 questions QCM\n", accent);
+    await type("✓ 63 flashcards\n", accent);
+    await type("✓ 32 questions QCM\n", accent);
     await wait(150);
     await type("$ ", prompt);
     const cursor = document.createElement("span");

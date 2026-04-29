@@ -9,13 +9,13 @@
         <meta name="author" content="Révisions NSI">
       
       
-        <link rel="canonical" href="https://a-jeaugey.github.io/revisions-NSI/fiches/13_programmation_dynamique/">
+        <link rel="canonical" href="https://a-jeaugey.github.io/revisions-NSI/fiches/19_decidabilite_calculabilite/">
       
       
-        <link rel="prev" href="../12_glouton_knn/">
+        <link rel="prev" href="../18_approfondissement/">
       
       
-        <link rel="next" href="../14_cryptographie/">
+        <link rel="next" href="../../memos/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>13 — Programmation dynamique - NSI Terminale</title>
+        <title>19 — Décidabilité &amp; calculabilité - NSI Terminale</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sequence-13-programmation-dynamique" class="md-skip">
+        <a href="#sequence-19-decidabilite-calculabilite" class="md-skip">
           Aller au contenu
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13 — Programmation dynamique
+              19 — Décidabilité &amp; calculabilité
             
           </span>
         </div>
@@ -1039,37 +1039,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    13 — Programmation dynamique
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../13_programmation_dynamique/" class="md-nav__link">
         
   
   
@@ -1085,216 +1058,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Sur cette page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TL;DR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plan-de-la-sequence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plan de la séquence
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notions-cles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notions clés
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Notions clés">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Définition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comparaison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comparaison
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#memoisation-top-down" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mémoïsation (top-down)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabulation-bottom-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tabulation (bottom-up)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vocabulaire" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Vocabulaire
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithmes-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithmes &amp; code
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Algorithmes &amp; code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-fibonacci-naif-vs-memoise-vs-tabule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Fibonacci — naïf vs mémoïsé vs tabulé
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-rendu-de-monnaie-dp-cas-non-canonique" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Rendu de monnaie — DP (cas non canonique)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-sac-a-dos-01-dp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Sac à dos 0/1 — DP
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diagramme-explosion-exponentielle-vs-memoisation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diagramme — explosion exponentielle vs mémoïsation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pieges-classiques-au-bac" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pièges classiques au bac
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#questions-types-au-bac" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Questions types au bac
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#liens" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Liens
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1444,10 +1207,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../19_decidabilite_calculabilite/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 — Décidabilité &amp; calculabilité
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1463,6 +1253,266 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TL;DR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plan-de-la-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan de la séquence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notions-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notions clés
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notions clés">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decidabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Décidabilité
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculabilité
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-programme-est-une-donnee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un programme est une donnée
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulaire
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-probleme-de-larret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le problème de l'arrêt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le problème de l'arrêt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Énoncé
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theoreme-turing-church-1936" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Théorème (Turing &amp; Church, 1936)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration-par-labsurde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démonstration par l'absurde
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagramme-largument-diagonal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagramme — l'argument diagonal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin-hors-programme-strict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour aller plus loin (hors programme strict)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pour aller plus loin (hors programme strict)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#machine-de-turing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine de Turing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-calcul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        λ-calcul
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#these-de-church-turing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thèse de Church-Turing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexte-historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte historique
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pieges-classiques-au-bac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pièges classiques au bac
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions-types-au-bac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions types au bac
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liens
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1986,10 +2036,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
+  <a href="#decidabilite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Définition
+        Décidabilité
       
     </span>
   </a>
@@ -1997,10 +2047,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparaison" class="md-nav__link">
+  <a href="#calculabilite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comparaison
+        Calculabilité
       
     </span>
   </a>
@@ -2008,21 +2058,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#memoisation-top-down" class="md-nav__link">
+  <a href="#un-programme-est-une-donnee" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mémoïsation (top-down)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabulation-bottom-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tabulation (bottom-up)
+        Un programme est une donnée
       
     </span>
   </a>
@@ -2046,22 +2085,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithmes-code" class="md-nav__link">
+  <a href="#le-probleme-de-larret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithmes &amp; code
+        Le problème de l'arrêt
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Algorithmes &amp; code">
+    <nav class="md-nav" aria-label="Le problème de l'arrêt">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-fibonacci-naif-vs-memoise-vs-tabule" class="md-nav__link">
+  <a href="#enonce" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Fibonacci — naïf vs mémoïsé vs tabulé
+        Énoncé
       
     </span>
   </a>
@@ -2069,10 +2108,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-rendu-de-monnaie-dp-cas-non-canonique" class="md-nav__link">
+  <a href="#theoreme-turing-church-1936" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Rendu de monnaie — DP (cas non canonique)
+        Théorème (Turing &amp; Church, 1936)
       
     </span>
   </a>
@@ -2080,10 +2119,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-sac-a-dos-01-dp" class="md-nav__link">
+  <a href="#demonstration-par-labsurde" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Sac à dos 0/1 — DP
+        Démonstration par l'absurde
       
     </span>
   </a>
@@ -2096,13 +2135,74 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagramme-explosion-exponentielle-vs-memoisation" class="md-nav__link">
+  <a href="#diagramme-largument-diagonal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diagramme — explosion exponentielle vs mémoïsation
+        Diagramme — l'argument diagonal
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin-hors-programme-strict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour aller plus loin (hors programme strict)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pour aller plus loin (hors programme strict)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#machine-de-turing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine de Turing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-calcul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        λ-calcul
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#these-de-church-turing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thèse de Church-Turing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexte-historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte historique
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2159,72 +2259,57 @@
   
 
 
-<h1 id="sequence-13-programmation-dynamique">Séquence 13 — Programmation dynamique<a class="headerlink" href="#sequence-13-programmation-dynamique" title="Permanent link">§</a></h1>
+<h1 id="sequence-19-decidabilite-calculabilite">Séquence 19 — Décidabilité &amp; Calculabilité<a class="headerlink" href="#sequence-19-decidabilite-calculabilite" title="Permanent link">§</a></h1>
 <blockquote>
-<p>Source : <a href="https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/30_sequence_30/30_sequence_30/">https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/30_sequence_30/30_sequence_30/</a></p>
+<p>Source : <a href="https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/90_sequence_90/90_sequence_90/">https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/90_sequence_90/90_sequence_90/</a>
+Cours détaillé : <a href="https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/decidabilite_calculabilite/cours/">https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/decidabilite_calculabilite/cours/</a></p>
 </blockquote>
 <hr>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">§</a></h2>
 <ul>
-<li><strong>Programmation dynamique (DP)</strong> : décomposer en sous-problèmes <strong>qui se chevauchent</strong> et
-  <strong>mémoriser</strong> les résultats pour ne pas les recalculer.</li>
-<li>Deux approches : <strong>top-down</strong> (mémoïsation, récursif + cache) et <strong>bottom-up</strong> (tabulation, itératif).</li>
-<li>Conditions : <strong>sous-structure optimale</strong> + <strong>chevauchement</strong> des sous-problèmes.</li>
-<li>Exemples bac : <strong>Fibonacci</strong>, <strong>rendu de monnaie</strong>, <strong>sac à dos 0/1</strong>.</li>
-<li>DP transforme typiquement une complexité <strong>exponentielle en polynomiale</strong> (ex : Fibonacci O(2ⁿ) → O(n)).</li>
+<li>Un problème est <strong>décidable</strong> s'il existe un algorithme qui, pour toute entrée, <strong>termine en temps fini</strong> et répond correctement « oui / non ».</li>
+<li>Une fonction est <strong>calculable</strong> s'il existe un algorithme qui, pour toute entrée, <strong>termine en temps fini</strong> et renvoie la bonne sortie. Décidabilité = calculabilité appliquée aux problèmes oui/non.</li>
+<li>Le <strong>problème de l'arrêt</strong> demande : « existe-t-il un programme <code>halt(P, x)</code> qui dit si l'exécution du programme <code>P</code> sur l'entrée <code>x</code> s'arrête ? ». <strong>Réponse (Turing &amp; Church, 1936) : non, il est indécidable.</strong></li>
+<li>La preuve est un <strong>raisonnement par l'absurde</strong> : on suppose <code>halt</code> existe, on construit <code>sym(prog)</code> qui boucle ssi <code>prog(prog)</code> s'arrête, puis on regarde <code>sym(sym)</code> → contradiction dans les deux cas.</li>
+<li><strong>Au programme strict du bac : uniquement le problème de l'arrêt</strong> (et sa démonstration). Machine de Turing, λ-calcul, thèse de Church-Turing = culture, hors programme.</li>
 </ul>
 <hr>
 <h2 id="plan-de-la-sequence">Plan de la séquence<a class="headerlink" href="#plan-de-la-sequence" title="Permanent link">§</a></h2>
 <ol>
-<li>Principe et conditions d'application.</li>
-<li>Comparaison avec diviser pour régner et glouton.</li>
-<li>Mémoïsation (top-down) vs tabulation (bottom-up).</li>
-<li>Fibonacci en DP.</li>
-<li>Rendu de monnaie en DP (cas non canonique).</li>
-<li>Sac à dos 0/1.</li>
+<li>Décidabilité : définition, exemples décidables (parité, primalité).</li>
+<li>Un programme peut être passé en paramètre à un autre programme.</li>
+<li>Le problème de l'arrêt : énoncé.</li>
+<li>Démonstration de l'indécidabilité du problème de l'arrêt (par l'absurde).</li>
+<li>Calculabilité — lien avec la décidabilité.</li>
+<li>Bonus historique : Hilbert, Gödel, Turing, Church.</li>
 </ol>
 <hr>
 <h2 id="notions-cles">Notions clés<a class="headerlink" href="#notions-cles" title="Permanent link">§</a></h2>
-<h3 id="definition">Définition<a class="headerlink" href="#definition" title="Permanent link">§</a></h3>
-<p>La <strong>programmation dynamique</strong> s'applique à des problèmes où :
-1. La solution optimale du problème dépend des solutions optimales de <strong>sous-problèmes</strong>
-   (sous-structure optimale).
-2. Les <strong>mêmes sous-problèmes apparaissent plusieurs fois</strong> au cours du calcul (chevauchement).</p>
-<p>L'idée est de résoudre <strong>chaque sous-problème une seule fois</strong> et de stocker (mémoriser) son
-résultat.</p>
-<h3 id="comparaison">Comparaison<a class="headerlink" href="#comparaison" title="Permanent link">§</a></h3>
-<table>
-<thead>
-<tr>
-<th>Stratégie</th>
-<th>Sous-problèmes</th>
-<th>Choix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Diviser pour régner</strong></td>
-<td>Indépendants</td>
-<td>—</td>
-</tr>
-<tr>
-<td><strong>Glouton</strong></td>
-<td>Pas de retour</td>
-<td>Localement optimal</td>
-</tr>
-<tr>
-<td><strong>Programmation dynamique</strong></td>
-<td>Se chevauchent</td>
-<td>Examen exhaustif des choix mémorisés</td>
-</tr>
-</tbody>
-</table>
-<h3 id="memoisation-top-down">Mémoïsation (top-down)<a class="headerlink" href="#memoisation-top-down" title="Permanent link">§</a></h3>
-<p>On garde l'écriture <strong>récursive</strong> naturelle, et on ajoute un <strong>cache</strong> (dictionnaire ou
-décorateur <code>@functools.lru_cache</code>) qui stocke les valeurs déjà calculées.</p>
-<h3 id="tabulation-bottom-up">Tabulation (bottom-up)<a class="headerlink" href="#tabulation-bottom-up" title="Permanent link">§</a></h3>
-<p>On résout les sous-problèmes <strong>du plus petit au plus grand</strong>, en remplissant un <strong>tableau</strong>.
-Approche <strong>itérative</strong>.</p>
+<h3 id="decidabilite">Décidabilité<a class="headerlink" href="#decidabilite" title="Permanent link">§</a></h3>
+<blockquote>
+<p><strong>Un problème de décision est <em>décidable</em></strong> s'il existe un algorithme qui, pour toute instance du problème, <strong>termine en un nombre fini d'étapes</strong> et retourne <strong><code>True</code></strong> si la réponse au problème est oui, <strong><code>False</code></strong> sinon.</p>
+</blockquote>
+<p>Exemples de problèmes <strong>décidables</strong> :</p>
+<ul>
+<li><strong>Parité</strong> : « n est-il pair ? » → <code>n % 2 == 0</code>. Termine toujours en O(1).</li>
+<li><strong>Primalité</strong> : « n est-il premier ? » → on teste <code>n % k == 0</code> pour <code>k</code> de 2 à <code>n−1</code>. Termine toujours.</li>
+<li>Recherche d'un élément dans un tableau, tri d'une liste finie, accessibilité dans un graphe fini, etc.</li>
+</ul>
+<h3 id="calculabilite">Calculabilité<a class="headerlink" href="#calculabilite" title="Permanent link">§</a></h3>
+<blockquote>
+<p><strong>Une fonction <code>f</code> est <em>calculable</em></strong> s'il existe un algorithme qui, pour toute entrée <code>x</code>, <strong>termine en un nombre fini d'étapes</strong> et renvoie <code>f(x)</code>.</p>
+</blockquote>
+<p>Lien : un problème oui/non est <em>décidable</em> ⟺ sa fonction caractéristique (<code>x ↦ True/False</code>) est <em>calculable</em>. La décidabilité est donc le <strong>cas particulier</strong> de la calculabilité où la sortie est binaire.</p>
+<h3 id="un-programme-est-une-donnee">Un programme est une donnée<a class="headerlink" href="#un-programme-est-une-donnee" title="Permanent link">§</a></h3>
+<p>Un programme est un <strong>fichier texte</strong>, donc une suite de caractères : on peut le passer en <strong>paramètre</strong> à un autre programme. C'est ce que font tous les jours :</p>
+<ul>
+<li>l'<strong>interpréteur</strong> Python (<code>python3 test.py</code> → <code>python3</code> reçoit <code>test.py</code> en entrée),</li>
+<li>un <strong>compilateur</strong> (<code>gcc fichier.c</code>),</li>
+<li>un <strong>antivirus</strong> (analyse un <code>.exe</code>),</li>
+<li>un <strong>linter</strong> (<code>pylint mon_code.py</code>),</li>
+<li>un <strong>debugger</strong> (exécute un programme pas à pas).</li>
+</ul>
+<p>Conséquence : un programme peut s'analyser <strong>lui-même</strong>.</p>
 <hr>
 <h2 id="vocabulaire">Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">§</a></h2>
 <table>
@@ -2236,219 +2321,172 @@ Approche <strong>itérative</strong>.</p>
 </thead>
 <tbody>
 <tr>
-<td>Sous-structure optimale</td>
-<td>La solution optimale se construit à partir de solutions optimales des sous-problèmes.</td>
+<td>Algorithme</td>
+<td>Suite finie d'instructions élémentaires, déterministe, qui termine et résout un problème.</td>
 </tr>
 <tr>
-<td>Chevauchement</td>
-<td>Les mêmes sous-problèmes reviennent plusieurs fois.</td>
+<td>Problème de décision</td>
+<td>Problème dont la réponse est binaire (oui / non).</td>
 </tr>
 <tr>
-<td>Mémoïsation</td>
-<td>Stocker les résultats des appels récursifs.</td>
+<td>Décidable</td>
+<td>Qui admet un algorithme de décision (terminaison + réponse correcte).</td>
 </tr>
 <tr>
-<td>Tabulation</td>
-<td>Calculer les valeurs dans une table itérativement.</td>
+<td>Indécidable</td>
+<td>Aucun algorithme universel ne peut décider le problème.</td>
 </tr>
 <tr>
-<td>Top-down</td>
-<td>Approche descendante (récursive + cache).</td>
+<td>Calculable</td>
+<td>Une fonction pour laquelle il existe un algorithme qui la calcule.</td>
 </tr>
 <tr>
-<td>Bottom-up</td>
-<td>Approche ascendante (itérative + tableau).</td>
+<td>Problème de l'arrêt</td>
+<td>« Étant donné <code>P</code> et <code>x</code>, est-ce que <code>P(x)</code> termine ? » → indécidable.</td>
 </tr>
 <tr>
-<td><code>@lru_cache</code></td>
-<td>Décorateur Python ajoutant un cache LRU à une fonction.</td>
+<td>Raisonnement par l'absurde</td>
+<td>Supposer le contraire de ce qu'on veut prouver, dériver une contradiction, conclure.</td>
 </tr>
 <tr>
-<td>dp</td>
-<td>Notation usuelle pour le tableau de la programmation dynamique.</td>
+<td>Entscheidungsproblem</td>
+<td>« Problème de la décision » de Hilbert (1928) : existe-t-il un algorithme universel répondant à toute question mathématique ? Réponse (1936) : non.</td>
+</tr>
+<tr>
+<td>Thèse de Church-Turing</td>
+<td>Tout ce qui est calculable peut être calculé par une machine de Turing (≡ par un programme dans n'importe quel langage usuel).</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="algorithmes-code">Algorithmes &amp; code<a class="headerlink" href="#algorithmes-code" title="Permanent link">§</a></h2>
-<h3 id="1-fibonacci-naif-vs-memoise-vs-tabule">1. Fibonacci — naïf vs mémoïsé vs tabulé<a class="headerlink" href="#1-fibonacci-naif-vs-memoise-vs-tabule" title="Permanent link">§</a></h3>
-<h4 id="1a-recursif-naif-o2n">1a. Récursif naïf — O(2ⁿ)<a class="headerlink" href="#1a-recursif-naif-o2n" title="Permanent link">§</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fibo_naif</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">"""Suite de Fibonacci, version récursive naïve.</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    F(0)=0, F(1)=1, F(n) = F(n-1) + F(n-2).</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    Complexité : O(2^n) — TRÈS LENT au-delà de n=35.</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">    """</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="k">return</span> <span class="n">n</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">return</span> <span class="n">fibo_naif</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibo_naif</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<h2 id="le-probleme-de-larret">Le problème de l'arrêt<a class="headerlink" href="#le-probleme-de-larret" title="Permanent link">§</a></h2>
+<h3 id="enonce">Énoncé<a class="headerlink" href="#enonce" title="Permanent link">§</a></h3>
+<p>On cherche à écrire une fonction <code>halt(prog, x)</code> qui :</p>
+<ul>
+<li>prend en entrée un programme <code>prog</code> (son code-source) et une entrée <code>x</code>,</li>
+<li>renvoie <code>True</code> si l'exécution de <code>prog(x)</code> <strong>s'arrête</strong>,</li>
+<li>renvoie <code>False</code> si <code>prog(x)</code> <strong>boucle indéfiniment</strong>.</li>
+</ul>
+<p>Cette fonction doit elle-même <strong>toujours terminer</strong>, et donner la bonne réponse pour <strong>n'importe quel</strong> programme <code>prog</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">halt</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">if</span> <span class="s2">"prog(x) s'arrête"</span><span class="p">:</span>   <span class="c1"># ← impossible à écrire,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">return</span> <span class="kc">True</span>           <span class="c1"># comme on va le démontrer</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">return</span> <span class="kc">False</span>
 </span></code></pre></div>
-<h4 id="1b-memoisation-top-down-on">1b. Mémoïsation top-down — O(n)<a class="headerlink" href="#1b-memoisation-top-down-on" title="Permanent link">§</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fibo_memo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">"""Fibonacci avec mémoïsation manuelle (cache = dictionnaire)."""</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">if</span> <span class="n">cache</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">return</span> <span class="n">n</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">fibo_memo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibo_memo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+<h3 id="theoreme-turing-church-1936">Théorème (Turing &amp; Church, 1936)<a class="headerlink" href="#theoreme-turing-church-1936" title="Permanent link">§</a></h3>
+<blockquote>
+<p><strong>Le problème de l'arrêt est indécidable</strong> : il n'existe pas de programme <code>halt</code> qui réponde correctement pour toute entrée <code>(prog, x)</code>.</p>
+</blockquote>
+<p>Ce résultat est <strong>fondamental</strong> :</p>
+<ul>
+<li>Il ne dit pas qu'écrire <code>halt</code> est <em>difficile</em> — il dit que c'est <strong>mathématiquement impossible</strong>.</li>
+<li>Il est <strong>indépendant du langage</strong> (Python, C, Java, futur, …).</li>
+<li>Il est <strong>indépendant de la puissance de la machine</strong> (même un ordinateur infiniment rapide ne peut pas).</li>
+</ul>
+<h3 id="demonstration-par-labsurde">Démonstration par l'absurde<a class="headerlink" href="#demonstration-par-labsurde" title="Permanent link">§</a></h3>
+<p><strong>Étape 1 — Hypothèse.</strong> On suppose qu'un programme <code>halt(prog, x)</code> existe et fonctionne correctement (termine toujours, répond juste).</p>
+<p><strong>Étape 2 — Construction de <code>sym</code>.</strong> Avec <code>halt</code>, on peut construire :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">sym</span><span class="p">(</span><span class="n">prog</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">if</span> <span class="n">halt</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span> <span class="n">prog</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"vers l'infini et au-delà !"</span><span class="p">)</span>   <span class="c1"># boucle infinie</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="k">return</span> <span class="mi">1</span>                                  <span class="c1"># s'arrête</span>
 </span></code></pre></div>
-<h4 id="1c-avec-decorateur-lru_cache">1c. Avec décorateur <code>@lru_cache</code><a class="headerlink" href="#1c-avec-decorateur-lru_cache" title="Permanent link">§</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="k">return</span> <span class="n">n</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-</span></code></pre></div>
-<h4 id="1d-tabulation-bottom-up-on-temps-on-espace">1d. Tabulation bottom-up — O(n) temps, O(n) espace<a class="headerlink" href="#1d-tabulation-bottom-up-on-temps-on-espace" title="Permanent link">§</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fibo_tab</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">"""Fibonacci par tabulation."""</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">return</span> <span class="n">n</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
-</span></code></pre></div>
-<h4 id="1e-tabulation-bottom-up-on-temps-o1-espace-variables-glissantes">1e. Tabulation bottom-up — O(n) temps, <strong>O(1) espace</strong> (variables glissantes)<a class="headerlink" href="#1e-tabulation-bottom-up-on-temps-o1-espace-variables-glissantes" title="Permanent link">§</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fibo_o1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="sd">"""Fibonacci en O(1) mémoire."""</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="k">return</span> <span class="n">n</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="k">return</span> <span class="n">b</span>
-</span></code></pre></div>
-<h3 id="2-rendu-de-monnaie-dp-cas-non-canonique">2. Rendu de monnaie — DP (cas non canonique)<a class="headerlink" href="#2-rendu-de-monnaie-dp-cas-non-canonique" title="Permanent link">§</a></h3>
-<p>Quand le système n'est pas canonique, le glouton ne donne pas l'optimum. La DP, oui.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">rendu_dp</span><span class="p">(</span><span class="n">somme</span><span class="p">,</span> <span class="n">pieces</span><span class="p">):</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">"""Nombre minimal de pièces pour rendre `somme` avec les valeurs `pieces`.</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">    Approche bottom-up : dp[s] = nb min de pièces pour la somme s.</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    Cas de base : dp[0] = 0.</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">    Récurrence : dp[s] = 1 + min(dp[s - p]) pour toute p ≤ s dans pieces.</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="sd">    Complexité : O(somme × len(pieces)).</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="sd">    """</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">INF</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">somme</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">somme</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pieces</span><span class="p">:</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">dp</span><span class="p">[</span><span class="n">s</span> <span class="o">-</span> <span class="n">p</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">dp</span><span class="p">[</span><span class="n">s</span><span class="p">]:</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>                <span class="n">dp</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">s</span> <span class="o">-</span> <span class="n">p</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">somme</span><span class="p">]</span> <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">somme</span><span class="p">]</span> <span class="o">!=</span> <span class="n">INF</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1"># Exemple canonique</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">rendu_dp</span><span class="p">(</span><span class="mi">287</span><span class="p">,</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>  <span class="c1"># 6</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="c1"># Exemple non canonique où le glouton échoue</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">rendu_dp</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>  <span class="c1"># 2  (3 + 3) -- glouton donnerait 3 (4+1+1)</span>
-</span></code></pre></div>
-<h3 id="3-sac-a-dos-01-dp">3. Sac à dos 0/1 — DP<a class="headerlink" href="#3-sac-a-dos-01-dp" title="Permanent link">§</a></h3>
-<p>Maximiser la valeur, sous contrainte de capacité, sans pouvoir prendre de fraction.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">sac_a_dos_01</span><span class="p">(</span><span class="n">objets</span><span class="p">,</span> <span class="n">capacite</span><span class="p">):</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">"""Sac à dos 0/1 par programmation dynamique.</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    objets : liste de tuples (valeur, poids).</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sd">    capacite : capacité entière du sac.</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="sd">    Retourne la valeur maximale réalisable.</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="sd">    dp[i][w] = valeur max en utilisant les i premiers objets et capacité w.</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="sd">    Récurrence :</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="sd">        - sans l'objet i :       dp[i-1][w]</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="sd">        - avec l'objet i (si w &gt;= poids[i]) : dp[i-1][w - poids[i]] + valeur[i]</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="sd">    Complexité : O(n × W).</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="sd">    """</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">objets</span><span class="p">)</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">capacite</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="n">valeur</span><span class="p">,</span> <span class="n">poids</span> <span class="o">=</span> <span class="n">objets</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">capacite</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            <span class="n">sans</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">w</span><span class="p">]</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>            <span class="n">avec</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">w</span> <span class="o">-</span> <span class="n">poids</span><span class="p">]</span> <span class="o">+</span> <span class="n">valeur</span> <span class="k">if</span> <span class="n">poids</span> <span class="o">&lt;=</span> <span class="n">w</span> <span class="k">else</span> <span class="mi">0</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sans</span><span class="p">,</span> <span class="n">avec</span><span class="p">)</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">capacite</span><span class="p">]</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="c1"># Exemple</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="n">objets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">)]</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="nb">print</span><span class="p">(</span><span class="n">sac_a_dos_01</span><span class="p">(</span><span class="n">objets</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>   <span class="c1"># 220 — on prend O2 et O3</span>
-</span></code></pre></div>
+<p><code>sym</code> reçoit un programme <code>prog</code> et :</p>
+<ul>
+<li>entre dans une boucle infinie si <code>prog(prog)</code> s'arrête ;</li>
+<li>termine en renvoyant 1 si <code>prog(prog)</code> ne s'arrête pas.</li>
+</ul>
+<p><strong>Étape 3 — Question diagonale.</strong> Que vaut <code>sym(sym)</code> ? Deux cas :</p>
+<ul>
+<li><strong>Cas 1</strong> : <code>halt(sym, sym) = True</code>. Cela signifie que <code>sym(sym)</code> <em>s'arrête</em>. Mais d'après le code de <code>sym</code>, dans ce cas on entre dans la boucle infinie → <code>sym(sym)</code> <strong>ne s'arrête pas</strong>. <strong>Contradiction.</strong></li>
+<li><strong>Cas 2</strong> : <code>halt(sym, sym) = False</code>. Cela signifie que <code>sym(sym)</code> <em>ne s'arrête pas</em>. Mais d'après le code, dans ce cas <code>sym</code> exécute <code>return 1</code> → <code>sym(sym)</code> <strong>s'arrête</strong>. <strong>Contradiction.</strong></li>
+</ul>
+<p><strong>Étape 4 — Conclusion.</strong> L'hypothèse de l'existence de <code>halt</code> mène à une contradiction dans <strong>tous les cas</strong>. Donc <code>halt</code> <strong>n'existe pas</strong> : le problème de l'arrêt est indécidable. <strong>CQFD</strong></p>
+<blockquote>
+<p>💡 La structure « auto-référence + diagonale » est la même que celle de l'argument de Cantor (cardinalité de R) ou du paradoxe de Russell. C'est le procédé clé en théorie de la calculabilité.</p>
+</blockquote>
 <hr>
-<h2 id="diagramme-explosion-exponentielle-vs-memoisation">Diagramme — explosion exponentielle vs mémoïsation<a class="headerlink" href="#diagramme-explosion-exponentielle-vs-memoisation" title="Permanent link">§</a></h2>
-<p></p><pre class="mermaid"><code>flowchart TD
-    F5[F 5] --&gt; F4a[F 4]
-    F5 --&gt; F3a[F 3]
-    F4a --&gt; F3b[F 3]
-    F4a --&gt; F2a[F 2]
-    F3a --&gt; F2b[F 2]
-    F3a --&gt; F1a[F 1]
-    F3b --&gt; F2c[F 2]
-    F3b --&gt; F1b[F 1]
-    F2a --&gt; F1c[F 1]
-    F2a --&gt; F0a[F 0]
-    F2b --&gt; F1d[F 1]
-    F2b --&gt; F0b[F 0]
-    F2c --&gt; F1e[F 1]
-    F2c --&gt; F0c[F 0]</code></pre>
-<em>Sans mémoïsation, F(3) est calculé 2x, F(2) 3x, F(1) 5x, etc. → O(2ⁿ).</em><p></p>
-<p></p><pre class="mermaid"><code>flowchart LR
-    F0((F0=0)) --&gt; F1((F1=1))
-    F1 --&gt; F2((F2=1))
-    F2 --&gt; F3((F3=2))
-    F3 --&gt; F4((F4=3))
-    F4 --&gt; F5((F5=5))</code></pre>
-<em>Avec mémoïsation/tabulation, chaque F(i) est calculé une seule fois → O(n).</em><p></p>
+<h2 id="diagramme-largument-diagonal">Diagramme — l'argument diagonal<a class="headerlink" href="#diagramme-largument-diagonal" title="Permanent link">§</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    H["Hypothèse : halt existe"] --&gt; S["Construction de sym(prog) :&lt;br/&gt;boucle si halt(prog,prog) = True&lt;br/&gt;termine si halt(prog,prog) = False"]
+    S --&gt; Q["Que fait sym(sym) ?"]
+    Q --&gt; C1["Cas 1 : halt(sym,sym) = True&lt;br/&gt;→ sym(sym) doit s'arrêter&lt;br/&gt;mais sym(sym) entre en boucle&lt;br/&gt;&lt;b&gt;Contradiction&lt;/b&gt;"]
+    Q --&gt; C2["Cas 2 : halt(sym,sym) = False&lt;br/&gt;→ sym(sym) doit boucler&lt;br/&gt;mais sym(sym) renvoie 1&lt;br/&gt;&lt;b&gt;Contradiction&lt;/b&gt;"]
+    C1 --&gt; CCL["Conclusion : halt n'existe pas&lt;br/&gt;&lt;b&gt;Le problème de l'arrêt est indécidable&lt;/b&gt;"]
+    C2 --&gt; CCL</code></pre>
+<hr>
+<h2 id="pour-aller-plus-loin-hors-programme-strict">Pour aller plus loin (hors programme strict)<a class="headerlink" href="#pour-aller-plus-loin-hors-programme-strict" title="Permanent link">§</a></h2>
+<h3 id="machine-de-turing">Machine de Turing<a class="headerlink" href="#machine-de-turing" title="Permanent link">§</a></h3>
+<p>Modèle théorique de calcul (Turing, 1936) :</p>
+<ul>
+<li>un <strong>ruban infini</strong> divisé en cases contenant des symboles,</li>
+<li>une <strong>tête de lecture/écriture</strong> qui se déplace ↔,</li>
+<li>un <strong>ensemble fini d'états</strong>,</li>
+<li>une <strong>table de transitions</strong> (symbole lu, état) → (symbole écrit, déplacement, nouvel état).</li>
+</ul>
+<p>Une <strong>machine de Turing universelle</strong> peut simuler n'importe quelle autre machine de Turing → c'est <strong>l'ancêtre théorique de l'ordinateur</strong> (un seul matériel, n'importe quel programme).</p>
+<h3 id="-calcul">λ-calcul<a class="headerlink" href="#-calcul" title="Permanent link">§</a></h3>
+<p>Modèle équivalent (Church, 1936) où <strong>tout est fonction</strong>. Base théorique des langages <strong>fonctionnels</strong> (Lisp, Haskell, OCaml, …). Le mot-clé <code>lambda</code> en Python est un héritage direct.</p>
+<h3 id="these-de-church-turing">Thèse de Church-Turing<a class="headerlink" href="#these-de-church-turing" title="Permanent link">§</a></h3>
+<p>Tout ce qui est calculable au sens intuitif est calculable par une machine de Turing — équivalent à : par un programme dans n'importe quel langage de programmation usuel. C'est une <strong>thèse</strong> (pas un théorème) car elle relie une notion intuitive à un modèle formel.</p>
+<h3 id="contexte-historique">Contexte historique<a class="headerlink" href="#contexte-historique" title="Permanent link">§</a></h3>
+<ul>
+<li><strong>1900</strong> — Hilbert publie ses <strong>23 problèmes</strong> au Congrès de Paris.</li>
+<li><strong>1928</strong> — Hilbert pose l'<strong>Entscheidungsproblem</strong> : « existe-t-il un algorithme universel qui décide si toute proposition mathématique est vraie ou fausse ? »</li>
+<li><strong>1931</strong> — <strong>Gödel</strong> démontre ses théorèmes d'<strong>incomplétude</strong> : tout système formel suffisamment puissant contient des énoncés vrais mais non démontrables.</li>
+<li><strong>1936</strong> — <strong>Turing</strong> (machine de Turing) et <strong>Church</strong> (λ-calcul), indépendamment, démontrent que <strong>l'Entscheidungsproblem n'a pas de solution</strong>, en passant par l'indécidabilité du problème de l'arrêt.</li>
+</ul>
 <hr>
 <h2 id="pieges-classiques-au-bac">Pièges classiques au bac<a class="headerlink" href="#pieges-classiques-au-bac" title="Permanent link">§</a></h2>
 <ul>
-<li><strong>Confondre DP et diviser pour régner</strong> : DP suppose que les sous-problèmes se chevauchent.</li>
-<li><strong>Oublier le cache</strong> dans la version récursive — tu retombes en O(2ⁿ).</li>
-<li><strong>Initialisation incorrecte</strong> : <code>dp[0]</code> doit refléter le cas vide (souvent 0 ou +∞).</li>
-<li><strong>Sens de remplissage</strong> : en bottom-up, calculer dp[i] AVANT dp[i+1].</li>
-<li><strong>Confondre sac fractionnaire (glouton) et sac 0/1 (DP)</strong>.</li>
-<li><strong>Ne pas reconnaître</strong> un problème DP : repérer un cas récursif simple + sous-problèmes répétés.</li>
+<li><strong>Confondre indécidable et difficile</strong> : <code>halt</code> n'est pas « long à exécuter » — il <strong>ne peut pas exister</strong>. Aucun langage, aucun ordinateur futur ne le permettra.</li>
+<li><strong>Croire que tout problème de décision est décidable</strong> : c'est faux ; le problème de l'arrêt en est le contre-exemple canonique.</li>
+<li><strong>Confondre décidabilité et complexité</strong> : un problème peut être décidable mais coûteux (ex. SAT en O(2ⁿ)). Décidable = il existe <em>un</em> algo qui termine. Complexité = à quel coût.</li>
+<li><strong>Oublier que l'algorithme doit terminer pour TOUTES les entrées</strong> : un programme qui répond bien sur 99 % des cas mais boucle parfois ne <em>décide</em> pas le problème.</li>
+<li><strong>Mal mener le raisonnement par l'absurde</strong> : il faut bien partir de l'hypothèse opposée, dériver la contradiction, <strong>puis</strong> conclure. Sauter une étape coûte des points.</li>
+<li><strong>Sortir du programme</strong> au bac : on attend la démonstration du problème de l'arrêt (avec <code>halt</code> et <code>sym</code>), pas un cours sur la machine de Turing ou le λ-calcul.</li>
 </ul>
 <hr>
 <h2 id="questions-types-au-bac">Questions types au bac<a class="headerlink" href="#questions-types-au-bac" title="Permanent link">§</a></h2>
-<p><strong>Q1.</strong> <em>Quelles sont les deux conditions pour appliquer la programmation dynamique ?</em></p>
+<p><strong>Q1.</strong> <em>Donner la définition d'un problème décidable.</em></p>
 <blockquote>
-<p>Sous-structure optimale + chevauchement des sous-problèmes.</p>
+<p>Un problème de décision est décidable s'il existe un algorithme qui, pour toute instance, termine en un nombre fini d'étapes et donne la bonne réponse (oui/non). « Termine <strong>toujours</strong> » est essentiel : un algorithme qui boucle parfois ne décide pas le problème.</p>
 </blockquote>
-<p><strong>Q2.</strong> <em>Quelle est la complexité de Fibonacci naïf vs mémoïsé ?</em></p>
+<p><strong>Q2.</strong> <em>Donner un exemple de problème décidable et expliquer pourquoi.</em></p>
 <blockquote>
-<p>O(2ⁿ) vs O(n).</p>
+<p>La primalité : tester si <code>n</code> est premier en essayant tous les diviseurs <code>k</code> de 2 à <code>n−1</code>. La boucle se termine après au plus <code>n−2</code> itérations, donc l'algorithme termine pour toute entrée et donne la bonne réponse. Le problème est décidable.</p>
 </blockquote>
-<p><strong>Q3.</strong> <em>Différence entre top-down et bottom-up ?</em></p>
+<p><strong>Q3.</strong> <em>Énoncer le problème de l'arrêt et son statut.</em></p>
 <blockquote>
-<p>Top-down : récursif + cache. Bottom-up : itératif + tableau rempli du plus petit au plus grand.</p>
+<p>Le problème de l'arrêt demande s'il existe un algorithme <code>halt(P, x)</code> qui, pour tout programme <code>P</code> et toute entrée <code>x</code>, termine et renvoie <code>True</code> si <code>P(x)</code> s'arrête, <code>False</code> sinon. Le théorème de Turing (1936) affirme que <strong>le problème de l'arrêt est indécidable</strong> : un tel algorithme n'existe pas.</p>
 </blockquote>
-<p><strong>Q4.</strong> <em>Pourquoi le sac à dos 0/1 ne se résout-il pas par glouton ?</em></p>
+<p><strong>Q4.</strong> <em>Démontrer l'indécidabilité du problème de l'arrêt (raisonnement par l'absurde).</em></p>
 <blockquote>
-<p>Pas de propriété du choix glouton : un choix « localement optimal » peut interdire
-  une combinaison globalement meilleure.</p>
+<p>Supposons par l'absurde que <code>halt(prog, x)</code> existe et fonctionne correctement. On construit le programme <code>sym(prog)</code> qui : entre en boucle infinie si <code>halt(prog, prog) == True</code>, et renvoie <code>1</code> sinon. On considère <code>sym(sym)</code> :
+– si <code>halt(sym, sym) = True</code>, alors <code>sym(sym)</code> doit s'arrêter ; or par construction <code>sym</code> entre en boucle infinie : contradiction.
+– si <code>halt(sym, sym) = False</code>, alors <code>sym(sym)</code> ne doit pas s'arrêter ; or par construction <code>sym</code> renvoie 1 : contradiction.
+Dans les deux cas, contradiction. L'hypothèse est fausse : <code>halt</code> n'existe pas. Le problème de l'arrêt est indécidable.</p>
 </blockquote>
-<p><strong>Q5.</strong> <em>Donner la récurrence du sac à dos 0/1.</em></p>
+<p><strong>Q5.</strong> <em>Pourquoi un programme peut-il prendre un autre programme en paramètre ?</em></p>
 <blockquote>
-<p>dp[i][w] = max(dp[i-1][w], dp[i-1][w-poids[i]] + valeur[i]).</p>
+<p>Parce qu'un programme est un fichier texte, c'est-à-dire une suite de caractères — donc une donnée comme une autre. C'est ce que font les compilateurs, interpréteurs, antivirus, linters, debuggers : ils prennent un programme en entrée. Rien n'empêche un programme de se prendre lui-même comme paramètre, ce qui est essentiel à la démonstration de l'indécidabilité du problème de l'arrêt.</p>
 </blockquote>
-<p><strong>Q6.</strong> <em>À quoi sert <code>@functools.lru_cache</code> ?</em></p>
+<p><strong>Q6.</strong> <em>L'indécidabilité du problème de l'arrêt est-elle une limite technologique ?</em></p>
 <blockquote>
-<p>Ajouter automatiquement un cache à une fonction (mémoïsation).</p>
+<p>Non. C'est une limite <strong>mathématique fondamentale</strong>, indépendante du langage de programmation et de la puissance de la machine. Aucun progrès technologique futur ne pourra la lever : c'est aussi vrai en Python aujourd'hui qu'en quantique demain.</p>
 </blockquote>
 <hr>
 <h2 id="liens">Liens<a class="headerlink" href="#liens" title="Permanent link">§</a></h2>
 <ul>
-<li>Cours en ligne : <a href="https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/30_sequence_30/30_sequence_30/">https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/30_sequence_30/30_sequence_30/</a></li>
-<li>Voir aussi : <a href="../12_glouton_knn/"><code>12_glouton_knn.md</code></a> (comparatif glouton/DP)</li>
-<li>Voir aussi : <a href="../08_diviser_pour_regner/"><code>08_diviser_pour_regner.md</code></a> (autre stratégie récursive)</li>
-<li>Voir aussi : <a href="../../memos/memo_complexites/"><code>memos/memo_complexites.md</code></a></li>
+<li>Page séquence (Lyotard) : <a href="https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/90_sequence_90/90_sequence_90/">https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/90_sequence_90/90_sequence_90/</a></li>
+<li>Cours détaillé : <a href="https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/decidabilite_calculabilite/cours/">https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/decidabilite_calculabilite/cours/</a></li>
+<li>Exercice type bac : <a href="https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/decidabilite_calculabilite/exercice_calculabilite_bac/">https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/decidabilite_calculabilite/exercice_calculabilite_bac/</a></li>
+<li>TP Capytale (machine de Turing en POO, hors programme) : <a href="https://capytale2.ac-paris.fr/web/c/711c-10383989">https://capytale2.ac-paris.fr/web/c/711c-10383989</a></li>
+<li>Vidéo Arte « L'Entscheidungsproblem ou la fin des mathématiques ? » (série <em>Voyages au pays des maths</em>, 2023).</li>
+<li>Vidéo Science Étonnante (David Louapre) sur la machine de Turing.</li>
 </ul>
 
 
@@ -2487,7 +2525,7 @@ Approche <strong>itérative</strong>.</p>
       <nav class="md-footer__inner md-grid" aria-label="Pied de page">
         
           
-          <a href="../12_glouton_knn/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 12 — Glouton &amp; KNN">
+          <a href="../18_approfondissement/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 18 — Approfondissement &amp; synthèse">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -2497,20 +2535,20 @@ Approche <strong>itérative</strong>.</p>
                 Précédent
               </span>
               <div class="md-ellipsis">
-                12 — Glouton &amp; KNN
+                18 — Approfondissement &amp; synthèse
               </div>
             </div>
           </a>
         
         
           
-          <a href="../14_cryptographie/" class="md-footer__link md-footer__link--next" aria-label="Suivant: 14 — Cryptographie">
+          <a href="../../memos/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Vue d'ensemble">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Suivant
               </span>
               <div class="md-ellipsis">
-                14 — Cryptographie
+                Vue d'ensemble
               </div>
             </div>
             <div class="md-footer__button md-icon">
