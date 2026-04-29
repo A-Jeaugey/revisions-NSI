@@ -8,7 +8,7 @@ hide:
 
 <div class="nsi-flash-wrap" id="nsi-flash-app">
   <div class="nsi-flash-meta">
-    Carte <strong><span data-flash-current>1</span></strong> / <span data-flash-total>60</span>
+    Carte <strong><span data-flash-current>1</span></strong> / <span data-flash-total>63</span>
     · séquence <strong data-flash-tag>—</strong>
     · <span data-flash-progress>0 vues · 0 acquises</span>
   </div>
@@ -31,6 +31,7 @@ hide:
     <button class="nsi-flash-filter" data-filter="15">SoC</button>
     <button class="nsi-flash-filter" data-filter="16">Recherche texte</button>
     <button class="nsi-flash-filter" data-filter="17">Paradigmes</button>
+    <button class="nsi-flash-filter" data-filter="19">Décidabilité</button>
     <button class="nsi-flash-filter" data-filter="todo">À revoir</button>
   </div>
 
@@ -124,6 +125,9 @@ hide:
     { tag: "16", q: "À quoi sert la table d'échec de KMP ?", a: "Sur un échec, évite de repartir à zéro en décalant grâce au plus long préfixe qui est aussi suffixe." },
     { tag: "17", q: "Définition d'une fonction pure ?", a: "Sans effet de bord et déterministe : même entrée → même sortie." },
     { tag: "17", q: "Différence impératif / fonctionnel ?", a: "Impératif : on décrit COMMENT (séquence d'états). Fonctionnel : on décrit QUOI (composition de fonctions, immuabilité)." },
+    { tag: "19", q: "Définis un problème <em>décidable</em>.", a: "Un problème de décision pour lequel il existe un algorithme qui termine pour toute entrée et donne la bonne réponse oui/non." },
+    { tag: "19", q: "Énonce le problème de l'arrêt.", a: "Existe-t-il un programme <code>halt(P, x)</code> qui dit, pour tout programme P et toute entrée x, si P(x) s'arrête ? Théorème de Turing (1936) : non, c'est <strong>indécidable</strong>." },
+    { tag: "19", q: "Schéma de la preuve d'indécidabilité du problème de l'arrêt.", a: "Par l'absurde : on suppose <code>halt</code> existe, on construit <code>sym(prog)</code> qui boucle ssi <code>prog(prog)</code> s'arrête. Alors <code>sym(sym)</code> mène à une contradiction dans les deux cas." },
   ];
 
   const STORAGE_KEY = "nsi_flash_state";

@@ -25,15 +25,15 @@ hide:
   </div>
   <div class="nsi-stat">
     <div class="nsi-stat__label">Fiches</div>
-    <div class="nsi-stat__value"><span data-count="18">0</span><small>séquences</small></div>
+    <div class="nsi-stat__value"><span data-count="19">0</span><small>séquences</small></div>
   </div>
   <div class="nsi-stat">
     <div class="nsi-stat__label">Flashcards</div>
-    <div class="nsi-stat__value"><span data-count="60">0</span><small>cartes</small></div>
+    <div class="nsi-stat__value"><span data-count="63">0</span><small>cartes</small></div>
   </div>
   <div class="nsi-stat">
     <div class="nsi-stat__label">QCM</div>
-    <div class="nsi-stat__value"><span data-count="30">0</span><small>questions</small></div>
+    <div class="nsi-stat__value"><span data-count="32">0</span><small>questions</small></div>
   </div>
 </div>
 
@@ -104,6 +104,7 @@ hide:
     <span class="nsi-marquee__item">RSA</span>
     <span class="nsi-marquee__item">pile</span>
     <span class="nsi-marquee__item">file</span>
+    <span class="nsi-marquee__item">indécidabilité</span>
     <!-- duplication pour loop -->
     <span class="nsi-marquee__item">récursivité</span>
     <span class="nsi-marquee__item">graphes</span>
@@ -123,6 +124,7 @@ hide:
     <span class="nsi-marquee__item">RSA</span>
     <span class="nsi-marquee__item">pile</span>
     <span class="nsi-marquee__item">file</span>
+    <span class="nsi-marquee__item">indécidabilité</span>
   </div>
 </div>
 
@@ -236,6 +238,12 @@ hide:
       <div><div class="nsi-card__num">seq_17</div>
       <h3 class="nsi-card__title">Paradigmes</h3>
       <p class="nsi-card__desc">Impératif, fonctionnel, déclaratif.</p></div>
+      <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
+    </a>
+    <a class="nsi-card" href="fiches/19_decidabilite_calculabilite/" data-fiche-id="19">
+      <div><div class="nsi-card__num">seq_19</div>
+      <h3 class="nsi-card__title">Décidabilité & calculabilité</h3>
+      <p class="nsi-card__desc">Problème de l'arrêt, indécidabilité, raisonnement par l'absurde.</p></div>
       <div class="nsi-card__foot"><span class="nsi-card__arrow">→</span></div>
     </a>
     <a class="nsi-card nsi-card--accent nsi-card--full" href="fiches/18_approfondissement/" data-fiche-id="18">

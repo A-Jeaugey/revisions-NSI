@@ -9,7 +9,7 @@ hide:
 <div class="nsi-quiz-wrap" id="nsi-quiz-app">
   <div class="nsi-quiz-head">
     <div class="nsi-quiz-score">
-      Question <strong data-quiz-current>1</strong> / <span data-quiz-total>30</span>
+      Question <strong data-quiz-current>1</strong> / <span data-quiz-total>32</span>
       · Score <strong data-quiz-score>0</strong>
     </div>
     <button class="nsi-flash-btn" data-quiz-restart>Recommencer</button>
@@ -133,6 +133,18 @@ hide:
       "Les boucles <code>while</code> complexes",
       "Les effets de bord contrôlés"
     ], c: 1, e: "Données immuables + fonctions composables = code plus simple à raisonner." },
+    { tag: "19", q: "Le problème de l'arrêt est…", o: [
+      "Décidable mais coûteux (exponentiel)",
+      "Indécidable : aucun programme ne peut le résoudre pour toute entrée",
+      "Décidable seulement pour les programmes courts",
+      "Une question ouverte non encore tranchée"
+    ], c: 1, e: "Théorème de Turing & Church (1936) : <code>halt(P, x)</code> ne peut pas exister, c'est une limite mathématique fondamentale." },
+    { tag: "19", q: "Quel mode de raisonnement utilise-t-on pour démontrer l'indécidabilité du problème de l'arrêt ?", o: [
+      "Récurrence",
+      "Raisonnement par l'absurde",
+      "Raisonnement direct",
+      "Disjonction de cas exhaustive"
+    ], c: 1, e: "On suppose que <code>halt</code> existe, on construit <code>sym(sym)</code> et on dérive une contradiction." },
   ];
 
   const root = document.getElementById("nsi-quiz-app");

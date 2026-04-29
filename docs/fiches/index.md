@@ -170,4 +170,11 @@ Pièges au bac → Questions types → Liens.**
 
     [→ Lire la fiche](18_approfondissement.md)
 
+- :material-infinity: **19 — Décidabilité & calculabilité**
+
+    Problème de l'arrêt, indécidabilité, démonstration par l'absurde
+    (programme `halt` → `sym(sym)`).
+
+    [→ Lire la fiche](19_decidabilite_calculabilite.md)
+
 </div>

@@ -141,6 +141,7 @@ nav:
       - "16 — Recherche textuelle": fiches/16_recherche_textuelle.md
       - "17 — Paradigmes de programmation": fiches/17_paradigmes_programmation.md
       - "18 — Approfondissement & synthèse": fiches/18_approfondissement.md
+      - "19 — Décidabilité & calculabilité": fiches/19_decidabilite_calculabilite.md
   - Mémos:
       - Vue d'ensemble: memos/index.md
       - Complexités: memos/memo_complexites.md
