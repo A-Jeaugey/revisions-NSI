@@ -149,7 +149,7 @@ def infixe(noeud):
     infixe(noeud.droite)
 ```
 
-### 1.6 Programmation dynamique (DP)
+### 1.6 Programmation dynamique (DP) — *moins prioritaire (note 2023+)*
 
 | Algorithme | Principe | Complexité |
 |------------|----------|------------|
@@ -193,7 +193,7 @@ def rendu_monnaie(montant, pieces=[200,100,50,20,10,5,2,1]):
     return res
 ```
 
-### 1.8 KNN et recherche textuelle
+### 1.8 KNN et recherche textuelle — *moins prioritaire (note 2023+)*
 
 | Algorithme | Principe | Complexité |
 |------------|----------|------------|
@@ -217,36 +217,15 @@ def recherche_naive(texte, motif):
     return -1
 ```
 
-### 1.9 Cryptographie
+### 1.9 Cryptographie — *culture générale (BO : distinction symétrique/asymétrique seulement)*
 
-| Algorithme | Principe | Sécurité |
-|------------|----------|----------|
-| César | Décalage fixe k | Trivial à casser |
-| Vigenère | Décalage variable selon clé | Cassable (Kasiski) |
-| RSA | Clé publique / privée, basé sur factorisation | Robuste si clé ≥ 2048 bits |
+> Le BO Terminale ne demande **que** la distinction *chiffrement symétrique vs asymétrique* et la compréhension du **principe HTTPS** (échange de clé symétrique via protocole asymétrique). Aucun algorithme précis n'est exigible.
 
-```python
-def cesar(texte, k):
-    res = ""
-    for c in texte:
-        if c.isupper():
-            res += chr((ord(c) - 65 + k) % 26 + 65)
-        elif c.islower():
-            res += chr((ord(c) - 97 + k) % 26 + 97)
-        else:
-            res += c
-    return res
-
-def vigenere(texte, cle):
-    res = ""
-    for i, c in enumerate(texte.upper()):
-        if c.isalpha():
-            k = ord(cle[i % len(cle)].upper()) - 65
-            res += chr((ord(c) - 65 + k) % 26 + 65)
-        else:
-            res += c
-    return res
-```
+| Catégorie | Principe en 1 ligne | Exemple |
+|-----------|---------------------|---------|
+| **Symétrique** | Une seule clé, partagée entre émetteur et récepteur | AES, masque jetable (XOR) |
+| **Asymétrique** | Deux clés (publique + privée) ; on chiffre avec la publique, on déchiffre avec la privée | RSA |
+| **HTTPS** | Échange d'une clé symétrique via un protocole asymétrique, puis communication chiffrée symétriquement | TLS |
 
 ---
 
@@ -362,17 +341,19 @@ graphe = {
 
 ## 4. Conseils méthodologiques
 
-### 4.1 Épreuve écrite (3h30, 2 exercices sur 3)
+### 4.1 Épreuve écrite (3h30, 3 exercices imposés)
 
-- **Lire les 3 sujets** au début (10 min). Choisir les 2 où on sent le mieux.
-- **Gérer le temps** : ~1h45 par exercice. Garder 15 min de relecture finale.
+> Depuis la session 2023 (note de service **MENE2227884N**), l'écrit comporte **3 exercices indépendants imposés** — il n'y a plus de choix entre les exercices. Tu dois traiter les trois.
+
+- **Lire les 3 exercices** au début (10 min) pour repérer celui que tu maîtrises le mieux et commencer par lui.
+- **Gérer le temps** : ~1h par exercice. Garder 15-20 min de relecture finale.
 - **Justifier** : un calcul de complexité, une réponse à « pourquoi », demande 2-3 phrases avec vocabulaire précis.
 - **Annoter le code donné** : commenter chaque ligne stratégique aide à comprendre.
 - **Pseudocode accepté** : si l'on ne sait plus la syntaxe Python exacte, du pseudocode clair vaut mieux qu'un code faux.
 - **Soigner l'écriture** des indentations et des indices de tableaux.
 - **Ne pas laisser de blanc** : même une réponse partielle peut rapporter 1-2 points.
 
-### 4.2 Épreuve pratique (1h, 2 exercices tirés d'une banque de 12)
+### 4.2 Épreuve pratique (1h, 2 exercices tirés de la banque officielle)
 
 - **Premier exercice** (souvent une fonction simple) : 20 min max.
 - **Deuxième exercice** (complète un programme) : 30 min, 10 min de relecture.
@@ -440,8 +421,8 @@ graphe = {
 **Q5.** En Python, quelle est la différence entre `==` et `is` ?
 **R5.** `==` compare les **valeurs**. `is` vérifie si deux variables désignent le **même objet** en mémoire.
 
-**Q6.** Citez les quatre piliers de la POO.
-**R6.** Encapsulation, héritage, polymorphisme, abstraction.
+**Q6.** Quel est le vocabulaire de la POO au programme NSI Terminale ?
+**R6.** **Classes, attributs, méthodes, objets**. Le BO précise explicitement : *« On n'aborde pas ici tous les aspects de la programmation objet comme le polymorphisme et l'héritage. »* — donc héritage et polymorphisme sont **hors programme NSI**.
 
 **Q7.** Quelle est la complexité du tri rapide en moyenne et en pire cas ?
 **R7.** Moyenne : O(n log n). Pire cas : O(n²) (pivot mal choisi sur tableau déjà trié).
@@ -474,10 +455,10 @@ Sur un **ABR** (arbre binaire de recherche), le parcours infixe affiche les vale
 - [ ] Je sais calculer la complexité d'une boucle simple, double, dichotomique.
 - [ ] Je connais SQL : SELECT, WHERE, JOIN, INSERT, UPDATE, DELETE.
 - [ ] Je sais lire un schéma de base de données (clés primaires/étrangères).
-- [ ] Je sais expliquer la différence processus/thread.
-- [ ] Je connais les 4 paradigmes (impératif, OO, fonctionnel, événementiel).
-- [ ] Je sais protéger une section critique (verrou, mutex).
-- [ ] Je connais le modèle TCP/IP grossièrement (4 couches).
+- [ ] Je sais ce qu'est un processus et expliquer l'**interblocage** (deadlock).
+- [ ] Je connais les 4 paradigmes (impératif, fonctionnel, OO, déclaratif).
+- [ ] Je sais lire une **commande Linux** simple (`ls`, `cd`, `chmod` rwx).
+- [ ] Je connais TCP/IP grossièrement (4 couches) et le **routage RIP/OSPF**.
 - [ ] Je sais ce qu'est un protocole (HTTP, HTTPS, TCP, UDP, IP, DNS).
 - [ ] Je sais expliquer chiffrement symétrique vs asymétrique.
 - [ ] Je sais utiliser `assert` et écrire une docstring.

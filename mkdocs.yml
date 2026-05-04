@@ -153,6 +153,5 @@ nav:
       - Quel algo choisir ?: diagrammes/arbre_decision_algos.md
       - Parcours de graphes: diagrammes/parcours_graphes.md
       - Terminologie des arbres: diagrammes/arbres_terminologie.md
-      - Modèle OSI / TCP-IP: diagrammes/modele_osi_tcpip.md
+      - Modèle TCP/IP: diagrammes/modele_osi_tcpip.md
       - États d'un processus: diagrammes/etats_processus.md
-      - Pipeline de compilation: diagrammes/pipeline_compilation.md

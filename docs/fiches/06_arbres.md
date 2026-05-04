@@ -15,10 +15,9 @@
 
 1. Vocabulaire des arbres généraux.
 2. Arbres binaires : définitions, mesures (taille, hauteur, profondeur).
-3. Implémentations : classe `Noeud`, dictionnaires.
+3. Implémentations : classe `Noeud`.
 4. Parcours en profondeur (préfixe, infixe, suffixe) et en largeur.
-5. Arbre binaire de recherche (ABR) : recherche, insertion, suppression.
-6. Notion de tas (heap) — propriété d'ordre, applications.
+5. Arbre binaire de recherche (ABR) : recherche, insertion.
 
 ## Notions clés (définitions précises bac)
 
@@ -37,7 +36,6 @@
 - **Arbre binaire complet** : tous les niveaux sont entièrement remplis (N = 2^h − 1 nœuds).
 - **Arbre binaire parfait** (ou « presque complet ») : tous les niveaux sont remplis sauf éventuellement le dernier, qui est rempli de gauche à droite.
 - **Arbre binaire de recherche (ABR)** : arbre binaire étiqueté par des éléments comparables tel que pour tout nœud n, toutes les valeurs du sous-arbre gauche sont **strictement inférieures** à n.valeur, et toutes celles du sous-arbre droit sont **strictement supérieures** (ou ≥ selon convention).
-- **Tas (heap)** : arbre binaire **parfait** vérifiant la **propriété de tas** : la valeur de chaque nœud est ≥ (tas max) ou ≤ (tas min) à celles de ses fils.
 
 ## Vocabulaire
 
@@ -56,7 +54,6 @@
 | Hauteur de l'arbre | Longueur du plus long chemin racine → feuille |
 | Arbre binaire | Au plus 2 fils par nœud |
 | ABR | Arbre binaire de recherche (G < N < D) |
-| Tas (heap) | Arbre binaire parfait + propriété d'ordre |
 | Arité | Nombre maximal de fils par nœud |
 | Niveau k | Ensemble des nœuds de profondeur k |
 
@@ -251,30 +248,6 @@ abr = construire_abr([20, 5, 25, 3, 12, 21, 8, 28, 13, 6])
 print(parcours_infixe(abr))           # [3, 5, 6, 8, 12, 13, 20, 21, 25, 28]
 ```
 
-### Notion de tas (heap)
-
-Un **tas max** est un arbre binaire **parfait** dans lequel chaque nœud est ≥ à ses deux fils (la racine contient donc le maximum).
-
-Stockage compact dans un tableau (sans pointeurs) : pour le nœud d'indice `i` (racine = 0) :
-- fils gauche : `2*i + 1`
-- fils droit : `2*i + 2`
-- père : `(i - 1) // 2`
-
-```python
-def est_tas_max(t: list) -> bool:
-    """Verifie la propriete de tas max sur le tableau t."""
-    n = len(t)
-    for i in range(n):
-        g, d = 2 * i + 1, 2 * i + 2
-        if g < n and t[i] < t[g]:
-            return False
-        if d < n and t[i] < t[d]:
-            return False
-    return True
-```
-
-Insertion / extraction du max : **O(log n)** chacune.
-
 ### Récapitulatif de complexités (ABR)
 
 | Opération | ABR équilibré | ABR filiforme |
@@ -322,7 +295,6 @@ graph TD
 - Confondre **arbre binaire complet** (tous les niveaux pleins) et **arbre binaire parfait** (tous pleins sauf le dernier, rempli à gauche).
 - En ABR, oublier que la **comparaison** doit être faite avec `<` à gauche et `>` à droite ; insérer un doublon sans le préciser.
 - Penser que le **parcours infixe** trie n'importe quel arbre : il ne trie que les **ABR**.
-- Confondre **tas** et **ABR** : un tas n'est PAS un ABR (il garantit seulement que la racine est le min ou le max).
 - Pour la suppression dans un ABR avec deux fils : oublier le **successeur** (plus petit du sous-arbre droit) ou prédécesseur.
 - Coder une fonction récursive sur arbre sans gérer le cas de base `arbre is None` → `RecursionError` ou `AttributeError`.
 

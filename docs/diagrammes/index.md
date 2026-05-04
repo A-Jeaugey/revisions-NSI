@@ -4,7 +4,7 @@ title: Diagrammes
 
 # 🗺 Diagrammes & cartes mentales
 
-Six diagrammes Mermaid pour visualiser les notions clés.
+Cinq diagrammes Mermaid pour visualiser les notions clés.
 
 <div class="grid cards" markdown>
 
@@ -29,25 +29,18 @@ Six diagrammes Mermaid pour visualiser les notions clés.
 
     [→ Ouvrir le diagramme](arbres_terminologie.md)
 
-- :material-lan: **Modèle OSI / TCP-IP**
+- :material-lan: **Modèle TCP/IP**
 
-    Comparaison côte à côte des deux modèles, encapsulation, handshake TCP,
-    calcul d'adresse réseau (CIDR), ports standards.
+    TCP/IP en 4 couches, encapsulation, calcul d'adresse réseau (CIDR),
+    plages privées, ports principaux.
 
     [→ Ouvrir le diagramme](modele_osi_tcpip.md)
 
 - :material-cog-sync-outline: **États d'un processus**
 
-    Automate des 5 états (Nouveau, Prêt, Élu, Bloqué, Terminé). Création par
-    fork(), interblocage (graphe d'allocation), processus vs thread.
+    Automate des 5 états (Nouveau, Prêt, Élu, Bloqué, Terminé) et interblocage
+    (graphe d'allocation, conditions de Coffman).
 
     [→ Ouvrir le diagramme](etats_processus.md)
-
-- :material-source-branch-sync: **Pipeline de compilation**
-
-    Source → exécutable, comparaison compilé / interprété / bytecode, carte
-    mentale des paradigmes de programmation.
-
-    [→ Ouvrir le diagramme](pipeline_compilation.md)
 
 </div>

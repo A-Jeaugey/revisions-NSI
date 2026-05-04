@@ -2,6 +2,9 @@
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/30_sequence_30/30_sequence_30/>
 
+!!! info "Périmètre d'évaluation — moins prioritaire (note 2023+)"
+    La note **MENE2227884N (2022)** exclut formellement la programmation dynamique du périmètre évaluable à l'écrit du bac NSI. **MAIS** : 4 sujets 2024-2025 la testent quand même (Centres étrangers gr1 j1 2024, Métropole-rempl. j1 2025, Pays étrangers 2025, Centres étrangers gr2 j2 2024). Cette fiche est volontairement allégée : on garde le **principe** + **Fibonacci mémoïsé** + **rendu de monnaie non canonique**. Le sac à dos 0/1 est gardé en bas de fiche comme exemple complet mais reste **facultatif** à l'écrit (lourd à dérouler à la main).
+
 ---
 
 ## TL;DR
@@ -174,7 +177,7 @@ print(rendu_dp(287, [200, 100, 50, 20, 10, 5, 2, 1]))  # 6
 print(rendu_dp(6, [4, 3, 1]))  # 2  (3 + 3) -- glouton donnerait 3 (4+1+1)
 ```
 
-### 3. Sac à dos 0/1 — DP
+### 3. Sac à dos 0/1 — DP *(facultatif au bac, lourd à dérouler à la main)*
 
 Maximiser la valeur, sous contrainte de capacité, sans pouvoir prendre de fraction.
 

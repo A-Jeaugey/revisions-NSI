@@ -2,7 +2,9 @@
 
 > Source principale : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/04_sequence_4/04_sequence_4/>
 > Ressource détaillée : <https://lyotardjulien.forge.apps.education.fr/bifurcation-site-coilhac-term/graphes/1_graphes_generalites/>
-> Vidéos référencées : parcours en largeur (BFS), parcours en profondeur (DFS).
+
+!!! info "Périmètre d'évaluation"
+    La note de service **MENE2227884N (2022)** exclut formellement la **structure « graphe »** et les **algorithmes sur graphes** du périmètre évaluable à l'écrit du bac NSI. **MAIS** : les graphes apparaissent quand même dans **19 sujets sur 84** en 2024-2025, presque toujours sous forme simple (modélisation par dictionnaire/matrice + BFS ou DFS). Cette fiche est donc volontairement allégée : on garde les représentations, BFS, DFS, plus court chemin (BFS non pondéré) et détection de cycle simple. Les algorithmes plus avancés (Dijkstra, etc.) sont **hors programme**.
 
 ## TL;DR
 
@@ -19,7 +21,7 @@
 3. Implémentation Python via une classe `Graphe` reposant sur un dictionnaire.
 4. Parcours en largeur (BFS) — file FIFO, applications.
 5. Parcours en profondeur (DFS) — récursif et itératif (pile LIFO).
-6. Applications : composantes connexes, détection de cycle, plus court chemin.
+6. Applications : plus court chemin BFS non pondéré, détection de cycle simple.
 
 ## Notions clés (définitions précises bac)
 
@@ -235,22 +237,6 @@ def dfs_iteratif(graphe: Graphe, depart) -> list:
 ```
 
 Complexité : **O(n + m)** en temps. La récursion utilise O(h) en mémoire (h = profondeur d'exploration).
-
-### Composantes connexes
-
-```python
-def composantes_connexes(graphe: Graphe) -> list:
-    """Renvoie la liste des composantes connexes (listes de sommets)."""
-    visites = set()
-    composantes = []
-    for s in graphe.sommets():
-        if s not in visites:
-            # Un BFS depuis s donne toute la composante de s
-            composante = parcours_largeur(graphe, s)
-            visites.update(composante)
-            composantes.append(composante)
-    return composantes
-```
 
 ### Détection de cycle (graphe non orienté)
 

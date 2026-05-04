@@ -2,15 +2,23 @@
 
 > Source : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/60_sequence_60/60_sequence_60/>
 
+!!! warning "Périmètre officiel BO Terminale — fiche allégée"
+    Le BO Terminale dit littéralement :
+
+    > « **Algorithme de Boyer-Moore** pour la recherche d'un motif dans un texte. […] **L'étude du coût, difficile, ne peut être exigée.** L'algorithme de Boyer-Moore sera présenté et son **efficacité sera mise en évidence**. »
+
+    Donc dans le programme : **algorithme naïf** + **présentation de Boyer-Moore** (sans étude de coût). La note **MENE2227884N (2022)** exclut même cette section de l'écrit. **1 seul sujet sur 28** en 2024-2025 traite la recherche textuelle.
+
+    **Hors programme NSI** : KMP (Knuth-Morris-Pratt), expressions régulières (regex). Cette fiche se limite donc à l'algorithme naïf et à la présentation de Boyer-Moore.
+
 ---
 
 ## TL;DR
 
-- Problème : trouver toutes les occurrences d'un **motif M** (longueur `m`) dans un **texte T**
-  (longueur `n`).
-- **Algorithme naïf** : O(n × m) — simple, à connaître par cœur.
-- **KMP** (Knuth-Morris-Pratt) : O(n + m), précalcul O(m) — évite les retours dans le texte.
-- **Regex (`re`)** : motifs flexibles (`\d`, `*`, `+`, `[]`, `(...|...)` …).
+- Problème : trouver toutes les occurrences d'un **motif M** (longueur `m`) dans un **texte T** (longueur `n`).
+- **Algorithme naïf** : compare le motif à chaque position du texte. Complexité O(n × m).
+- **Boyer-Moore (BM)** : compare le motif **de droite à gauche** et utilise la **règle du mauvais caractère** pour faire des **sauts** plutôt que d'avancer position par position. **Beaucoup plus efficace** en pratique (souvent sous-linéaire en moyenne).
+- L'étude formelle du coût de Boyer-Moore n'est **pas exigible** au bac.
 
 ---
 
@@ -18,8 +26,7 @@
 
 1. Définition du problème.
 2. Algorithme naïf (force brute).
-3. Algorithme de Knuth-Morris-Pratt (KMP).
-4. Expressions régulières en Python.
+3. Algorithme de Boyer-Moore (présentation + efficacité).
 
 ---
 
@@ -28,16 +35,17 @@
 ### Le problème
 
 Étant donné :
+
 - un **texte** `T = t₀ t₁ … t_{n-1}` (longueur `n`),
-- un **motif** `M = m₀ m₁ … m_{p-1}` (longueur `p`),
+- un **motif** `M = m₀ m₁ … m_{m-1}` (longueur `m`),
 
 renvoyer la **liste des positions** `i` de `T` à partir desquelles `M` apparaît dans `T`.
 
 ### Pourquoi optimiser
 
 - Un texte peut faire des **gigaoctets** (génome humain, archives web).
-- L'algo naïf O(nm) devient vite trop lent.
-- Un algo linéaire comme KMP (O(n+m)) devient indispensable.
+- L'algo naïf O(n × m) devient vite trop lent.
+- Boyer-Moore, en exploitant la structure du motif, peut **sauter** de gros blocs du texte → bien plus rapide en pratique.
 
 ---
 
@@ -45,14 +53,12 @@ renvoyer la **liste des positions** `i` de `T` à partir desquelles `M` apparaî
 
 | Terme | Définition |
 |-------|------------|
-| Motif | Séquence à chercher dans le texte. |
-| Texte | Séquence dans laquelle on cherche. |
-| Occurrence | Position `i` de `T` où le motif se trouve. |
-| Préfixe propre | Préfixe non vide et différent du mot. |
-| Suffixe propre | Suffixe non vide et différent du mot. |
-| Bord | Préfixe propre qui est aussi un suffixe propre. |
-| Failure function (KMP) | Tableau π[i] = longueur du plus long bord du préfixe de longueur i+1. |
-| Regex | Expression régulière, langage de motifs. |
+| Motif | Séquence à chercher dans le texte |
+| Texte | Séquence dans laquelle on cherche |
+| Occurrence | Position `i` de `T` où le motif se trouve |
+| Comparaison | Test `T[i+j] == M[j]` |
+| Décalage (shift) | Quantité dont on déplace le motif vers la droite |
+| Mauvais caractère | Caractère du texte ne correspondant pas au motif |
 
 ---
 
@@ -64,18 +70,19 @@ renvoyer la **liste des positions** `i` de `T` à partir desquelles `M` apparaî
 def recherche_naive(motif, texte):
     """Renvoie la liste des positions de `motif` dans `texte` (algorithme naïf).
 
-    Parcourt chaque position i de 0 à len(texte) - len(motif) et compare.
+    Pour chaque position i de 0 a n - m, on compare motif et texte[i:i+m]
+    caractere par caractere. En cas de difference, on avance de 1.
 
-    Complexité : O((n - p + 1) * p) ≈ O(n * p).
+    Complexité : O((n - m + 1) * m) ≈ O(n * m).
     """
-    n, p = len(texte), len(motif)
+    n, m = len(texte), len(motif)
     positions = []
-    for i in range(n - p + 1):
-        # On compare motif et texte[i:i+p] caractère par caractère
+    for i in range(n - m + 1):
+        # On compare motif et texte[i:i+m] caractère par caractère
         j = 0
-        while j < p and texte[i + j] == motif[j]:
+        while j < m and texte[i + j] == motif[j]:
             j += 1
-        if j == p:                # toutes les comparaisons OK
+        if j == m:                # toutes les comparaisons OK
             positions.append(i)
     return positions
 
@@ -84,159 +91,120 @@ def recherche_naive(motif, texte):
 print(recherche_naive("abc", "abcabcabc"))  # [0, 3, 6]
 ```
 
-### 2. Algorithme de Knuth-Morris-Pratt (KMP)
+### 2. Algorithme de Boyer-Moore (présentation)
 
-#### 2.1 Idée
+#### Idée fondamentale
 
-Quand une comparaison échoue à la position `i + j` du texte (caractère `j` du motif), au
-lieu de repartir à `i + 1` et de tout recomparer, KMP utilise la **structure du motif**
-(via le tableau `π` calculé à l'avance) pour **avancer plus vite**, sans jamais revenir
-en arrière dans le texte.
+Boyer-Moore (BM) introduit deux innovations majeures par rapport à l'algorithme naïf :
 
-#### 2.2 Précalcul du tableau π (longueur des bords)
+1. **Comparaison de droite à gauche** : on commence par comparer le **dernier** caractère du motif avec le caractère du texte correspondant, puis on remonte vers la gauche.
+2. **Règle du mauvais caractère** : en cas de désaccord à la position `j` du motif sur un caractère `c` du texte, on **décale le motif** de manière à aligner :
+   - soit la dernière occurrence de `c` dans le motif (à gauche de la position `j`),
+   - soit le motif complet **après** `c` si `c` n'apparaît pas dans le motif.
 
-```python
-def kmp_table(motif):
-    """Calcule le tableau pi (failure function) pour KMP.
+→ Quand le caractère du texte n'est pas du tout dans le motif, on saute **m positions d'un coup** au lieu d'une seule.
 
-    pi[i] = longueur du plus long préfixe propre de motif[:i+1] qui est aussi suffixe.
-    Complexité : O(p).
-    """
-    p = len(motif)
-    pi = [0] * p
-    k = 0
-    for i in range(1, p):
-        while k > 0 and motif[k] != motif[i]:
-            k = pi[k - 1]
-        if motif[k] == motif[i]:
-            k += 1
-        pi[i] = k
-    return pi
+#### Exemple intuitif
 
+Cherchons `"NIVEAU"` dans `"VIVE_LE_BAC_NIVEAU_2026"` :
 
-# Exemple : "abcabd" -> [0, 0, 0, 1, 2, 0]
-print(kmp_table("abcabd"))
+```
+position 0 : V I V E _ L E _ B A C _ N I V E A U _ 2 0 2 6
+             N I V E A U
+             ↑                     ← on compare en partant de la droite : 'L' (texte) ≠ 'U' (motif)
 ```
 
-#### 2.3 Recherche KMP
+À la position 0, on compare le dernier caractère du motif `'U'` avec `texte[5] = 'L'`. `'L'` n'apparaît **pas du tout** dans le motif `"NIVEAU"`, donc on peut **sauter 6 positions d'un coup** (toute la longueur du motif).
 
-```python
-def kmp_recherche(motif, texte):
-    """Renvoie la liste des positions de `motif` dans `texte` avec KMP.
-
-    Complexité : O(n + p) après précalcul O(p).
-    """
-    if motif == "":
-        return list(range(len(texte) + 1))
-    pi = kmp_table(motif)
-    positions = []
-    j = 0   # index dans le motif
-    for i, c in enumerate(texte):
-        while j > 0 and motif[j] != c:
-            j = pi[j - 1]      # on saute, sans revenir dans le texte
-        if motif[j] == c:
-            j += 1
-        if j == len(motif):
-            positions.append(i - len(motif) + 1)
-            j = pi[j - 1]      # on continue pour chercher d'autres occurrences
-    return positions
-
-
-print(kmp_recherche("ab", "ababab"))   # [0, 2, 4]
+```
+position 6 : V I V E _ L E _ B A C _ N I V E A U _ 2 0 2 6
+                         N I V E A U
+                                    ↑   ← compare 'U' (motif) avec '_' (texte) : echec, '_' pas dans motif → saut
 ```
 
-### 3. Expressions régulières (regex)
+Et ainsi de suite. **L'algorithme naïf** aurait fait n×m comparaisons ; BM en fait beaucoup moins en sautant des blocs entiers.
 
-Le module `re` de Python.
+#### Pseudo-code simplifié
 
-| Métacaractère | Signification |
-|---------------|---------------|
-| `.` | Tout caractère (sauf `\n`) |
-| `^` | Début de chaîne (ou de ligne avec `re.MULTILINE`) |
-| `$` | Fin |
-| `*` | 0 ou plus |
-| `+` | 1 ou plus |
-| `?` | 0 ou 1 |
-| `{n}` / `{n,m}` | exactement n / entre n et m |
-| `[]` | Classe de caractères (ex `[abc]` ou `[a-z]`) |
-| `[^...]` | Négation de classe |
-| `\d`, `\D` | Chiffre / non-chiffre |
-| `\w`, `\W` | Mot (alphanum + _) / non-mot |
-| `\s`, `\S` | Espace / non-espace |
-| `(...)` | Groupe de capture |
-| `(?:...)` | Groupe non capturant |
-| `\|` | Alternative (OU) |
-
-```python
-import re
-
-# Trouver tous les nombres dans un texte
-re.findall(r"\d+", "il y a 12 pommes et 7 oranges")   # ['12', '7']
-
-# Vérifier un email simple
-motif_email = r"^[\w.+-]+@[\w-]+\.[a-zA-Z]{2,}$"
-bool(re.match(motif_email, "alice@example.com"))      # True
-
-# Substitution
-re.sub(r"\d", "*", "code 1234")                        # 'code ****'
-
-# Groupe de capture
-m = re.search(r"(\d+)/(\d+)/(\d+)", "Date: 22/04/2026")
-m.group(0)  # '22/04/2026'
-m.group(1), m.group(2), m.group(3)   # ('22', '04', '2026')
+```text
+fonction boyer_moore(motif, texte) :
+    construire derniere_occurrence[c] pour chaque caractere c
+        (= position la plus a droite de c dans le motif, -1 si absent)
+    i ← 0                                      # position de depart de la fenetre
+    tant que i ≤ n - m :
+        j ← m - 1                              # on compare DE LA DROITE
+        tant que j ≥ 0 et motif[j] = texte[i+j] :
+            j ← j - 1
+        si j < 0 :                             # tout le motif a matche
+            ajouter i au resultat
+            i ← i + 1                          # on avance d'une position
+        sinon :
+            c ← texte[i+j]                      # caractere fautif
+            saut ← max(1, j - derniere_occurrence[c])
+            i ← i + saut                        # on saute potentiellement m positions
 ```
+
+> 💡 Le code complet de BM est plus subtil (avec aussi la **règle du bon suffixe**) ; le BO ne demande **pas** de l'écrire, mais de **comprendre l'idée** et d'expliquer pourquoi BM est efficace.
+
+#### Efficacité
+
+- **Pire cas théorique** : O(n × m) (rarement atteint en pratique).
+- **En pratique** : BM est souvent **plus rapide que linéaire en moyenne** sur des alphabets grands (texte naturel, ADN), car il saute de gros blocs.
+- C'est l'algorithme utilisé par `grep` et de nombreux outils de recherche textuelle.
+
+> Note : « **L'étude du coût, difficile, ne peut être exigée** » (BO). Pas besoin de démontrer la complexité, seulement de **comprendre pourquoi BM est efficace**.
 
 ---
 
-## Diagramme — déroulé de l'algo naïf
+## Diagramme — Comparaison naïf vs Boyer-Moore
 
-Recherche de `"abc"` dans `"abcabc"` :
+Recherche de `"abc"` dans `"xyzabc"` :
 
 ```mermaid
 flowchart TD
-    A[i=0 : "abc" vs "abc" → MATCH 0] --> B[i=1 : "abc" vs "bca" → echec en 0]
-    B --> C[i=2 : "abc" vs "cab" → echec en 0]
-    C --> D[i=3 : "abc" vs "abc" → MATCH 3]
-    D --> E[Resultat : 0, 3]
+    A[Naif : commence en 0] --> B[i=0 : 'a' vs 'x' → echec, avance de 1]
+    B --> C[i=1 : 'a' vs 'y' → echec, avance de 1]
+    C --> D[i=2 : 'a' vs 'z' → echec, avance de 1]
+    D --> E[i=3 : abc vs abc → MATCH]
 ```
 
 ```mermaid
-flowchart LR
-    M[Motif] --> P[Precalcul de pi en O p]
-    P --> R[Parcours du texte en O n]
-    R --> O[Sortie : positions]
+flowchart TD
+    A2[Boyer-Moore : commence en 0] --> B2[i=0 : compare 'c' avec texte 2 = 'z'. 'z' pas dans motif → SAUT de 3]
+    B2 --> C2[i=3 : compare 'c' avec texte 5 = 'c' → match, on remonte]
+    C2 --> D2[match complet]
 ```
+
+→ BM fait **2 étapes** contre 4 pour l'algorithme naïf ici. Sur des textes longs avec un alphabet large, l'écart devient énorme.
 
 ---
 
 ## Pièges classiques au bac
 
-- **Compter les occurrences chevauchantes ou non** : `"aaa"` dans `"aaaa"` → 2 chevauchantes
-  (positions 0, 1) ; en KMP on continue avec `pi[j-1]` pour trouver les chevauchantes.
-- **Algo naïf complexité O(nm), pas O(n+m)** : ne pas confondre.
-- **Indices d'arrivée** : la fenêtre de comparaison va de `i` à `i+p-1`.
-- **Regex « gourmandes »** : `.*` est gourmand par défaut. `.*?` est paresseux.
-- **Caractères spéciaux à échapper** dans les regex : `\.`, `\(`, `\)`.
+- **Compter les occurrences chevauchantes ou non** : `"aaa"` dans `"aaaa"` → 2 chevauchantes (positions 0, 1).
+- **Algo naïf complexité O(n × m), pas O(n + m)** : ne pas confondre.
+- **Indices d'arrivée** : la fenêtre de comparaison va de `i` à `i + m − 1`.
+- **Boyer-Moore compare de DROITE à GAUCHE** : c'est l'astuce centrale, ne pas l'oublier.
+- **Le saut peut être de m positions** quand le caractère du texte n'est pas dans le motif.
 
 ---
 
 ## Questions types au bac
 
-**Q1.** *Quelle est la complexité de l'algorithme naïf de recherche d'un motif de longueur p dans un texte de longueur n ?*
-> O(n × p).
+**Q1.** *Quelle est la complexité de l'algorithme naïf de recherche d'un motif de longueur m dans un texte de longueur n ?*
+> O(n × m).
 
-**Q2.** *Quelle amélioration apporte KMP par rapport à l'algorithme naïf ?*
-> KMP ne revient jamais en arrière dans le texte. Sa complexité est O(n + p) au lieu de O(np).
+**Q2.** *Donner les deux idées clés de l'algorithme de Boyer-Moore.*
+> (1) Comparer le motif au texte **de droite à gauche** ; (2) en cas d'échec, utiliser la **règle du mauvais caractère** pour décaler le motif de plusieurs positions à la fois (potentiellement de toute la longueur du motif si le caractère du texte n'apparaît pas dans le motif).
 
-**Q3.** *Que contient le tableau π de KMP ?*
-> Pour chaque indice i, π[i] = longueur du plus long préfixe propre de motif[0..i] qui est
-> aussi suffixe.
+**Q3.** *Pourquoi Boyer-Moore est-il efficace en pratique ?*
+> Parce qu'il **saute** de gros blocs du texte (parfois la longueur entière du motif) au lieu d'avancer position par position. Sur des alphabets grands (texte naturel, ADN), de nombreux caractères du texte n'apparaissent pas dans le motif, ce qui permet des sauts maximaux.
 
-**Q4.** *Donner une expression régulière qui reconnaît un nombre entier (positif ou négatif).*
-> `^-?\d+$` ou `r"-?\d+"`.
-
-**Q5.** *Combien d'occurrences de "ab" dans "ababab" ?*
+**Q4.** *Combien d'occurrences de `"ab"` dans `"ababab"` ?*
 > 3 (positions 0, 2, 4).
+
+**Q5.** *Sur la recherche de `"NIVEAU"` dans `"VIVE_LE_BAC"`, expliquer ce que fait Boyer-Moore à la première étape.*
+> Il aligne le motif sur les positions 0-5 et compare le **dernier** caractère du motif (`'U'`) avec `texte[5] = 'L'`. Comme `'L'` n'apparaît **pas du tout** dans le motif `"NIVEAU"`, il peut décaler le motif de toute sa longueur (6 positions) sans rien manquer.
 
 ---
 
@@ -244,4 +212,3 @@ flowchart LR
 
 - Cours en ligne : <https://lyotardjulien.forge.apps.education.fr/terminale-specialite-nsi-au-lycee-notre-dame/60_sequence_60/60_sequence_60/>
 - Voir aussi : [`memos/memo_complexites.md`](../memos/memo_complexites.md)
-- Documentation Python : <https://docs.python.org/fr/3/library/re.html>

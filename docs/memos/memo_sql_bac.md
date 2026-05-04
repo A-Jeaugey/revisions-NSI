@@ -3,23 +3,26 @@
 Le SQL au bac NSI = **lecture et rédaction de requêtes** sur des tables données.
 Tu n'auras pas à concevoir une base, mais à **interroger** une base existante.
 
+!!! warning "Périmètre officiel BO Terminale"
+    Le BO précise : « Les requêtes SQL d'interrogation **sans utiliser les clauses `GROUP BY` et `HAVING`**. »
+
+    Donc **`GROUP BY`, `HAVING`, sous-requêtes, transactions et propriétés ACID** sont **hors programme NSI** et ne figurent pas dans ce mémo. Le périmètre testé : `SELECT FROM WHERE JOIN`, `INSERT`, `UPDATE`, `DELETE`, `DISTINCT`, `ORDER BY`, et les agrégats simples (`COUNT`, `SUM`, `AVG`, `MIN`, `MAX`) appliqués globalement (sans regroupement).
+
 ---
 
 ## 1. Anatomie d'une requête SELECT
 
 ```sql
-SELECT colonnes               -- ce qu'on veut afficher
+SELECT [DISTINCT] colonnes    -- ce qu'on veut afficher
 FROM table                    -- d'où ça vient
 [JOIN autre_table ON ...]     -- jointures (optionnel)
 [WHERE conditions]            -- filtre des lignes
-[GROUP BY colonnes]           -- regroupement
-[HAVING conditions]           -- filtre sur les groupes
 [ORDER BY colonnes [ASC|DESC]] -- tri
 [LIMIT n [OFFSET k]];         -- nb max de résultats
 ```
 
 **Ordre d'évaluation logique** (≠ ordre d'écriture !) :
-`FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT`
+`FROM → JOIN → WHERE → SELECT → ORDER BY → LIMIT`
 
 ---
 
@@ -81,20 +84,25 @@ SELECT * FROM Note WHERE matiere IS NOT NULL;     -- jamais "= NULL"
 
 **LIKE** : `%` = n'importe quelle séquence ; `_` = exactement un caractère.
 
-### 3.4 Tri
+### 3.4 DISTINCT
+```sql
+SELECT DISTINCT classe FROM Eleve;   -- elimine les doublons
+```
+
+### 3.5 Tri
 ```sql
 SELECT * FROM Eleve ORDER BY nom ASC;
 SELECT * FROM Note  ORDER BY note DESC, matiere ASC;
 ```
 
-### 3.5 LIMIT
+### 3.6 LIMIT
 ```sql
 SELECT * FROM Note ORDER BY note DESC LIMIT 3;   -- top 3
 ```
 
 ---
 
-## 4. Fonctions d'agrégation
+## 4. Fonctions d'agrégation (utilisation globale)
 
 | Fonction | Rôle |
 |----------|------|
@@ -105,47 +113,20 @@ SELECT * FROM Note ORDER BY note DESC LIMIT 3;   -- top 3
 | `AVG(col)` | moyenne |
 | `MIN(col)`, `MAX(col)` | min, max |
 
+> ⚠️ Au bac NSI, ces agrégats s'utilisent **sans `GROUP BY`** (donc en agrégeant sur toute la table ou un sous-ensemble filtré par `WHERE`).
+
 ```sql
-SELECT COUNT(*) FROM Eleve;                      -- 3
-SELECT AVG(note) FROM Note WHERE matiere='NSI';  -- (17+12+18)/3 = 15.66
+SELECT COUNT(*) FROM Eleve;                          -- 3
+SELECT AVG(note) FROM Note WHERE matiere='NSI';      -- (17+12+18)/3 = 15.66
+SELECT MAX(note) FROM Note;                          -- 18
+SELECT MIN(note) FROM Note WHERE matiere = 'Maths';  -- 14
 ```
 
 ---
 
-## 5. GROUP BY + HAVING
+## 5. Jointures (JOIN)
 
-```sql
--- Moyenne par matière
-SELECT matiere, AVG(note) AS moyenne
-FROM Note
-GROUP BY matiere;
-
--- Matières avec moyenne >= 14 (filtrer les groupes → HAVING, pas WHERE)
-SELECT matiere, AVG(note) AS moy
-FROM Note
-GROUP BY matiere
-HAVING AVG(note) >= 14;
-
--- Élèves avec au moins 2 notes
-SELECT id_eleve, COUNT(*) AS nb
-FROM Note
-GROUP BY id_eleve
-HAVING COUNT(*) >= 2;
-```
-
-**Règle d'or** : dans une requête avec `GROUP BY`, le `SELECT` ne peut contenir QUE :
-- des colonnes du `GROUP BY`,
-- des fonctions d'agrégation.
-
-**WHERE vs HAVING** :
-- `WHERE` filtre **les lignes** AVANT regroupement.
-- `HAVING` filtre **les groupes** APRÈS regroupement.
-
----
-
-## 6. Jointures (JOIN)
-
-### 6.1 INNER JOIN — intersection
+### 5.1 INNER JOIN — intersection
 ```sql
 SELECT e.nom, e.prenom, n.matiere, n.note
 FROM Eleve e
@@ -153,7 +134,7 @@ INNER JOIN Note n ON e.id = n.id_eleve;
 ```
 Renvoie uniquement les élèves qui ont au moins une note.
 
-### 6.2 LEFT JOIN — toutes les lignes de la gauche, NULL si pas de match
+### 5.2 LEFT JOIN — toutes les lignes de la gauche, NULL si pas de match
 ```sql
 SELECT e.nom, n.matiere, n.note
 FROM Eleve e
@@ -161,13 +142,13 @@ LEFT JOIN Note n ON e.id = n.id_eleve;
 ```
 Renvoie aussi les élèves sans note (avec `NULL` dans matiere/note).
 
-### 6.3 Jointure naturelle (équivalente)
+### 5.3 Jointure naturelle (équivalente à INNER JOIN)
 ```sql
 SELECT * FROM Eleve, Note
 WHERE Eleve.id = Note.id_eleve;
 ```
 
-### 6.4 Schéma visuel
+### 5.4 Schéma visuel
 
 ```
 INNER JOIN      LEFT JOIN
@@ -179,21 +160,7 @@ INNER JOIN      LEFT JOIN
 
 ---
 
-## 7. Sous-requêtes
-
-```sql
--- Élèves ayant la meilleure note en NSI
-SELECT nom, prenom FROM Eleve
-WHERE id IN (
-    SELECT id_eleve FROM Note
-    WHERE matiere = 'NSI'
-      AND note = (SELECT MAX(note) FROM Note WHERE matiere = 'NSI')
-);
-```
-
----
-
-## 8. INSERT / UPDATE / DELETE
+## 6. INSERT / UPDATE / DELETE
 
 ```sql
 -- Ajout
@@ -212,7 +179,7 @@ DELETE FROM Note WHERE note < 5;
 
 ---
 
-## 9. CREATE TABLE (lecture suffisante au bac)
+## 7. CREATE TABLE (lecture suffisante au bac)
 
 ```sql
 CREATE TABLE Eleve (
@@ -239,45 +206,22 @@ CREATE TABLE Note (
 
 ---
 
-## 10. Algèbre relationnelle ↔ SQL
+## 8. Algèbre relationnelle ↔ SQL
 
 | Algèbre | Notation | SQL équivalent |
 |---------|----------|----------------|
 | Sélection | σ_condition(R) | `SELECT * FROM R WHERE condition` |
-| Projection | π_cols(R) | `SELECT cols FROM R` |
+| Projection | π_cols(R) | `SELECT cols FROM R` (avec `DISTINCT`) |
 | Jointure | R ⋈_cond S | `SELECT * FROM R JOIN S ON cond` |
-| Union | R ∪ S | `SELECT * FROM R UNION SELECT * FROM S` |
-| Intersection | R ∩ S | `... INTERSECT ...` |
-| Différence | R − S | `... EXCEPT ...` |
-| Produit cartésien | R × S | `SELECT * FROM R, S` |
-| Renommage | ρ | `AS` |
 
 ---
 
-## 11. ACID (transactions)
-
-| Lettre | Signification |
-|--------|---------------|
-| **A**tomicité | Une transaction est tout-ou-rien. |
-| **C**ohérence | La base passe d'un état cohérent à un autre. |
-| **I**solation | Les transactions concurrentes ne se gênent pas. |
-| **D**urabilité | Une transaction validée est persistante. |
-
-```sql
-BEGIN;
-UPDATE Compte SET solde = solde - 100 WHERE id = 1;
-UPDATE Compte SET solde = solde + 100 WHERE id = 2;
-COMMIT;     -- ou ROLLBACK; si problème
-```
-
----
-
-## 12. Pièges classiques au bac
+## 9. Pièges classiques au bac
 
 | Piège | Bonne pratique |
 |-------|----------------|
 | `WHERE col = NULL` | `WHERE col IS NULL` |
-| Mettre une agrégat dans WHERE | Utiliser HAVING |
+| Utiliser `GROUP BY` ou `HAVING` au bac NSI | **Hors programme** : repenser la requête |
 | Oublier que `LIKE` est sensible à la casse (selon SGBD) | Tester ou `LOWER(col) LIKE '...'` |
 | Ne pas qualifier les colonnes en JOIN (ambigu) | `e.nom`, `n.note` |
 | Confondre `INNER JOIN` et `LEFT JOIN` | Lire « toutes les lignes de gauche ? » |
@@ -286,39 +230,41 @@ COMMIT;     -- ou ROLLBACK; si problème
 
 ---
 
-## 13. Questions types au bac
+## 10. Questions types au bac
 
-**Q1.** *Donner le nom et la classe des élèves ayant une moyenne supérieure à 14.*
+**Q1.** *Donner le nom et la classe des élèves de la classe `'TG3'`.*
 ```sql
-SELECT e.nom, e.classe
-FROM Eleve e
-JOIN Note n ON e.id = n.id_eleve
-GROUP BY e.id, e.nom, e.classe
-HAVING AVG(n.note) > 14;
+SELECT nom, classe
+FROM   Eleve
+WHERE  classe = 'TG3';
 ```
 
-**Q2.** *Donner le nombre de notes par matière, classées de la matière la plus notée à la moins notée.*
+**Q2.** *Calculer la moyenne en NSI sur l'ensemble des élèves.*
 ```sql
-SELECT matiere, COUNT(*) AS nb
-FROM Note
-GROUP BY matiere
-ORDER BY nb DESC;
+SELECT AVG(note) AS moyenne_NSI
+FROM   Note
+WHERE  matiere = 'NSI';
 ```
 
 **Q3.** *Quels élèves n'ont aucune note ?*
 ```sql
 SELECT e.nom
-FROM Eleve e
+FROM   Eleve e
 LEFT JOIN Note n ON e.id = n.id_eleve
-WHERE n.id_eleve IS NULL;
+WHERE  n.id_eleve IS NULL;
 ```
 
-**Q4.** *Donner la moyenne générale par élève (nom, moyenne).*
+**Q4.** *Lister toutes les notes d'un élève donné (id = 1) avec son nom et la matière.*
 ```sql
-SELECT e.nom, AVG(n.note) AS moy
-FROM Eleve e
-JOIN Note n ON e.id = n.id_eleve
-GROUP BY e.id, e.nom;
+SELECT e.nom, n.matiere, n.note
+FROM   Eleve e
+JOIN   Note  n ON n.id_eleve = e.id
+WHERE  e.id = 1;
+```
+
+**Q5.** *Lister les classes distinctes (sans doublons) présentes dans la table `Eleve`.*
+```sql
+SELECT DISTINCT classe FROM Eleve;
 ```
 
 ---
@@ -326,8 +272,9 @@ GROUP BY e.id, e.nom;
 ## 🎯 Check-list bac SQL
 
 - [ ] Je sais lire une jointure et expliquer le résultat.
-- [ ] Je sais utiliser GROUP BY + HAVING.
-- [ ] Je différencie `WHERE` et `HAVING`.
+- [ ] Je différencie `INNER JOIN` et `LEFT JOIN`.
 - [ ] Je sais filtrer avec `LIKE`, `IN`, `BETWEEN`, `IS NULL`.
-- [ ] Je sais compter, sommer, moyenner.
+- [ ] Je sais compter, sommer, moyenner (sans `GROUP BY`).
 - [ ] Je sais traduire une question naturelle en SQL.
+- [ ] Je sais utiliser `DISTINCT` et `ORDER BY`.
+- [ ] Je n'utilise **jamais** `GROUP BY` ni `HAVING` au bac NSI (hors programme).

@@ -8,6 +8,9 @@ Une fiche par séquence du cours. Chacune suit la même structure :
 **TL;DR → Plan → Notions clés → Vocabulaire → Algorithmes & code → Diagramme →
 Pièges au bac → Questions types → Liens.**
 
+!!! tip "Périmètre du programme"
+    Chaque fiche commence par un encadré indiquant ce qui est **au programme strict** et ce qui est **hors programme NSI**, en s'appuyant sur le BO Terminale et la note de service MENE2227884N (2022) qui définit le périmètre évaluable à l'écrit. Les notions hors programme ne sont **pas** dans ces fiches.
+
 ## 🐍 Bases Python & structures
 
 <div class="grid cards" markdown>
@@ -28,15 +31,15 @@ Pièges au bac → Questions types → Liens.**
 
 - :material-package-variant-closed: **3 — Types abstraits (ADT)**
 
-    Pile (LIFO), File (FIFO), liste chaînée, calculatrice polonaise inversée,
-    type abstrait vs implémentation.
+    Pile (LIFO), File (FIFO), interface vs implémentation, vérification de
+    parenthésage.
 
     [→ Lire la fiche](03_types_abstraits_donnees.md)
 
 - :material-account-tie-hat: **4 — Programmation orientée objet (POO)**
 
-    Classes, objets, attributs, méthodes, héritage, polymorphisme, méthodes
-    spéciales, UML simple.
+    Vocabulaire (classe, attribut, méthode, objet), `__init__`, méthodes,
+    `__str__` / `__repr__`. *(Héritage et polymorphisme : hors programme.)*
 
     [→ Lire la fiche](04_programmation_orientee_objet.md)
 
@@ -46,17 +49,17 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-graph-outline: **5 — Graphes**
+- :material-graph-outline: **5 — Graphes** *(moins prioritaire — note 2023+)*
 
-    Définitions, matrice / liste d'adjacence, BFS, DFS, plus court chemin,
-    composantes connexes, détection de cycle.
+    Définitions, matrice / liste d'adjacence, BFS, DFS, plus court chemin BFS
+    non pondéré, détection de cycle simple.
 
     [→ Lire la fiche](05_graphes.md)
 
 - :material-file-tree-outline: **6 — Arbres**
 
     Vocabulaire (racine, feuille, hauteur), arbre binaire, ABR, parcours
-    préfixe/infixe/suffixe/largeur, tas.
+    préfixe/infixe/suffixe/largeur.
 
     [→ Lire la fiche](06_arbres.md)
 
@@ -68,8 +71,9 @@ Pièges au bac → Questions types → Liens.**
 
 - :material-database: **7 — Bases de données (SQL)**
 
-    Modèle relationnel, clés, algèbre relationnelle (σ, π, ⋈), SQL
-    (SELECT/JOIN/GROUP BY/HAVING), ACID, transactions.
+    Modèle relationnel, clés primaires/étrangères, contraintes, SQL au
+    périmètre bac : `SELECT/FROM/WHERE/JOIN/INSERT/UPDATE/DELETE/DISTINCT/ORDER BY`,
+    agrégats simples. *(`GROUP BY`, `HAVING`, ACID : hors programme.)*
 
     [→ Lire la fiche](07_bases_de_donnees.md)
 
@@ -81,7 +85,7 @@ Pièges au bac → Questions types → Liens.**
 
 - :material-call-split: **8 — Diviser pour régner**
 
-    Tri fusion, tri rapide, dichotomie, récurrences.
+    Tri fusion, dichotomie, récurrences.
 
     [→ Lire la fiche](08_diviser_pour_regner.md)
 
@@ -92,15 +96,15 @@ Pièges au bac → Questions types → Liens.**
 
     [→ Lire la fiche](12_glouton_knn.md)
 
-- :material-table-large: **13 — Programmation dynamique**
+- :material-table-large: **13 — Programmation dynamique** *(moins prioritaire)*
 
-    Mémoïsation top-down, tabulation bottom-up, sac à dos 0/1.
+    Mémoïsation top-down, tabulation bottom-up, rendu de monnaie non canonique.
 
     [→ Lire la fiche](13_programmation_dynamique.md)
 
-- :material-magnify: **16 — Recherche textuelle**
+- :material-magnify: **16 — Recherche textuelle** *(moins prioritaire)*
 
-    Algorithme naïf, KMP (failure function), regex.
+    Algorithme naïf, présentation de Boyer-Moore et son efficacité. *(KMP, regex : hors programme.)*
 
     [→ Lire la fiche](16_recherche_textuelle.md)
 
@@ -112,29 +116,28 @@ Pièges au bac → Questions types → Liens.**
 
 - :material-cog-sync-outline: **9 — Processus**
 
-    États, ordonnancement, fork, communication inter-processus, interblocage
-    (Coffman), processus vs thread.
+    États, ordonnancement, création de processus, **interblocage** (Coffman).
 
     [→ Lire la fiche](09_processus.md)
 
 - :material-linux: **10 — Linux**
 
-    Shell, arborescence, commandes essentielles, permissions (chmod),
-    redirections (`|`, `>`, `<`), scripts shell.
+    Shell, arborescence, commandes de base (`ls`, `cd`, `cp`, `chmod`),
+    permissions rwx + octales, redirections simples (`|`, `>`, `<`).
 
     [→ Lire la fiche](10_linux.md)
 
 - :material-lan: **11 — Réseaux**
 
-    Modèles OSI / TCP-IP, IPv4 + CIDR, plages privées, TCP/UDP, encapsulation,
-    routage, NAT.
+    TCP/IP en 4 couches, IPv4 + CIDR, plages privées, encapsulation, **routage
+    RIP/OSPF** (programme Terminale).
 
     [→ Lire la fiche](11_reseaux.md)
 
-- :material-chip: **15 — System on Chip (SoC)**
+- :material-chip: **15 — System on Chip (SoC)** *(moins prioritaire)*
 
-    Architecture von Neumann/Harvard, CPU (ALU + registres), cycle Fetch/Decode/
-    Execute/Writeback, hiérarchie mémoire.
+    Identification des composants d'un SoC, avantages de l'intégration
+    (vitesse, consommation), architecture de von Neumann en bref.
 
     [→ Lire la fiche](15_soc.md)
 
@@ -144,16 +147,17 @@ Pièges au bac → Questions types → Liens.**
 
 <div class="grid cards" markdown>
 
-- :material-key-variant: **14 — Cryptographie**
+- :material-key-variant: **14 — Cryptographie** *(moins prioritaire)*
 
-    Symétrique vs asymétrique, César, Vigenère, XOR, RSA, signature, fonctions
-    de hachage.
+    Vocabulaire, distinction symétrique/asymétrique, principe HTTPS, masque
+    jetable XOR (sécurité parfaite de Shannon). *(RSA détaillé, signature, hash : hors programme.)*
 
     [→ Lire la fiche](14_cryptographie.md)
 
-- :material-language-haskell: **17 — Paradigmes de programmation**
+- :material-language-haskell: **17 — Paradigmes de programmation** *(moins prioritaire)*
 
-    Impératif, OO, fonctionnel, logique, événementiel ; comparaison sur exemples.
+    Identifier les 4 paradigmes (impératif, OO, fonctionnel, déclaratif) et
+    choisir un paradigme selon le contexte.
 
     [→ Lire la fiche](17_paradigmes_programmation.md)
 
@@ -170,7 +174,7 @@ Pièges au bac → Questions types → Liens.**
 
     [→ Lire la fiche](18_approfondissement.md)
 
-- :material-infinity: **19 — Décidabilité & calculabilité**
+- :material-infinity: **19 — Décidabilité & calculabilité** *(moins prioritaire)*
 
     Problème de l'arrêt, indécidabilité, démonstration par l'absurde
     (programme `halt` → `sym(sym)`).
